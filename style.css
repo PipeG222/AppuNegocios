@@ -1,0 +1,73 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+#tabla-precios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.table {
+    width: 17%;
+}
+
+.planes:hover {
+    box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+
+}
+
+.table#caracteristicas {
+    position: relative;
+    top: 7px;
+}
+
+ul {
+    margin-top: 0;
+    padding: 0;
+}
+
+.caracteristicas > ul > li {
+    list-style: none;  
+}
+
+li.oscuro {
+    background: #D8D8D8;
+}
+
+li.oscuroCaracteristicas {
+    background: #323332;
+    color: white
+}
+
+li.claroCaracteristicas {
+    background: #4D4D4C;
+    color: white;
+}
+
+
+
+button#pro {
+    display: flex;
+    background-color: transparent;
+    color: #323332;
+    padding: 10px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+    align-items: center;
+}
+
+span.shop {
+    padding: 8px;
+    font-size: x-large;
+    margin-right: 8px;
+}
+
+
