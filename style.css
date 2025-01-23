@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: rgb(242, 242, 242);
 }
 
 #tabla-precios {
@@ -10,22 +10,61 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
 }
 
-.table {
-    width: 17%;
+@media (min-width: 576px) {
+    .table {
+        width: 48%; /* Ajusta el ancho para pantallas pequeñas */
+    }
+
+    .table#caracteristicas {
+        position: relative;
+        top: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    .table {
+        width: 20%; /* Ajusta el ancho para pantallas medianas */
+    }
+
+    .table#caracteristicas {
+        position: relative;
+        top: 35px;
+    }
+}
+
+@media (min-width: 992px) {
+    .table {
+        width: 18%; /* Ajusta el ancho para pantallas grandes */
+    }
+
+    .table#caracteristicas {
+        position: relative;
+        top: 35px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .table {
+        width: 16%; /* Ajusta el ancho para pantallas extra grandes */
+    }
+
+    .table#caracteristicas {
+        position: relative;
+        top: 35px;
+    }
 }
 
 .planes:hover {
-    box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 10px 0 10px 0 rgb( 0 0 0 / 30%);
     transform: scale(1.05);
 
 }
 
-.table#caracteristicas {
-    position: relative;
-    top: 7px;
-}
+
 
 ul {
     margin-top: 0;
@@ -37,17 +76,17 @@ ul {
 }
 
 li.oscuro {
-    background: #D8D8D8;
+    background: rgb(216 216 216);
 }
 
 li.oscuroCaracteristicas {
-    background: #323332;
-    color: white
+    background: rgb(50 51 50);
+    color: rgb(255 255 255)
 }
 
 li.claroCaracteristicas {
-    background: #4D4D4C;
-    color: white;
+    background: rgb(77 77 76);
+    color: rgb(255 255 255);
 }
 
 
@@ -55,7 +94,7 @@ li.claroCaracteristicas {
 button#pro {
     display: flex;
     background-color: transparent;
-    color: #323332;
+    color: rgb(50 51 50);
     padding: 10px 24px;
     cursor: pointer;
     border: none;
