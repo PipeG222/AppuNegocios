@@ -11,19 +11,17 @@
 <body class="container-fluid" style="padding-left: 0; padding-right: 0;">
     <header >
         <nav
-            class="navbar navbar-expand-lg p-2"
-            style="background-color: #2d2c59; color: #ffffff; display: flex; justify-content: flex-end;"
+            class="navbar navbar-expand-lg"
+            style="background-color: #2d2c59; color: #ffffff; display: flex; justify-content: flex-end; padding: 10px;"
         >
+            <img src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="" width="150px" style="position: absolute; z-index: 1; top: 15px; left: 150px;">
             <div style="display: flex; align-items: center; width: 50%; justify-content: space-evenly;">
-                <div style="display: flex; background-color: #ffffff; border-radius: 10px; padding: 1px 3px;">
-                    <img src="https://appu-bucket-s3.s3.amazonaws.com/static/img/barra/logo_superior.png" alt="" width="50px">
-                    <select name="Ubicacion" id="ubi" style="border: none; background-color: #ffffff;">
-                        <option value="Medellin">Medellin</option>
-                        <option value="Bogota">Bogota</option>
-                        <option value="Cali">Cali</option>
-                        <option value="Barranquilla">Barranquilla</option>
+                    <select name="Ubicacion" id="ubi" style="border: none; background-color: #ffffff; border-radius: 5px; padding: 5px;"> 
+                        <option value="Medellin">📍 Medellin</option>
+                        <option value="Bogota">📍 Bogota</option>
+                        <option value="Cali">📍 Cali</option>
+                        <option value="Barranquilla">📍 Barranquilla</option>
                     </select>
-                </div>
                 
                     
                 </select>
@@ -41,10 +39,9 @@
     <img class="img" src="Img/banner.png" width="100%" alt="">
     <main style="text-align: center; padding: 20px;">
         <img src="Img/titulo.png" alt="" width="30%">
-        <div class="row">
+        <div class="row p-3">
             <div class="col-6">
-                <img src="" alt="">
-
+                <iframe style="padding: 20px;" width="560" height="315" src="https://www.youtube.com/embed/Gn1S6OXrTSo?si=QWFsmpKJBdBkKlM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="col-6" style="text-align: left;">
                 <h2 style="text-align: left; color: #7F848A">alegra <br>Contabilidad</h2>
@@ -65,14 +62,15 @@
     </main>
     <aside style="margin: 0 50px;">
         <hr style="border: 1px solid #2d2c59; width: 90%; margin: 50px auto;">
-        <div class="row">
+        <div class="row" style="width: 80%; margin: 0 auto;">
             <h1>MARCAMOS Diferencia</h1>
-            <div class="col-12 my-2" style="background-color: #ff6600; padding: 20px; color: white; border-radius: 30px 5px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In assumenda quam quos rerum aspernatur. Commodi, quos placeat tempore veritatis dicta nemo deleniti iure totam dolores, mollitia neque! Assumenda, est neque!</p>
-            </div>
-            <div class="col-12" style="background-color: #2d2c59; color: white; padding: 20px; border-radius: 30px 5px; ">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestias ab ipsum corporis illum amet dolores aliquid non fugit hic? Provident nemo sint voluptate vitae eius earum voluptates enim odio.</p>
-            </div>
+                <div style="background-color: #ff6600; padding: 20px; color: white; border-radius: 30px 5px; margin: 20px 0;">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In assumenda quam quos rerum aspernatur. Commodi, quos placeat tempore veritatis dicta nemo deleniti iure totam dolores, mollitia neque! Assumenda, est neque!</p>
+                </div>
+                <div style="background-color: #2d2c59; color: white; padding: 20px; border-radius: 30px 5px;">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestias ab ipsum corporis illum amet dolores aliquid non fugit hic? Provident nemo sint voluptate vitae eius earum voluptates enim odio.</p>
+                </div>
+            
             
             <div class="row justify-content-center mt-5">
                 <!-- Tarjeta 1 -->
@@ -212,5 +210,6 @@
     <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp whatsapp-icon"></i>
     </a>
+    <img src="Img/fondo_logo.png" alt="" style="position: absolute; top: 0; left: 0; width: 25%; z-index: 0;">
 </body>
 </html>

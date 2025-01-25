@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(242, 242, 242);
+    overflow-x: hidden;
 }
 
 
@@ -167,4 +168,12 @@ span.shop {
     z-index: 1000; /* Se asegura de estar encima de otros elementos */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
   }
