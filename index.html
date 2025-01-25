@@ -14,12 +14,25 @@
             class="navbar navbar-expand-lg p-2"
             style="background-color: #2d2c59; color: #ffffff; display: flex; justify-content: flex-end;"
         >
-            <div style="display: flex; align-items: center; width: 50%; justify-content: space-between;">
+            <div style="display: flex; align-items: center; width: 50%; justify-content: space-evenly;">
+                <div style="display: flex; background-color: #ffffff; border-radius: 10px; padding: 1px 3px;">
+                    <img src="https://appu-bucket-s3.s3.amazonaws.com/static/img/barra/logo_superior.png" alt="" width="50px">
+                    <select name="Ubicacion" id="ubi" style="border: none; background-color: #ffffff;">
+                        <option value="Medellin">Medellin</option>
+                        <option value="Bogota">Bogota</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                    </select>
+                </div>
+                
+                    
+                </select>
+
                 <a href="">Appu Reservas</a>
                 <a class="mx-3" href="">Appu Facturacion</a>
                 <div style="display: flex; flex-direction: column; align-items: center;">
-                     <p style="margin-bottom: 0;">Unete</p>
-                     <span class="badge bg-warning">Inicio de sesion</span>
+                     <p style="margin-bottom: 0; font-size: 12px;">Unete a nosotros!</p>
+                     <span class="badge p-2" style="background-color: #ff6600; font-size: 14px;">Inicio de sesion</span>
                 </div> 
             </div>
                
@@ -47,13 +60,47 @@
                     <li>Recibe, valida y contabilice sus comprobantes electronicos de forma inmediata con el Buzon inteligente</li>
                 </ul>
                 <button class="c-light p-1" style="background-color: #ff6600; color: white; border-radius: 5px; border: none; font-weight: 600;">Reserva tu demo ahora</button>
-
-            </div>
-            <div class="col-12" style="text-align: justify; margin-top: 20px;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore deserunt asperiores numquam blanditiis repellat nisi quas excepturi, minima ratione? Recusandae maiores voluptas sapiente quisquam, nam rerum facilis iusto earum molestiae. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi alias explicabo inventore, delectus similique dicta, corrupti voluptates ratione vitae odio recusandae? Soluta, accusamus tenetur atque assumenda ipsa perspiciatis similique veritatis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, atque a. At quae ea repellat totam ipsam illo velit sunt omnis dolore, magni voluptate fugit, assumenda exercitationem ratione similique sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ducimus quidem officiis tempora sequi ipsa laboriosam ea dolores totam fuga atque repudiandae minima animi quia odit eveniet, corrupti vero. Est?
             </div>
         </div>
     </main>
+    <aside style="margin: 0 50px;">
+        <hr style="border: 1px solid #2d2c59; width: 90%; margin: 50px auto;">
+        <div class="row">
+            <h1>MARCAMOS Diferencia</h1>
+            <div class="col-12 my-2" style="background-color: #ff6600; padding: 20px; color: white; border-radius: 30px 5px;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In assumenda quam quos rerum aspernatur. Commodi, quos placeat tempore veritatis dicta nemo deleniti iure totam dolores, mollitia neque! Assumenda, est neque!</p>
+            </div>
+            <div class="col-12" style="background-color: #2d2c59; color: white; padding: 20px; border-radius: 30px 5px; ">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestias ab ipsum corporis illum amet dolores aliquid non fugit hic? Provident nemo sint voluptate vitae eius earum voluptates enim odio.</p>
+            </div>
+            
+            <div class="row justify-content-center mt-5">
+                <!-- Tarjeta 1 -->
+                <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="icon">icono</div>
+                    <p class="card-text">descripción de una fortaleza principal</p>
+                </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="icon">icono</div>
+                    <p class="card-text">descripción de una fortaleza principal</p>
+                </div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="icon">icono</div>
+                    <p class="card-text">descripción de una fortaleza principal</p>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+        <hr style="border: 1px solid #2d2c59; width: 90%; margin: 50px auto;">
+    </aside>
     <section id="tabla-precios" style="margin-top: 50px;">
         <div class="table" id="caracteristicas">
             <div class="caracteristicas">
@@ -70,11 +117,9 @@
             </div>
         </div>
         <div class="table planes">
-            <div class="precio">
-                <img src="Img/Banner Planes/pyme.png" style="width: 100%;">
-            </div>
             <div class="caracteristicas">
                 <ul>
+                    <li class="imgPrecio"><img src="Img/Banner Planes/pyme.png" style="width: 100%;"></li>
                     <li class="oscuro">1</li>
                     <li>&times;</li>
                     <li class="oscuro">Basico</li>
@@ -88,11 +133,9 @@
             </div>
         </div>
         <div class="table planes">
-            <div class="precio">
-                <img src="Img/Banner Planes/plus.png" alt="" style="width: 100%;">
-            </div>
             <div class="caracteristicas">
                 <ul>
+                    <li class="imgPrecio"><img src="Img/Banner Planes/plus.png" alt="" style="width: 100%;"></li>
                     <li>2</li>
                     <li class="oscuro">✅</li>
                     <li>Online</li>
@@ -101,18 +144,17 @@
                     <li class="oscuro">✅</li>
                     <li>2</li>
                     <li class="oscuro">Por mes</li>
-                    <li class="oscuro"><button id="pro" style="font-weight: bold; margin-bottom: 0;"><span class="shop" style="background-color: #FEAD3B; border-radius: 100%; padding: 2px;">🛒</span> COMPRAR!</button>
-                        <span class="badge" style="padding: 7px; position: relative; bottom: -17px; width: 60%; font-size: 14px; background-color: #FEAD3B; color: #323332;">Recomendado</span>
+                    <li class="oscuro">
+                        <button id="pro" style="font-weight: bold; margin-bottom: 0;"><span class="shop" style="background-color: #FEAD3B; border-radius: 100%; padding: 2px;">🛒</span> COMPRAR!</button>
+                        <!-- <span class="badge" style="padding: 7px; position: relative; bottom: -17px; width: 60%; font-size: 14px; background-color: #FEAD3B; color: #323332;">Recomendado</span> -->
                     </li>
                 </ul>
             </div>
         </div>
         <div class="table planes">
-            <div class="precio">
-                <img src="Img/Banner Planes/pro.png" alt="" style="width: 100%;">
-            </div>
             <div class="caracteristicas">
                 <ul>
+                    <li class="imgPrecio"><img src="Img/Banner Planes/pro.png" alt="" style="width: 100%;"></li>
                     <li class="oscuro">3</li>
                     <li>✅</li>
                     <li class="oscuro">Asistencia</li>
@@ -126,11 +168,9 @@
             </div>
         </div>
         <div class="table planes">
-            <div class="precio">
-                <img src="Img/Banner Planes/pro+.png" alt="" style="width: 100%;">
-            </div>
             <div class="caracteristicas">
                 <ul>
+                    <li class="imgPrecio"><img src="Img/Banner Planes/pro+.png" alt="" style="width: 100%;"></li>
                     <li>4</li>
                     <li class="oscuro">✅</li>
                     <li>Asistencia</li>
@@ -146,28 +186,31 @@
     </section>
     <div class="row p-5">
         <div class="col-6"></div>
-        <div class="col-6">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, cum. Minima architecto eius ullam aperiam corporis soluta tempora unde eos maiores officia, iste nostrum, quidem maxime modi repellat sint ipsa!</p>
-            <p>Harum maxime reprehenderit libero nostrum, similique aliquid hic, id voluptas, consequatur delectus repudiandae numquam incidunt eaque iste? Ipsa modi maiores aliquid aspernatur debitis perferendis ad perspiciatis. Est nam velit earum.</p>
-            <p>Maiores, perferendis obcaecati? Debitis mollitia hic perferendis natus quae reprehenderit omnis, expedita voluptates earum dolore ipsa quam cum quisquam eligendi enim inventore architecto illo praesentium minus veniam corporis consequuntur? Maiores.</p>
+        <div class="col-6 p-4" style="background: #7F848A; border-radius: 15px;">
+            <div class="noticias">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, adipisci fugit. Rerum officiis error a sunt praesentium veniam ratione doloribus maiores voluptatum? Consectetur, nihil libero! Iusto qui repellat quibusdam ipsam.</p>
+            </div>
+            <div class="noticias">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem cupiditate, porro itaque, natus, totam nihil repudiandae officia quos incidunt illum ut cum. Nobis perferendis totam molestias blanditiis eos repellendus.</p>
+            </div>
+            <div class="noticias">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellendus quas earum provident nobis, suscipit doloremque, eius velit sunt modi eum corrupti voluptatem. Natus placeat cupiditate magnam laudantium fugiat ipsa!</p>
+            </div>
         </div>
     </div>
-    <footer style="background-color: #2d2c59; color: white; padding: 20px;">
+    <footer style="background-color: #2d2c59; color: white; padding: 20px; width: 100%;">
         <div class="row">
             <div class="col-6">
-                <h3>Elige tu plan</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, cum. Minima architecto eius ullam
-                    a
-                    periam corporis soluta tempora unde eos maiores officia, iste nostrum, quidem maxime modi repellat
-                    sint ipsa!</p>
             </div>
-            <div class="col-6">
-                <h3>Elige tu plan</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, cum. Minima architecto eius ullam
-                    a
-                    periam corporis soluta tempora unde eos maiores officia, iste nostrum, quidem maxime modi repellat
-                    sint ipsa!</p>
+            <div class="col-4">
+                <h2>Contacto</h2>
+                <hr style="border: 2px solid #ff6600; width: 20%; margin: 10px 0;">
             </div>
+            <div class="col-2">
+                <img class="p-5" src="https://appu-bucket-s3.s3.amazonaws.com/static/img/barra/logo_superior.png" alt="" width="80%">
     </footer>
+    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
 </body>
 </html>

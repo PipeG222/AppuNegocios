@@ -5,6 +5,7 @@ body {
     background-color: rgb(242, 242, 242);
 }
 
+
 #tabla-precios {
     display: flex;
     justify-content: center;
@@ -52,10 +53,15 @@ body {
         width: 16%; /* Ajusta el ancho para pantallas extra grandes */
     }
 
-    .table#caracteristicas {
+    /* .table#caracteristicas {
         position: relative;
-        top: 35px;
-    }
+        top: 38px;
+    } */
+}
+
+a {
+    text-decoration: underline ;
+    color: #ffffff;
 }
 
 .planes:hover {
@@ -63,7 +69,31 @@ body {
     transform: scale(1.05);
 
 }
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+    text-align: center;
+    padding: 20px;
+  }
 
+  .icon {
+    background-color: #4a61dd; /* Color del fondo del icono */
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .card-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333333;
+  }
 
 
 ul {
@@ -77,6 +107,8 @@ ul {
 
 li.oscuro {
     background: rgb(216 216 216);
+    display: flex;
+    justify-content: center;
 }
 
 li.oscuroCaracteristicas {
@@ -90,6 +122,9 @@ li.claroCaracteristicas {
 }
 
 
+.imgPrecio {
+    padding: 0 !important;
+}
 
 button#pro {
     display: flex;
@@ -109,4 +144,27 @@ span.shop {
     margin-right: 8px;
 }
 
+.noticias {
+    background: white;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 10px;
+}
 
+.whatsapp-btn {
+    position: fixed; /* Permite que el botón se mantenga en su posición */
+    bottom: 20px; /* Espaciado desde el fondo de la pantalla */
+    right: 20px; /* Espaciado desde la derecha de la pantalla */
+    background-color: #25d366; /* Color de WhatsApp */
+    color: white;
+    border-radius: 50%; /* Hace el botón redondo */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    z-index: 1000; /* Se asegura de estar encima de otros elementos */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
