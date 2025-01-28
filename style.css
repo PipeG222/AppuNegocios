@@ -156,7 +156,6 @@ span.shop {
     position: fixed; /* Permite que el botón se mantenga en su posición */
     bottom: 20px; /* Espaciado desde el fondo de la pantalla */
     right: 20px; /* Espaciado desde la derecha de la pantalla */
-    background-color: #25d366; /* Color de WhatsApp */
     color: white;
     border-radius: 50%; /* Hace el botón redondo */
     width: 60px;
