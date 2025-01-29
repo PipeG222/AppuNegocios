@@ -10,31 +10,39 @@
     <title>Langing Appu</title>
 </head>
 <body class="container-fluid" style="padding-left: 0; padding-right: 0;">
-    <header >
+    <header>
         <nav
             class="navbar navbar-expand-lg"
-            style="background-color: #2d2c59; color: #ffffff; display: flex; justify-content: flex-end; padding: 10px;"
+            style="background-color: #2d2c59; color: #ffffff; display: flex; justify-content: flex-end; padding: 10px; position: relative;"
         >
-            <img src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="" width="180px" style="background-color: #2d2c59; position: absolute; z-index: 1; top: -9px; left: -9px; padding: 20px; border-radius: 80px 0;">
-            <div style="display: flex; align-items: center; width: 50%; justify-content: space-evenly;">
-                    <select name="Ubicacion" id="ubi" style="border: none; background-color: #ffffff; border-radius: 5px; padding: 5px;"> 
-                        <option value="Medellin">📍 Medellin</option>
-                        <option value="Bogota">📍 Bogota</option>
-                        <option value="Cali">📍 Cali</option>
-                        <option value="Barranquilla">📍 Barranquilla</option>
-                    </select>
-                
-                    
+            <!-- Contenedor del Logo -->
+            <div style="
+                position: absolute;
+                top: 10px; 
+                left: -10px;
+                background-color: #2d2c59; 
+                padding: 15px;
+                width: 200px;
+                border-radius: 30% 0 50% 0;
+                z-index: 2;">
+                <img src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="Logo" width="140px" style="margin-left: 10px;">
+            </div>
+    
+            <div style="display: flex; align-items: center; width: 50%; justify-content: space-evenly; margin-left: auto;">
+                <select name="Ubicacion" id="ubi" style="border: none; background-color: #ffffff; border-radius: 5px; padding: 5px;"> 
+                    <option value="Medellin">📍 Medellin</option>
+                    <option value="Bogota">📍 Bogota</option>
+                    <option value="Cali">📍 Cali</option>
+                    <option value="Barranquilla">📍 Barranquilla</option>
                 </select>
-
-                <a href="">Appu Reservas</a>
+    
+                <a href="https://appu.store/">Appu Reservas</a>
                 <a class="mx-3" href="">Appu Facturacion</a>
                 <div style="display: flex; flex-direction: column; align-items: center;">
-                     <p style="margin-bottom: 0; font-size: 12px;">Unete a nosotros!</p>
-                     <span class="badge p-2" style="background-color: #ff6600; font-size: 14px;">Inicio de sesion</span>
+                    <p style="margin-bottom: 0; font-size: 12px;">¡Únete a nosotros!</p>
+                    <span class="badge p-2" style="background-color: #ff6600; font-size: 14px;">Inicio de sesión</span>
                 </div> 
             </div>
-               
         </nav>
     </header>
     <img class="img" src="Img/banner.png" width="100%" alt="">
@@ -173,20 +181,23 @@
             </div>
         </div>
     </section>
-    <div class="row p-5">
-        <div class="col-4" >
-            <img src="Img/mujer.png" alt="" class="moving-image" style="object-fit: contain; width: 100%;">
+    <div class="row">
+        <div class="col-4" style="display: flex; align-items: flex-end;" >
+            <img src="Img/mujer1.png" alt="" class="moving-image" style="object-fit: contain; width: 100%;">
         </div>
-        <div class="col-8 p-4" style="background: #7F848A; border-radius: 15px;">
-            <div class="noticias">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, adipisci fugit. Rerum officiis error a sunt praesentium veniam ratione doloribus maiores voluptatum? Consectetur, nihil libero! Iusto qui repellat quibusdam ipsam.</p>
+        <div class="col-8" >
+            <div style="background: #7F848A; border-radius: 15px; padding: 25px; margin: 10px;">
+                <div class="noticias">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, adipisci fugit. Rerum officiis error a sunt praesentium veniam ratione doloribus maiores voluptatum? Consectetur, nihil libero! Iusto qui repellat quibusdam ipsam.</p>
+                </div>
+                <div class="noticias">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem cupiditate, porro itaque, natus, totam nihil repudiandae officia quos incidunt illum ut cum. Nobis perferendis totam molestias blanditiis eos repellendus.</p>
+                </div>
+                <div class="noticias">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellendus quas earum provident nobis, suscipit doloremque, eius velit sunt modi eum corrupti voluptatem. Natus placeat cupiditate magnam laudantium fugiat ipsa!</p>
+                </div>
             </div>
-            <div class="noticias">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem cupiditate, porro itaque, natus, totam nihil repudiandae officia quos incidunt illum ut cum. Nobis perferendis totam molestias blanditiis eos repellendus.</p>
-            </div>
-            <div class="noticias">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellendus quas earum provident nobis, suscipit doloremque, eius velit sunt modi eum corrupti voluptatem. Natus placeat cupiditate magnam laudantium fugiat ipsa!</p>
-            </div>
+            
         </div>
     </div>
     <footer style="background-image: url('Img/footer.png'); background-size: cover; background-repeat: no-repeat; padding: 20px; color: white; padding: 20px;">
@@ -197,12 +208,16 @@
                 <h2>Contacto</h2>
                 <hr style="border: 2px solid #ff6600; width: 20%; margin: 10px 0;">
             </div>
-            <div class="col-2">
+            <div class="col-2" style="display: block; text-align: center; padding: 20px;">
                 <img class="p-5" src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="" width="80%">
+                <div style="display: flex; justify-content: space-evenly; margin-top: 20px;">
+                    <a href="https://www.tiktok.com/@appu_colombia" target="_blank"><img src="Img/tiktok.png" alt="" width="30"></a>
+                    <a href="https://www.instagram.com/appu_colombia/" target="_blank"><img src="Img/instagram.png" alt="" width="35"></a>
+                </div>
+            </div>
     </footer>
     <a href="https://wa.me/+573186574668" class="whatsapp-btn" target="_blank">
         <img src="Img/icono_wsap.png" alt="" height="80px">
     </a>
-    <!-- <img src="Img/fondo_logo.png" alt="" style="position: absolute; top: 0; left: 0; width: 25%; z-index: 0;"> -->
 </body>
 </html>
