@@ -12,12 +12,14 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en múltiples líneas */
 }
 
 @media (min-width: 576px) {
     .table {
-        width: 48%; /* Ajusta el ancho para pantallas pequeñas */
+        width: 48%;
+        /* Ajusta el ancho para pantallas pequeñas */
     }
 
     .table#caracteristicas {
@@ -28,7 +30,8 @@ body {
 
 @media (min-width: 768px) {
     .table {
-        width: 20%; /* Ajusta el ancho para pantallas medianas */
+        width: 20%;
+        /* Ajusta el ancho para pantallas medianas */
     }
 
     .table#caracteristicas {
@@ -39,7 +42,8 @@ body {
 
 @media (min-width: 992px) {
     .table {
-        width: 18%; /* Ajusta el ancho para pantallas grandes */
+        width: 18%;
+        /* Ajusta el ancho para pantallas grandes */
     }
 
     .table#caracteristicas {
@@ -51,7 +55,8 @@ body {
 
 @media (min-width: 1200px) {
     .table {
-        width: 16%; /* Ajusta el ancho para pantallas extra grandes */
+        width: 16%;
+        /* Ajusta el ancho para pantallas extra grandes */
     }
 
     /* .table#caracteristicas {
@@ -61,25 +66,27 @@ body {
 }
 
 a {
-    text-decoration: underline ;
+    text-decoration: underline;
     color: #ffffff;
 }
 
 .planes:hover {
-    box-shadow: 10px 0 10px 0 rgb( 0 0 0 / 30%);
+    box-shadow: 10px 0 10px 0 rgb(0 0 0 / 30%);
     transform: scale(1.05);
 
 }
+
 .card {
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
     text-align: center;
     padding: 20px;
-  }
+}
 
-  .icon {
-    background-color: #4a61dd; /* Color del fondo del icono */
+.icon {
+    background-color: #4a61dd;
+    /* Color del fondo del icono */
     color: white;
     border-radius: 8px;
     display: inline-block;
@@ -88,13 +95,13 @@ a {
     width: 80px;
     height: 50px;
     line-height: 50px;
-  }
+}
 
-  .card-text {
+.card-text {
     margin-top: 10px;
     font-size: 14px;
     color: #333333;
-  }
+}
 
 
 ul {
@@ -102,8 +109,8 @@ ul {
     padding: 0;
 }
 
-.caracteristicas > ul > li {
-    list-style: none;  
+.caracteristicas>ul>li {
+    list-style: none;
 }
 
 li.oscuro {
@@ -152,27 +159,135 @@ span.shop {
     border-radius: 10px;
 }
 
+/* Estilos para el botón de WhatsApp */
+
 .whatsapp-btn {
-    position: fixed; /* Permite que el botón se mantenga en su posición */
-    bottom: 20px; /* Espaciado desde el fondo de la pantalla */
-    right: 20px; /* Espaciado desde la derecha de la pantalla */
+    position: fixed;
+    /* Permite que el botón se mantenga en su posición */
+    bottom: 20px;
+    /* Espaciado desde el fondo de la pantalla */
+    right: 20px;
+    /* Espaciado desde la derecha de la pantalla */
     color: white;
-    border-radius: 50%; /* Hace el botón redondo */
+    border-radius: 50%;
+    /* Hace el botón redondo */
     width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    z-index: 1000; /* Se asegura de estar encima de otros elementos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para darle profundidad */
+    z-index: 1000;
+    /* Se asegura de estar encima de otros elementos */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+}
 
-  .card {
-    padding: 30px;
-  }
-
-  .card:hover {
+.whatsapp-btn:hover {
     transform: scale(1.05);
-  }
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de las cartas segunda sección */
+
+.card {
+    padding: 30px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para el footer */
+
+footer {
+    background: url('Img/footer.png') no-repeat center center;
+}
+
+
+/* Estilos para la animación de movimiento imagen de la chica*/
+.moving-image {
+    animation: moveUpDown 3s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos para la animación de aparición */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Añadir un retraso a las animaciones */
+.fade-in-up.delay-1 {
+    transition-delay: 0.5s;
+}
+
+.fade-in-up.delay-2 {
+    transition-delay: 1s;
+}
+
+.fade-in-up.delay-3 {
+    transition-delay: 1.5s;
+}
+
+/* Estilos del carrusel de los planes */
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+}
