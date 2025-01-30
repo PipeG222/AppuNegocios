@@ -6,20 +6,17 @@ body {
     overflow-x: hidden;
 }
 
-
 #tabla-precios {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan en múltiples líneas */
 }
 
 @media (min-width: 576px) {
     .table {
         width: 48%;
-        /* Ajusta el ancho para pantallas pequeñas */
     }
 
     .table#caracteristicas {
@@ -31,7 +28,6 @@ body {
 @media (min-width: 768px) {
     .table {
         width: 20%;
-        /* Ajusta el ancho para pantallas medianas */
     }
 
     .table#caracteristicas {
@@ -43,7 +39,6 @@ body {
 @media (min-width: 992px) {
     .table {
         width: 18%;
-        /* Ajusta el ancho para pantallas grandes */
     }
 
     .table#caracteristicas {
@@ -52,17 +47,10 @@ body {
     }
 }
 
-
 @media (min-width: 1200px) {
     .table {
         width: 16%;
-        /* Ajusta el ancho para pantallas extra grandes */
     }
-
-    /* .table#caracteristicas {
-        position: relative;
-        top: 38px;
-    } */
 }
 
 a {
@@ -73,7 +61,6 @@ a {
 .planes:hover {
     box-shadow: 10px 0 10px 0 rgb(0 0 0 / 30%);
     transform: scale(1.05);
-
 }
 
 .card {
@@ -86,7 +73,6 @@ a {
 
 .icon {
     background-color: #4a61dd;
-    /* Color del fondo del icono */
     color: white;
     border-radius: 8px;
     display: inline-block;
@@ -103,13 +89,12 @@ a {
     color: #333333;
 }
 
-
 ul {
     margin-top: 0;
     padding: 0;
 }
 
-.caracteristicas>ul>li {
+.caracteristicas > ul > li {
     list-style: none;
 }
 
@@ -121,14 +106,13 @@ li.oscuro {
 
 li.oscuroCaracteristicas {
     background: rgb(50 51 50);
-    color: rgb(255 255 255)
+    color: rgb(255 255 255);
 }
 
 li.claroCaracteristicas {
     background: rgb(77 77 76);
     color: rgb(255 255 255);
 }
-
 
 .imgPrecio {
     padding: 0 !important;
@@ -153,33 +137,27 @@ span.shop {
 }
 
 .noticias {
-    background: white;
-    padding: 5px;
+    background: #2d2c59;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
     margin: 15px;
     border-radius: 10px;
 }
 
-/* Estilos para el botón de WhatsApp */
-
 .whatsapp-btn {
     position: fixed;
-    /* Permite que el botón se mantenga en su posición */
     bottom: 20px;
-    /* Espaciado desde el fondo de la pantalla */
     right: 20px;
-    /* Espaciado desde la derecha de la pantalla */
     color: white;
     border-radius: 50%;
-    /* Hace el botón redondo */
     width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Sombra para darle profundidad */
     z-index: 1000;
-    /* Se asegura de estar encima de otros elementos */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -189,8 +167,6 @@ span.shop {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos de las cartas segunda sección */
-
 .card {
     padding: 30px;
 }
@@ -199,37 +175,28 @@ span.shop {
     transform: scale(1.05);
 }
 
-/* Estilos para el footer */
-
 footer {
     background: url('Img/footer.png') no-repeat center center;
 }
 
-
-/* Estilos para la animación de movimiento imagen de la chica*/
 .moving-image {
     animation: moveUpDown 3s ease-in-out infinite;
 }
 
 @keyframes moveUpDown {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-10px);
     }
 }
 
-/* Estilos para la animación de aparición */
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -246,7 +213,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Añadir un retraso a las animaciones */
 .fade-in-up.delay-1 {
     transition-delay: 0.5s;
 }
@@ -258,8 +224,6 @@ footer {
 .fade-in-up.delay-3 {
     transition-delay: 1.5s;
 }
-
-/* Estilos del carrusel de los planes */
 
 .card {
     border: none;
@@ -273,21 +237,54 @@ footer {
     height: auto;
 }
 
-.carousel-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* animacion class = noticias apareciendo desde la derecha */
+
+/* Aparece */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Desaparece */
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: black;
-    border-radius: 50%;
-    padding: 10px;
+.slideInRight {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1.5s, transform 1.5s;
 }
+
+.slideInRight.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slideInRight.disappear {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.slideInRight.delay-1 {
+    transition-delay: 0.5s;
+}
+
+.slideInRight.delay-2 {
+    transition-delay: 1s;
+}
+
+.slideInRight.delay-3 {
+    transition-delay: 1.5s;
+}
+
