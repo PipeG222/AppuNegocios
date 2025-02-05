@@ -144,7 +144,7 @@ span.shop {
     background: #2d2c59;
     color: white;
     font-size: 18px;
-    padding: 15px;
+    padding: 25px;
     margin: 15px;
     border-radius: 10px;
 }
@@ -281,15 +281,15 @@ footer {
 }
 
 .slideInRight.delay-1 {
-    transition-delay: 0.5s;
+    transition-delay: 0.2s;
 }
 
 .slideInRight.delay-2 {
-    transition-delay: 1s;
+    transition-delay: 0.4s;
 }
 
 .slideInRight.delay-3 {
-    transition-delay: 1.5s;
+    transition-delay: 0.6s;
 }
 
 /* CODIGO ESTILOS PLANES DE SUSCRIPCION */
@@ -300,6 +300,8 @@ footer {
     margin: 40px 0;
     /* max-width: 1000px; */
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .plan {
@@ -340,8 +342,10 @@ footer {
 
 ul {
     list-style: none;
-    padding: 10px 0;
-    flex-grow: 1; /* Empuja el botón hacia abajo */
+    padding: 15px 0;
+    /* flex-grow: 1;  Empuja el botón hacia abajo  */
+    text-align: left;
+    font-size: 18px;
 }
 
 ul li {
