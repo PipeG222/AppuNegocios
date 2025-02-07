@@ -18,4 +18,5 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.slideInRight').forEach(element => {
         observer.observe(element);
     });
+
 });

@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -6,71 +7,49 @@ body {
     overflow-x: hidden;
 }
 
-#tabla-precios {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-@media (min-width: 576px) {
-    .table {
-        width: 48%;
-    }
-
-    .table#caracteristicas {
-        position: relative;
-        top: 35px;
-    }
-}
-
-@media (min-width: 768px) {
-    .table {
-        width: 20%;
-    }
-
-    .table#caracteristicas {
-        position: relative;
-        top: 35px;
-    }
-}
-
-@media (min-width: 992px) {
-    .table {
-        width: 18%;
-    }
-
-    .table#caracteristicas {
-        position: relative;
-        top: 35px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .table {
-        width: 16%;
-    }
-}
-
 a {
     text-decoration: underline;
     color: #ffffff;
 }
 
-/* .planes:hover {
-    box-shadow: 10px 0 10px 0 rgb(0 0 0 / 30%);
-    transform: scale(1.05);
-} */
+ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
 
+li {
+    list-style: none;
+}
+
+
+/* Card Styles */
 .card {
     border: none;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Icon Styles */
 .icon {
     background-color: #4a61dd;
     color: white;
@@ -83,25 +62,12 @@ a {
     line-height: 50px;
 }
 
-.card-text {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333333;
+.icono {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-ul {
-    margin-top: 0;
-    padding: 0;
-}
-
-/* .caracteristicas > ul > li {
-    list-style: none;
-} */
-
-li {
-    list-style: none;
-}
-
+/* List Item Styles */
 li.oscuro {
     background: rgb(216 216 216);
     display: flex;
@@ -118,28 +84,7 @@ li.claroCaracteristicas {
     color: rgb(255 255 255);
 }
 
-.imgPrecio {
-    padding: 0 !important;
-}
-
-button#pro {
-    display: flex;
-    background-color: transparent;
-    color: rgb(50 51 50);
-    padding: 10px 24px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    margin: 2px;
-    align-items: center;
-}
-
-span.shop {
-    padding: 8px;
-    font-size: x-large;
-    margin-right: 8px;
-}
-
+/* Noticias Styles */
 .noticias {
     background: #2d2c59;
     color: white;
@@ -149,6 +94,7 @@ span.shop {
     border-radius: 10px;
 }
 
+/* Whatsapp Button Styles */
 .whatsapp-btn {
     position: fixed;
     bottom: 20px;
@@ -171,18 +117,12 @@ span.shop {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.card {
-    padding: 30px;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
+/* Footer Styles */
 footer {
     background: url('Img/footer.png') no-repeat center center;
 }
 
+/* Animation Styles */
 .moving-image {
     animation: moveUpDown 3s ease-in-out infinite;
 }
@@ -209,7 +149,7 @@ footer {
 
 .fade-in-up {
     opacity: 0;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .fade-in-up.appear {
@@ -229,22 +169,6 @@ footer {
     transition-delay: 1.5s;
 }
 
-.card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.card-img-top {
-    width: 100%;
-    height: auto;
-}
-
-
-/* animacion class = noticias apareciendo desde la derecha */
-
-/* Aparece */
 @keyframes slideInRight {
     from {
         transform: translateX(100%);
@@ -254,7 +178,6 @@ footer {
     }
 }
 
-/* Desaparece */
 @keyframes slideOutRight {
     from {
         transform: translateX(0);
@@ -292,13 +215,11 @@ footer {
     transition-delay: 0.6s;
 }
 
-/* CODIGO ESTILOS PLANES DE SUSCRIPCION */
-
+/* Subscription Plan Styles */
 .planes {
     display: flex;
     gap: 20px;
     margin: 40px 0;
-    /* max-width: 1000px; */
     justify-content: center;
     align-items: first baseline;
     flex-wrap: wrap;
@@ -314,7 +235,7 @@ footer {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribuye el contenido */
+    justify-content: space-between;
     height: 100%;
 }
 
@@ -343,23 +264,12 @@ footer {
 ul {
     list-style: none;
     padding: 15px 0;
-    /* flex-grow: 1;  Empuja el botón hacia abajo  */
     text-align: left;
     font-size: 18px;
 }
 
 ul li {
     padding: 5px 0;
-}
-
-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .recomendado {
@@ -380,17 +290,8 @@ button {
     transform: translateX(-50%);
 }
 
-.icono {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-
-/* Estilo menu collapse del nav */
-
+/* Navbar Styles */
 @media (max-width: 992px) {
-    /* Animación de entrada collapse */
-    
     .navbar-collapse {
         animation: slideInRight 1s;
     }
@@ -398,14 +299,13 @@ button {
     .navbar-nav {
         flex-direction: column;
         align-items: center;
-
     }
+
     .nav-item {
         margin-left: 10px;
     }
 }
 
-/* Estilo del logo en el nav e imagen del final quitandose */
 @media (max-width: 768px) {
     .navbar-brand {
         margin-left: 0;
@@ -413,5 +313,82 @@ button {
 
     .moving-image {
         display: none;
+    }
+}
+
+/* Carousel Styles */
+.carrusel-container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-item {
+    min-width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* Slider Estilos */
+.slider {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .slide-track {
+    display: flex;
+    align-items: center;
+    width: calc(200px * 7); /* Ajusta el ancho según el número de imágenes */
+    animation: scroll 20s linear infinite;
+}
+
+.slider .slide {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.slider .slide img {
+    width: 100%;
+    padding: 20px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 7)); /* Ajusta el valor según el número de imágenes */
     }
 }
