@@ -370,7 +370,7 @@ ul li {
 .slider .slide-track {
     display: flex;
     align-items: center;
-    width: calc(200px * 7); /* Ajusta el ancho según el número de imágenes */
+    width: calc(200px * 10); /* Ajusta el ancho según el número de imágenes */
     animation: scroll 20s linear infinite;
 }
 
@@ -389,6 +389,6 @@ ul li {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-200px * 7)); /* Ajusta el valor según el número de imágenes */
+        transform: translateX(calc(-200px * 10)); /* Ajusta el valor según el número de imágenes */
     }
 }
