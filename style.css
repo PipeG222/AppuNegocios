@@ -23,65 +23,116 @@ li {
 }
 
 
-/* Card Styles */
-.card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 30px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card-img-top {
-    width: 100%;
-    height: auto;
-}
-
-.card-text {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333333;
-}
-
-/* Icon Styles */
-.icon {
-    background-color: #4a61dd;
+nav#headerContent {
+    background-color: #2d2c59 !important;
     color: white;
-    border-radius: 8px;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: bold;
-    width: 80px;
-    height: 50px;
-    line-height: 50px;
-}
-
-.icono {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-/* List Item Styles */
-li.oscuro {
-    background: rgb(216 216 216);
+    border-radius: 100px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 0.4rem;
+    margin-left: 5%;
+    margin-right: 5%;
     display: flex;
+    position: fixed;
+    inset: 0% 0% auto;
+    z-index: 1000;
+    min-height: 90px;
+}
+
+@media (max-width: 992px) {
+    nav#headerContent {
+        padding: 5px;
+    }
+}
+
+nav#headerContent a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+nav#headerContent a:hover {
+    color: #ffcc00;
+}
+
+nav#headerContent button {
+    background-color: #ffcc00;
+    color: #2d2c59;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 40px;
+}
+
+nav#headerContent > div:last-child > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div#navbarNav:active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#navbarNav {
     justify-content: center;
 }
 
-li.oscuroCaracteristicas {
-    background: rgb(50 51 50);
-    color: rgb(255 255 255);
+section#pos-inteligente {
+    background: radial-gradient(circle, #da7e41, #cac147);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
 }
 
-li.claroCaracteristicas {
-    background: rgb(77 77 76);
-    color: rgb(255 255 255);
+main#posIdeal {
+    text-align: center;
+    padding: 50px;
+    background: -webkit-radial-gradient(circle, #ecdd9a, #cac3b7);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#videoDemo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 520px;
+
+}
+
+div#infoPosInteligente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
+    div#infoPosInteligente {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+}
+
+div#infoPosInteligente > ul {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 /* Noticias Styles */
@@ -161,14 +212,6 @@ footer {
     transition-delay: 0.5s;
 }
 
-.fade-in-up.delay-2 {
-    transition-delay: 1s;
-}
-
-.fade-in-up.delay-3 {
-    transition-delay: 1.5s;
-}
-
 @keyframes slideInRight {
     from {
         transform: translateX(100%);
@@ -221,7 +264,7 @@ footer {
     gap: 20px;
     margin: 40px 0;
     justify-content: center;
-    align-items: first baseline;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -236,7 +279,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    min-height:75vh;
 }
 
 @media (max-width: 768px) {
@@ -271,11 +314,6 @@ footer {
     color: #222;
 }
 
-.descuentos {
-    font-size: 14px;
-    color: green;
-}
-
 ul {
     list-style: none;
     padding: 15px 0;
@@ -307,14 +345,7 @@ ul li {
 
 /* Navbar Styles */
 @media (max-width: 992px) {
-    .navbar-collapse {
-        animation: slideInRight 1s;
-    }
-
-    .navbar-nav {
-        flex-direction: column;
-        align-items: center;
-    }
+    
 
     .nav-item {
         margin-left: 10px;
@@ -322,56 +353,11 @@ ul li {
 }
 
 @media (max-width: 768px) {
-    .navbar-brand {
-        margin-left: 0;
-    }
 
     .moving-image {
         display: none;
     }
 }
-
-/* Carousel Styles */
-.carrusel-container {
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-    position: relative;
-    margin: auto;
-}
-
-.carrusel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carrusel-item {
-    min-width: 100%;
-    padding: 20px;
-    text-align: center;
-    background: #f5f5f5;
-    border: 1px solid #ccc;
-}
-
-.carrusel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
 
 /* Slider Estilos */
 .slider {
@@ -425,6 +411,7 @@ ul li {
     padding: 50px 20px;
     background: linear-gradient(135deg, #f5bc1f, #f79708);
     color: white;
+    min-height: 60vh;
 }
 
 .title {
@@ -472,4 +459,31 @@ ul li {
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* Estilos de tarjetas de planes POS */
+
+.business-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 22vh;
+    background: linear-gradient(135deg, #f5bc1f, #f79708);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.business-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }

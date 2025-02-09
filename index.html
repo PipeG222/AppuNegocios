@@ -10,19 +10,22 @@
     <title>Langing Appu</title>
 </head>
 <body class="container-fluid" style="padding-left: 0; padding-right: 0;">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d2c59; color: #ffffff; padding: 10px;">
-            <!-- Contenedor del Logo -->
-            <a class="navbar-brand" href="#">
-            <img src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="Logo" height="80px" style="margin-left: 10px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    
+    <nav id="headerContent" class="navbar navbar-expand-lg">
+        <!-- Contenedor del Logo -->
+        <div>
+        <a class="navbar-brand" href="#">
+            <img src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="Logo" height="60px" style="margin-left: 10px;">
+        </a>
+        </div>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" >
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link" href="https://appu.store/" style="font-size: 18px; text-decoration: none;">Appu Reservas</a>
+                </li> <a class="nav-link" href="https://appu.store/" style="font-size: 18px; text-decoration: none;">Appu Reservas</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link mx-3" href="#" style="font-size: 18px; text-decoration: none;">Appu Facturacion</a>
@@ -34,60 +37,40 @@
                 </div>
                 </li>
             </ul>
-            </div>
-        </nav>
+        </div>
+    </nav>
+    <header style="background-color:#2d2c59;">
+        <img id="bannerImage" class="img" src="Img/banner.png" width="100%" alt="" style="padding-top: 120px; " >
     </header>
-    <img class="img" src="Img/banner.png" width="100%" alt="">
-    <section id="pos-inteligente" class="bg-light py-5 text-center">
+    
+    <section id="pos-inteligente">
         <div class="container">
-          <h2 class="fw-bold text-primary">Sistema POS Inteligente para Potenciar tu Negocio en Colombia</h2>
-          <p class="lead text-dark">
+            <h2 class="fw-bold text-primary">Sistema POS Inteligente para Potenciar tu Negocio en Colombia</h2>
+            <p class="lead text-dark">
             📊 Gestiona, vende y factura con facilidad desde cualquier lugar.<br>
             💡 Optimiza tu negocio con el mejor software POS diseñado para Colombia.<br>
             🛒 Desde pequeños comercios hasta grandes empresas: Tenemos el plan ideal para ti.<br>
             🎁 <strong>Prueba GRATIS por 7 días</strong> y descubre el poder de la facturación sin complicaciones.<br>
             📍 Disponible en todo Colombia | 100% en la nube | Fácil, rápido y seguro.
-          </p>
-          <a href="#contacto" class="btn btn-primary btn-lg mt-3">Prueba Gratis</a>
+            </p>
+            <a href="#contacto" class="btn btn-primary btn-lg mt-3">Prueba Gratis</a>
         </div>
-      </section>
+    </section>
       
-      <!-- Formulario de Contacto -->
-      <section id="contacto" class="py-5 bg-white">
-        <div class="container">
-          <h3 class="text-center text-primary">Empieza ahora con tu prueba gratuita</h3>
-          <form action="/enviar-formulario" method="POST" class="w-75 mx-auto mt-4">
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo Electrónico</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono" name="telefono" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Solicitar Prueba Gratis</button>
-          </form>
-        </div>
-      </section>
-      
-    <main style="text-align: center; padding: 50px; margin: 10px 50px;">
+    <main id="posIdeal">
         <!-- <img src="Img/titulo.png" alt="" height="50" style="margin-bottom: 30px;"> -->
         <h1 style="margin-bottom:35px; font-size: 50px; font-weight: 700; color: #2d2c59;">Conoce el <span style="color: #ff6600;">POS</span> ideal para tu negocio</h1>
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <div style="display: flex; align-items: center; justify-content: center; background-image: url(); background-size: contain; background-repeat: no-repeat; background-position: center; height: 520px; border-radius: 20px; margin: auto;">
+                <div id="videoDemo">
                     <iframe style="padding: 20px; box-shadow: 0 4px 10px #ff6600;" width="660" height="415" src="https://www.youtube.com/embed/Gn1S6OXrTSo?si=QWFsmpKJBdBkKlM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 20px;">
+            <div id="infoPosInteligente" class="col-lg-6 col-md-12" >
                 <h1 style="color: #2d2c59; font-weight: 600;">Sistema POS Inteligente</h1>
                 <h2 style="color: #ff6600;">Potencia tu Negocio en Colombia</h2>
 
-                <ul id="texto" style="text-align: left; font-size: 18px; font-weight: 500;">
+                <ul id="texto">
                     <li>🔹 Factura electrónica en segundos</li>
                     <li>🔹 Control total de inventarios y ventas</li>
                     <li>🔹 Reportes avanzados y contabilidad en línea</li>
@@ -100,7 +83,7 @@
         </div>
     </main>
     <section class="why-choose-us">
-        <h2 class="title">🔥 ¿Por qué elegirnos? Marcamos la diferencia 🔥</h2>
+        <h2 class="title">¿Por qué elegirnos? Marcamos la diferencia</h2>
         <div class="features">
             <div class="feature">
                 <i class="fas fa-bolt"></i>
@@ -138,7 +121,71 @@
         </div>
     </section>
 
+    <div class="container text-center mt-5">
+        <h1>Obtén superpoderes con Alegra POS</h1>
+        <p>en cualquier tipo de comercio o pyme</p>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Tienda de ropa">
+                    <h5>Tienda de ropa</h5>
+                    <p>Clasifica prendas por talla y color</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Microempresas">
+                    <h5>Microempresas</h5>
+                    <p>Gestiona fácil tu efectivo y stock</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Licorería">
+                    <h5>Licorería</h5>
+                    <p>Vende y distribuye tus bebidas</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Ferretería">
+                    <h5>Ferretería</h5>
+                    <p>Maneja fácil tu inventario</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Panaderías">
+                    <h5>Panaderías</h5>
+                    <p>Clasifica platos y factura fácil</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Autopartes">
+                    <h5>Autopartes</h5>
+                    <p>Administra y ordena tus repuestos</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Librería">
+                    <h5>Librería</h5>
+                    <p>Ordena por editorial, género y autor</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="business-card">
+                    <img src="Img/Planes/plus.png" alt="Farmacias">
+                    <h5>Farmacias</h5>
+                    <p>Ideal para Farmacias de todos los tamaños</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="slider">
+        <h1 style="text-align: center;">Aliados</h1>
         <div class="slide-track">
             <div class="slide">
                 <img src="Img/Aliados/alcaldiaMed.png" alt="Logo Alcaldía de Medellín">
@@ -208,8 +255,8 @@
         </div>
         <div class="col-xl-4 col-md-8 col-sm-12">
             <div style="padding: 25px; margin: 10px; ">
-                <div class="noticias slideInRight delay-1">
-                    <form  action="submit_form.php" method="post" style="margin-top: 20px; display: flex; flex-direction: column; ">
+                <div class="noticias">
+                    <form id="formulario" method="post" style="margin-top: 20px; display: flex; flex-direction: column; ">
                         <h1 style="color: #8EC343; font-weight: 700;">¡Mantente informado!</h1>
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
