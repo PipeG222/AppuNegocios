@@ -19,11 +19,29 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(element);
     });
 
-});
+    document.getElementById("formulario").addEventListener("submit", async (event) => {
+        event.preventDefault();
 
+        const datos = {
+            nombre: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            telefono: document.getElementById("phone").value,
+        };
 
-// Funcion para contenido de acuerdo al tamaño de la pantalla
-document.addEventListener("DOMContentLoaded", function () {
+        console.log("Datos a enviar:", datos);
+        const response = await fetch("https://43lqqq3t4h.execute-api.us-east-1.amazonaws.com/default/appu-registroUsuarios-landing", {
+            method: "POST",
+            body: JSON.stringify(datos),
+            headers: { "Content-Type": "application/json" }
+        });
+
+        console.log("Respuesta del servidor:", response);
+        alert("¡Gracias por registrarte! Pronto nos pondremos en contacto contigo.");
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+    });
+
     function ajustarCarrusel() {
         const anchoPantalla = window.innerWidth;
         const carrusel = document.getElementById("carouselExampleIndicators");
@@ -282,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>`;
 
         // Cambiar contenido según el tamaño de la pantalla
-        if (anchoPantalla > 768) {
+        if (anchoPantalla > 1080) {
             carrusel.innerHTML = contenidoEscritorio;
         } else {
             carrusel.innerHTML = contenidoMovil;
@@ -295,4 +313,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Volver a ajustar cuando la pantalla cambie de tamaño
     window.addEventListener("resize", ajustarCarrusel);
 });
+
+
+
+
 
