@@ -218,7 +218,7 @@ h1 {
 }
 
 #imgFormularioRegistro {
-    height: 50%;
+    height: 500px;
 
     @media (width < 992px) {
         display: none;
