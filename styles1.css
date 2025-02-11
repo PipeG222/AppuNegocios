@@ -1,0 +1,416 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header div  {
+    @media (width < 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+nav {
+    @media (width < 768px) {
+        flex-direction: column;
+    }
+}
+
+nav ul {
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    @media (width < 768px) {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+form {
+    font-size: 20px;
+    
+}
+
+form input {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #2d2c59;
+    margin: 10px;
+    width: clamp(600px, 90%);
+
+    @media (width < 992px) {
+        width: 90%;
+    }
+}
+
+div img#imgPrueba {
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: 65% 50%;
+
+    @media (width < 768px) {
+        display: none;
+    }
+
+    @media (orientation: landscape) {
+        display: block;
+    }
+}
+
+form button {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 100px;
+    border: 2px solid #2d2c59;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* section#formularioPrueba {
+    align-items: center;
+} */
+
+section#formularioPrueba div:first-child {
+    width: 55%;
+
+    @media (width < 768px) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+footer {
+    @media (width < 768px) {
+        flex-direction: column;
+    }
+}
+
+/* Estilos por id ↓↓↓*/
+
+#posInteligente {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+
+    /* Pantallas de menos de 768px (tablets y móviles) */
+    @media (width < 992px) {
+        flex-direction: column; 
+        flex-wrap: wrap;
+    }
+
+    @media (orientation: landscape) AND (width > 992px) {
+        flex-direction: row;
+        text-align: justify;
+    }
+}
+
+#posInteligente div:last-child {
+    @media (width < 768px) {
+        width: 100%;
+    }
+}
+
+#infoCaracteristicasAPPU {
+    @media (width < 768px) {
+        flex-direction: column;
+    }
+}
+
+#formularioPrueba {
+    @media (orientation: landscape) {
+        align-items: center;
+    }
+}
+
+#posIdeal {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+
+    /* Pantallas de menos de 768px (tablets y móviles) */
+    @media (width < 992px) {
+        flex-direction: column; 
+        flex-wrap: wrap;
+    }
+
+    @media (orientation: landscape) AND (width > 992px) {
+        flex-direction: row;
+        text-align: justify;
+    }
+}
+
+#caracteristicasPosIdeal {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 20px;
+
+    @media (width < 992px) {
+        width: 90%;
+    }
+}
+
+#caracteristicasPosIdeal div:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+#caracteristicasPosIdeal div h1 {
+    font-size: 1.8rem;
+    width: 75%;
+}
+
+#caracteristicasPosIdeal div ul {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#caracteristicasPosIdeal div ul li {
+    margin: 10px 0;
+}
+
+
+#why-choose-us {
+    width: 100%;
+}
+
+#why-choose-us div {
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc(100% / 3);
+    min-height: 80vh;
+
+    @media (width < 992px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+
+/* Estilos por id ⬆⬆⬆*/
+
+/* ↓↓ Estilos por clase ↓↓*/
+
+.c-naranja {
+  color: #ff6600;
+}
+
+.c-appuAzul {
+    color: #2d2c59;
+}
+
+.c-white {
+    color: #fff;
+}
+
+.c-appuVerde {
+    color: #8EC343;
+}
+
+.bc-appuAzul {
+    background-color: #2d2c59;
+}
+
+.bc-naranja {
+    background-color: #ff6600;
+}
+
+.bc-appuVerde {
+    background-color: #8EC343;
+}
+
+.bc-white {
+    background-color: #fff;
+}  
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}  
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.width-50 {
+    min-width: 50%;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.hr {
+    border: 1px solid #2d2c59;
+}
+
+/* Estilo botones */
+.btn {
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.caracteristicas {
+    margin: 20px 0;
+    text-align: left;
+
+    /* Pantallas de menos de 768px (tablets y móviles) */
+    @media (width < 992px) {
+        justify-content: center;
+        text-align: center;
+    }
+
+    @media (orientation: landscape) AND (width < 992px) {
+        text-align: justify;
+    }
+}
+
+.caracteristicas > h3 {
+    width: 50%;
+}
+
+.infoCaracteristicas {
+    margin: auto 30px;
+    font-size: 20px;
+}
+
+.posInteligente-prueba {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    @media (width < 768px) {
+        width: 100%;
+    }
+}
+
+.posInteligente-prueba p:last-child {
+    width: 60%;
+
+    @media (width < 992px) {
+        width: 100%;
+    }
+
+    @media (orientation: landscape) AND (width < 992px) {
+        width: 80%;
+    }
+}
+
+
+.slider {
+    width: 100%;
+    height: 50vh;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+
+    /* Centra el slider */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slider .slide-track {
+    display: flex;
+    align-items: center;
+    width: calc(200px * 10); /* Ajusta el ancho según el número de imágenes */
+    animation: scroll 40s linear infinite;
+}
+
+.slider .slide {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.slider .slide img {
+    width: 90%;
+    padding: 20px;
+}
+
+.slider .slide img:hover {
+    transform: scale(1.1);
+}
+/* ↑↑ Estilos por clase ↑↑/*
+
+
+/* ↓↓ Animaciones ↓↓*/
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.1s ease-out;
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-up.delay-1 {
+    transition-delay: 0.3s;
+}
+
+.fade-in-up.delay-2 {
+    transition-delay: 0.5s;
+}
+
+.fade-in-up.delay-3 {
+    transition-delay: 0.7s;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 10)); /* Ajusta el valor según el número de imágenes */
+    }
+}
+
+/* ↑↑ Animaciones ↑↑*/
