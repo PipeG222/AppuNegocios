@@ -89,6 +89,10 @@ footer {
     }
 }
 
+h1 {
+    font-size: 40px;
+    margin: 20px;
+}
 /* Estilos por id ↓↓↓*/
 
 #posInteligente {
@@ -179,21 +183,23 @@ footer {
 
 
 #why-choose-us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
     width: 100%;
-}
+    min-height: 100vh;
 
-#why-choose-us div {
-    padding: 20px;
-    box-sizing: border-box;
-    width: calc(100% / 3);
-    min-height: 80vh;
 
     @media (width < 992px) {
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
+        grid-template-columns: 1fr; /* 1 columna */
     }
 }
+
+
+#sliderAliados h1 {
+    font-size: 40px;
+    margin: 20px;
+}
+
 
 
 /* Estilos por id ⬆⬆⬆*/
@@ -257,9 +263,6 @@ footer {
     text-align: center;
 }
 
-.width-50 {
-    min-width: 50%;
-}
 
 .p-20 {
     padding: 20px;
@@ -329,7 +332,6 @@ footer {
 
 .slider {
     width: 100%;
-    height: 50vh;
     margin: auto;
     overflow: hidden;
     position: relative;
