@@ -84,6 +84,8 @@ section#formularioPrueba div:first-child {
 }
 
 footer {
+    border-radius: 60px 60px 0 0;
+
     @media (width < 768px) {
         flex-direction: column;
     }
@@ -194,6 +196,14 @@ h1 {
     }
 }
 
+#why-choose-us div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 
 #sliderAliados h1 {
     font-size: 40px;
@@ -201,6 +211,19 @@ h1 {
 }
 
 
+#banner {
+    filter: brightness(0.5);
+    height: 200px;
+    object-fit: cover;
+}
+
+#imgFormularioRegistro {
+    height: 50%;
+
+    @media (width < 992px) {
+        display: none;
+    }
+}
 
 /* Estilos por id ⬆⬆⬆*/
 
@@ -413,6 +436,26 @@ button:hover {
     100% {
         transform: translateX(calc(-200px * 10)); /* Ajusta el valor según el número de imágenes */
     }
+}
+
+.image-container {
+    position: relative;
+    width: 100px; /* Ajusta el ancho según tus necesidades */
+    height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+.sequence-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sequence-image.active {
+    opacity: 1;
 }
 
 /* ↑↑ Animaciones ↑↑*/

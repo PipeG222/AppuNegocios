@@ -312,6 +312,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Volver a ajustar cuando la pantalla cambie de tamaño
     // window.addEventListener("resize", ajustarCarrusel);
+
+    const imageContainers = document.querySelectorAll('.image-container');
+
+    imageContainers.forEach(container => {
+        const images = container.querySelectorAll('.sequence-image');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        // Mostrar la primera imagen inicialmente
+        images[currentIndex].classList.add('active');
+
+        // Cambiar la imagen cada 3 segundos
+        setInterval(showNextImage, 800);
+    });
 });
 
 
