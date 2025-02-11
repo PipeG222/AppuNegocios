@@ -331,6 +331,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Cambiar la imagen cada 3 segundos
         setInterval(showNextImage, 800);
     });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+    });
 });
 
 
