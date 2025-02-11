@@ -362,10 +362,15 @@ ul li {
 /* Slider Estilos */
 .slider {
     width: 100%;
-    height: auto;
+    height: 50vh;
     margin: auto;
     overflow: hidden;
     position: relative;
+
+    /* Centra el slider */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .slider .slide-track {
