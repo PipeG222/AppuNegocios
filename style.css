@@ -1,7 +1,7 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* header div  {
@@ -17,20 +17,37 @@ body {
     }
 } */
 
-nav ul {
-    list-style: none;
-    font-size: 20px;
-    cursor: pointer;
+header {
+    height: 40vh;
 
-    @media (width < 768px) {
-        text-align: center;
-        padding: 0;
+    div#navHeader{
+        padding: 10px
     }
+
+    nav {
+        ul {
+            list-style: none;
+            font-size: 20px;
+            cursor: pointer;
+        
+            @media (width < 768px) {
+                text-align: center;
+                padding: 0;
+            } 
+        }
+    
+        li:hover {
+            color: #ff6600;
+            transform: translateY(-5px);
+        } 
+    } 
 }
+
+
 
 form {
     font-size: 20px;
-    
+
 }
 
 form input {
@@ -85,9 +102,39 @@ section#formularioPrueba div:first-child {
 
 footer {
     border-radius: 60px 60px 0 0;
+    min-height: 30vh;
 
     @media (width < 768px) {
         flex-direction: column;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px 0;
+        padding-left: 0;
+        
+    }
+
+    li {
+
+        margin: 5px 0;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+    
+        }
+    };
+
+    li a:hover {
+        color: #ff6600;
     }
 }
 
@@ -117,15 +164,25 @@ p {
 
 #posInteligente {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas de igual ancho */
     justify-items: center;
     align-items: center;
     min-height: 50vh;
 
     /* Pantallas de menos de 768px (tablets y móviles) */
     @media (width < 992px) {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: 1fr;
+        /* 1 columna */
+    }
 
+    h1 {
+        margin-bottom: 0;
+    }
+
+    p:nth-of-type(1) {
+        margin-top: 0;
+        margin-bottom: 50px;
     }
 }
 
@@ -156,7 +213,7 @@ p {
 
     /* Pantallas de menos de 768px (tablets y móviles) */
     @media (width < 992px) {
-        flex-direction: column; 
+        flex-direction: column;
         flex-wrap: wrap;
     }
 
@@ -199,22 +256,30 @@ p {
 
 #why-choose-us {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas de igual ancho */
     width: 100%;
     min-height: 100vh;
 
 
     @media (width < 992px) {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: 1fr;
+        /* 1 columna */
     }
 }
 
-#why-choose-us div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+#why-choose-us {
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        img {
+            height: 120px;
+        }
+    }
 }
 
 
@@ -230,7 +295,7 @@ p {
 
 #banner {
     filter: brightness(0.5);
-    height: 200px;
+    height: 40vh;
     object-fit: cover;
 }
 
@@ -276,16 +341,65 @@ img#imgVideo {
     }
 }
 
-section#formularioInformacion div:first-child h1, p {
+section#formularioInformacion {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70vh;
+
+    @media (width < 992px) {
+        justify-content: center;
+    }
+}
+
+section#formularioInformacion div:first-child h1,
+p {
     text-align: center;
 }
+
+form#formularioRegistro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+        text-align: left;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    button {
+        width: 60%;
+    }
+
+    @media (width < 768px) {
+        width: 100%;
+    }
+}
+
+
+
+#wcu-2 h1 {
+    margin-bottom: 0;
+}
+
+#wcu-2 h2 {
+    margin-top: 0;
+}
+
+div#wcu-1, div#wcu-3 {
+    justify-content: space-around;
+}
+
 
 /* Estilos por id ⬆⬆⬆*/
 
 /* ↓↓ Estilos por clase ↓↓*/
 
 .c-naranja {
-  color: #ff6600;
+    color: #ff6600;
 }
 
 .c-appuAzul {
@@ -314,7 +428,7 @@ section#formularioInformacion div:first-child h1, p {
 
 .bc-white {
     background-color: #fff;
-}  
+}
 
 .d-flex {
     display: flex;
@@ -331,7 +445,7 @@ section#formularioInformacion div:first-child h1, p {
 
 .align-center {
     align-items: center;
-}  
+}
 
 .mt-2 {
     margin-top: 0.5rem;
@@ -373,7 +487,7 @@ section#formularioInformacion div:first-child h1, p {
 
     @media (orientation: landscape) AND (width < 992px) {
         text-align: left;
-        
+
     }
 }
 
@@ -438,7 +552,8 @@ section#formularioInformacion div:first-child h1, p {
 .slider .slide-track {
     display: flex;
     align-items: center;
-    width: calc(200px * 10); /* Ajusta el ancho según el número de imágenes */
+    width: calc(200px * 10);
+    /* Ajusta el ancho según el número de imágenes */
     animation: scroll 40s linear infinite;
 }
 
@@ -463,12 +578,13 @@ h3.wcu {
 
 .plans-container {
     display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
 
-  .plan {
+.plan {
     background-color: #2d2c59;
     color: #fff;
     border-radius: 8px;
@@ -477,26 +593,27 @@ h3.wcu {
     text-align: center;
     flex: 1 1 250px;
     max-width: 300px;
-  }
+}
 
-  .plan:hover {
+.plan:hover {
     transform: scale(1.05);
-    img {
-      transform: scale(1.3);
-    }
-  }
 
-  .plan h2 {
+    img {
+        transform: scale(1.3);
+    }
+}
+
+.plan h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-  }
+}
 
-  .plan p {
+.plan p {
     font-size: 1rem;
     color: #fff;
-  }
+}
 
-  .plan button {
+.plan button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -504,22 +621,44 @@ h3.wcu {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
-  }
+}
 
-  .plan button:hover {
+.plan button:hover {
     background-color: #0056b3;
-  }
+}
+
 /* ↑↑ Estilos por clase ↑↑/*
 
 
 /* ↓↓ Animaciones ↓↓*/
 
 /* Animación de entrada */
+
+h1#textHeader {
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    top: -150px;
+    color: #fff;
+    animation: fadeInUp 2s ease-out forwards;
+
+    @media (width < 992px) {
+        top: -200px;
+        font-size: 3rem;
+    }
+
+    @media (width < 768px) {
+        font-size: 1.5rem;
+    }
+}
+
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -557,15 +696,19 @@ button:hover {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(calc(-200px * 10)); /* Ajusta el valor según el número de imágenes */
+        transform: translateX(calc(-200px * 10));
+        /* Ajusta el valor según el número de imágenes */
     }
 }
 
 .image-container {
     position: relative;
-    width: 100px; /* Ajusta el ancho según tus necesidades */
-    height: 100px; /* Ajusta la altura según tus necesidades */
+    width: 100px;
+    /* Ajusta el ancho según tus necesidades */
+    height: 100px;
+    /* Ajusta la altura según tus necesidades */
 }
 
 .sequence-image {
