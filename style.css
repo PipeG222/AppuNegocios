@@ -138,6 +138,10 @@ footer {
 
     @media (width < 768px) {
         flex-direction: column;
+
+        #footerLogo {
+            margin: auto;
+        }
     }
 
     h1 {
@@ -220,11 +224,11 @@ p {
     }
 }
 
-#posInteligente div:last-child {
+/* #posInteligente div:last-child {
     @media (width < 768px) {
         width: 100%;
     }
-}
+} */
 
 #infoCaracteristicasAPPU {
     @media (width < 768px) {
@@ -405,6 +409,13 @@ div#wcu-3 {
 }
 
 
+img#WhatsAppAppu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 70px;
+}
+
 /* Estilos por id ⬆⬆⬆*/
 
 /* ↓↓ Estilos por clase ↓↓*/
@@ -456,6 +467,10 @@ div#wcu-3 {
 
 .align-center {
     align-items: center;
+}
+
+.content-center {
+    align-content: center;
 }
 
 .mt-2 {
@@ -512,7 +527,15 @@ div#wcu-3 {
 
     @media (width < 992px) {
         font-size: 1.4rem;
-        width: 100%;
+        width: 60%;
+        text-align: left;
+        ;
+    }
+
+    @media (width < 768px) {
+        font-size: 1.2rem;
+        width: 90%;
+        text-align: center;
     }
 
     @media (orientation: landscape) AND (width < 992px) {
