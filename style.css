@@ -20,8 +20,40 @@ body {
 header {
     height: 40vh;
 
-    div#navHeader{
-        padding: 10px
+    div#navHeader {
+        padding: 10px;
+        background-color: #2d2c59 !important;
+        color: white;
+        border-radius: 100px;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        margin-top: 0.4rem;
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+        position: fixed;
+        inset: 0% 0% auto;
+        z-index: 1000;
+        min-height: 90px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+        div:nth-child(3) {
+            @media (width < 992px) {
+                display: none;
+            }
+        }
+
+        button#btnHamburguesa {
+            display: none;
+            opacity: 0;
+
+            @media (width < 992px) {
+                display: block;
+                margin: auto;
+                opacity: 1;
+            }
+        }
     }
 
     nav {
@@ -29,18 +61,18 @@ header {
             list-style: none;
             font-size: 20px;
             cursor: pointer;
-        
+
             @media (width < 768px) {
                 text-align: center;
                 padding: 0;
-            } 
+            }
         }
-    
+
         li:hover {
             color: #ff6600;
             transform: translateY(-5px);
-        } 
-    } 
+        }
+    }
 }
 
 
@@ -119,7 +151,7 @@ footer {
         justify-content: center;
         margin: 10px 0;
         padding-left: 0;
-        
+
     }
 
     li {
@@ -129,9 +161,11 @@ footer {
         a {
             color: #fff;
             text-decoration: none;
-    
+
         }
-    };
+    }
+
+    ;
 
     li a:hover {
         color: #ff6600;
@@ -307,30 +341,6 @@ p {
     }
 }
 
-#navHeader {
-    background-color: #2d2c59 !important;
-    color: white;
-    border-radius: 100px;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    margin-top: 0.4rem;
-    margin-left: 5%;
-    margin-right: 5%;
-    display: flex;
-    position: fixed;
-    inset: 0% 0% auto;
-    z-index: 1000;
-    min-height: 90px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-
-    /* @media (width < 992px) {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    } */
-}
-
 img#imgVideo {
     width: 500px;
     object-fit: cover;
@@ -389,7 +399,8 @@ form#formularioRegistro {
     margin-top: 0;
 }
 
-div#wcu-1, div#wcu-3 {
+div#wcu-1,
+div#wcu-3 {
     justify-content: space-around;
 }
 
@@ -727,48 +738,87 @@ button:hover {
 
 
 .nav-links {
-    display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
-.nav-links li {
-    margin: 0 15px;
-    cursor: pointer;
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    /* Texto blanco para contrastar con el fondo */
+    transition: color 0.3s ease;
 }
 
+.nav-links li a:hover {
+    color: #007bff;
+    /* Color azul al hacer hover */
+}
+
+/* Estilos del menú hamburguesa */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    gap: 5px;
+    z-index: 1000;
+    /* Asegura que el ícono esté por encima del menú */
 }
 
-.hamburger .bar {
+.bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.3s;
+    background-color: white;
+    /* Barras blancas para contrastar con el fondo */
+    transition: all 0.3s ease;
 }
 
-/* Estilos responsivos */
+/* Estilos para pantallas pequeñas */
 @media (width < 992px) {
     .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
+        font-size: 16px;
         position: absolute;
-        top: 70px;
-        left: 0;
+        top: 95%;
+        /* Se expande desde la parte inferior del header */
+        right: 95px;
+        width: 200px;
+        /* Ancho del menú */
         background-color: #2d2c59;
-        text-align: center;
+        /* Mismo color que el navHeader */
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        max-height: 0;
+        /* Inicialmente oculto */
+        overflow: hidden;
+        transition: max-height 0.7s ease, padding 0.3s ease;
+        border-radius: 0 0 20px 20px;
+        /* Bordes redondeados en la parte inferior */
     }
 
     .nav-links.active {
-        display: flex;
+        max-height: 300px;
+        /* Altura máxima del menú desplegado */
+        padding: 20px 0;
     }
 
     .hamburger {
         display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 

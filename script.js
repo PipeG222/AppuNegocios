@@ -332,11 +332,12 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(showNextImage, 800);
     });
 
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-    hamburger.addEventListener('click', function () {
-        navLinks.classList.toggle('active');
+    hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
     });
 });
 
