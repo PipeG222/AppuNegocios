@@ -1,309 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <title>Appu Store</title>
-
-</head>
-<body class="container-fluid" style="padding-left: 0; padding-right: 0;">
-    
-    <nav id="headerContent" class="navbar navbar-expand-lg">
-        <!-- Contenedor del Logo -->
+    <link
+      rel="icon"
+      href="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+    />
+    <title>AppuStore</title>
+  </head>
+  <body>
+    <header>
+      <div id="navHeader" class="d-flex justify-around align-center">
         <div>
-        <a class="navbar-brand" href="#">
-            <img src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="Logo" height="60px" style="margin-left: 10px;">
-        </a>
+          <img
+            src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+            alt="Logo AppuStore"
+            height="70px"
+          />
         </div>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav" >
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                </li> <a class="nav-link" href="https://appu.store/" style="font-size: 18px; text-decoration: none;">Appu Reservas</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link mx-3" href="#" style="font-size: 18px; text-decoration: none;">Appu Facturacion</a>
-                </li>
-                <li class="nav-item">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <p style="margin-bottom: 0; font-size: 14px;">¡Únete a nosotros!</p>
-                    <span class="badge p-2" style="background-color: #ff6600; font-size: 14px;">Inicio de sesión</span>
-                </div>
-                </li>
-            </ul>
+        <nav class="d-flex justify-around">
+          <ul class="nav-links">
+            <li>Prueba Gratis</li>
+            <li>APPU Reservas</li>
+            <li>APPU facturación</li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+        <div>
+          <button class="c-appuAzul bc-white btn">INGRESAR</button>
         </div>
-    </nav>
-    <header style="background-color:#2d2c59;">
-        <img id="bannerImage" class="img" src="Img/banner.png" width="100%" alt="" style="padding-top: 120px; " >
+      </div>
+      <img
+        id="banner"
+        src="Img/banner1.png"
+        alt="Banner de AppuStore"
+        width="100%"
+        height="500px"
+      />
     </header>
-    
-    <section id="pos-inteligente">
-        <div class="container">
-            <h2 class="fw-bold text-primary">Sistema POS Inteligente para Potenciar tu Negocio en Colombia</h2>
-            <p class="lead text-dark">
-            📊 Gestiona, vende y factura con facilidad desde cualquier lugar.<br>
-            💡 Optimiza tu negocio con el mejor software POS diseñado para Colombia.<br>
-            🛒 Desde pequeños comercios hasta grandes empresas: Tenemos el plan ideal para ti.<br>
-            🎁 <strong>Prueba GRATIS por 7 días</strong> y descubre el poder de la facturación sin complicaciones.<br>
-            📍 Disponible en todo Colombia | 100% en la nube | Fácil, rápido y seguro.
-            </p>
-            <a href="#contacto" class="btn btn-primary btn-lg mt-3">Prueba Gratis</a>
+    <main id="posInteligente" class="p-20">
+      <div class="posInteligente-prueba text-center">
+        <h1 class="c-appuAzul">
+          SISTEMA POS <span class="c-naranja">INTELIGENTE</span>
+        </h1>
+        <p class="c-naranja">!Potencia tu negocio en Colombia!</p>
+        <div id="posInteligente-BtnPrueba">
+          <button class="bc-appuAzul c-white btn">PRUEBA GRATIS</button>
+          <button class="btn c-appuAzul">VER PLANES</button>
         </div>
-    </section>
-      
-    <main id="posIdeal">
-        <!-- <img src="Img/titulo.png" alt="" height="50" style="margin-bottom: 30px;"> -->
-        <h1 style="margin-bottom:35px; font-size: 50px; font-weight: 700; color: #2d2c59;">Conoce el <span style="color: #ff6600;">POS</span> ideal para tu negocio</h1>
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <div id="videoDemo">
-                    <iframe style="padding: 20px; box-shadow: 0 4px 10px #ff6600;" width="660" height="415" src="https://www.youtube.com/embed/Gn1S6OXrTSo?si=QWFsmpKJBdBkKlM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div id="infoPosInteligente" class="col-lg-6 col-md-12" >
-                <h1 style="color: #2d2c59; font-weight: 600;">Sistema POS Inteligente</h1>
-                <h2 style="color: #ff6600;">Potencia tu Negocio en Colombia</h2>
-
-                <ul id="texto">
-                    <li>🔹 Factura electrónica en segundos</li>
-                    <li>🔹 Control total de inventarios y ventas</li>
-                    <li>🔹 Reportes avanzados y contabilidad en línea</li>
-                    <li>🔹 Integración con bancos y medios de pago</li>
-                    <li>🔹 Multiusuario y acceso desde cualquier dispositivo</li>
-                    
-                </ul>
-                <button class="c-light p-1" style="background-color: #ff6600; color: white; border-radius: 5px; border: none; font-weight: 600; width: 200px;">Reserva tu demo ahora</button>
-            </div>
+        <p class="c-appuAzul">
+          Prueba GRATIS por 7 dias y descubre el poder de la facturacion sin
+          complicaciones
+        </p>
+      </div>
+      <div class="posInteligente-Caracteristicas">
+        <div class="d-flex caracteristicas">
+          <div class="image-container">
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/grafica.png"
+              alt="Grafica frame 1"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/grafica1.png"
+              alt="Grafica frame 2"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/grafica2.png"
+              alt="Grafica frame 3"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/grafica1.png"
+              alt="Grafica frame 2"
+              height="100px"
+            />
+          </div>
+          <h3 class="c-appuAzul infoCaracteristicas">
+            <span class="c-naranja">Gestiona,</span> vende y factura facilmente
+            desde cualquier lugar.
+          </h3>
         </div>
+        <div class="d-flex caracteristicas">
+          <div class="image-container">
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/bombillo.png"
+              alt="Grafica frame 1"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/bombillo1.png"
+              alt="Grafica frame 2"
+              height="100px"
+            />
+          </div>
+          <h3 class="c-appuAzul infoCaracteristicas">
+            <span class="c-naranja">Optimiza</span> tu negocio con el mejor
+            software POS disenado para Colombia.
+          </h3>
+        </div>
+        <div class="d-flex caracteristicas">
+          <div class="image-container">
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/carrito/carrito1.png"
+              alt="Grafica frame 1"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/carrito/carrito4.png"
+              alt="Grafica frame 1"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/carrito/carrito8.png"
+              alt="Grafica frame 1"
+              height="100px"
+            />
+            <img
+              class="sequence-image"
+              src="Img/posInteligente/carrito/carrito4.png"
+              alt="Grafica frame 1"
+              height="100px"
+            />
+          </div>
+          <h3 class="c-appuAzul infoCaracteristicas">
+            Desde pequeños comercios hasta grandes empresas: Tenemos el
+            <span class="c-naranja">plan ideal</span> para ti.
+          </h3>
+        </div>
+      </div>
     </main>
-    <section class="why-choose-us">
-        <h2 class="title">¿Por qué elegirnos? Marcamos la diferencia</h2>
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-bolt"></i>
-                <h3>Velocidad y eficiencia</h3>
-                <p>Emite facturas en segundos, sin complicaciones.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-chart-line"></i>
-                <h3>Reportes avanzados</h3>
-                <p>Control total de ventas, inventarios y clientes.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-credit-card"></i>
-                <h3>Pagos electrónicos</h3>
-                <p>Compatible con múltiples plataformas.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-lock"></i>
-                <h3>Seguridad garantizada</h3>
-                <p>Protegemos tu información con tecnología en la nube.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-globe"></i>
-                <h3>Acceso desde cualquier lugar</h3>
-                <p>Maneja tu negocio desde cualquier dispositivo.</p>
-            </div>
+    <aside
+      id="infoCaracteristicasAPPU"
+      class="d-flex justify-around mt-2 bc-naranja c-white p-20"
+    >
+      <h2 class="text-center fade-in-up delay-1">
+        100% EN LA<br />
+        NUBE
+      </h2>
+      <h2 class="text-center fade-in-up delay-2">
+        DISPONIBILIDAD EN<br />TODA COLOMBIA
+      </h2>
+      <h2 class="text-center fade-in-up delay-3">
+        FACIL, RAPIDO<br />
+        Y SEGURO
+      </h2>
+    </aside>
+    <section
+      id="formularioPrueba"
+      class="d-flex justify-around p-20 c-appuAzul"
+      style="display: none"
+    >
+      <div>
+        <h1 class="text-center">Empieza ahora con tu prueba gratis</h1>
+        <form action="" class="d-flex flex-column">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" required />
+          <label for="email">Correo electrónico</label>
+          <input type="email" name="email" id="email" required />
+          <label for="telefono">Teléfono</label>
+          <input type="tel" name="telefono" id="telefono" required />
+          <button type="submit" class="bc-appuAzul c-white">
+            SOLICITAR PRUEBA GRATIS
+          </button>
+        </form>
+      </div>
+      <div>
+        <img
+          id="imgPrueba"
+          src="Img/formulario2.png"
+          alt="chica comiendo"
+          height="500px"
+        />
+      </div>
+    </section>
+    <!-- <hr class="hr" > -->
+    <section id="posIdeal" class="d-flex justify-around p-20">
+      <div id="videoDemo">
+        <!-- <iframe style="padding: 20px; box-shadow: 0 4px 10px #ff6600;" width="660" height="415" src="https://www.youtube.com/embed/Gn1S6OXrTSo?si=QWFsmpKJBdBkKlM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        <img
+          id="imgVideo"
+          src="Img/video.png"
+          alt="Boceto de video"
+          height="500px"
+        />
+      </div>
+      <div id="caracteristicasPosIdeal">
+        <div>
+          <h1 class="c-appuAzul text-center">
+            ¡CONOCE EL <span class="c-appuVerde">POS</span> IDEAL PARA TU
+            NEGOCIO!
+          </h1>
         </div>
+        <div>
+          <ul>
+            <li class="c-appuVerde">
+              Factura electrónica <span class="c-appuAzul">en segundos</span>
+            </li>
+            <li class="c-appuAzul">
+              Control total de <span class="c-appuVerde">inventarios</span> y
+              <span class="c-appuVerde">ventas</span>
+            </li>
+            <li class="c-appuVerde">
+              Reportes
+              <span class="c-appuAzul"> avanzados y</span> contabilidad<span
+                class="c-appuAzul"
+              >
+                en linea</span
+              >
+            </li>
+            <li class="c-appuAzul">
+              Integración con <span class="c-appuVerde">bancos</span> y
+              <span class="c-appuVerde">medios de pago</span>
+            </li>
+            <li class="c-appuVerde">
+              Multiusuario
+              <span class="c-appuAzul"
+                >y acceso desde cualquier dispositivo</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button class="bc-appuVerde c-white btn">
+            RESERVA TU DEMO AHORA
+          </button>
+        </div>
+      </div>
     </section>
 
-    <section >
-        <h1 style="text-align: center; padding: 30px; margin: 40px auto; font-weight: 700; color: #8EC343;">Planes diseñados para cada tipo de negocio</h1>
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin: 50px 0; padding: 50px; background-color: #8EC343;">
-            
+    <section id="planes" class="p-20 c-appuAzul text-center">
+      <h1>
+        PLANES DISEÑADOS PARA
+        <span class="c-naranja">CADA TIPO DE NEGOCIO</span>
+      </h1>
+      <p>
+        Elige el plan que mejor se adapte a tu negocio y empieza a vender sin
+        límites.
+      </p>
+      <div class="plans-container">
+        <div class="plan">
+          <img src="Img/Planes/restaurant.png" alt="" width="50" />
+          <h2>Restaurantes</h2>
+          <p>
+            Access to exclusive discounts on medications and health products.
+          </p>
+          <button>Conoce más</button>
         </div>
+        <div class="plan">
+          <img src="Img/Planes/tienda.png" alt="" width="50" />
+          <h2>Tiendas</h2>
+          <p>
+            Enjoy special offers and early access to sales in participating
+            stores.
+          </p>
+          <button>Conoce más</button>
+        </div>
+        <div class="plan">
+          <img src="Img/Planes/farmacy1.png" alt="" width="50" />
+          <h2>Farmacias</h2>
+          <p>
+            Get unlimited access to gyms, yoga classes, and personal trainers.
+          </p>
+          <button>Conoce más</button>
+        </div>
+        <div class="plan">
+            <img src="Img/Planes/legumbreria.png" alt="" width="50" />
+            <h2>Legumbrerias</h2>
+            <p>
+            Stream movies, music, and shows with no ads and exclusive content.
+            </p>
+          <button>Conoce más</button>
+        </div>
+      </div>
     </section>
 
-    <div class="container text-center mt-5">
-        <h1>Obtén superpoderes con Alegra POS</h1>
-        <p>en cualquier tipo de comercio o pyme</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Tienda de ropa">
-                    <h5>Tienda de ropa</h5>
-                    <p>Clasifica prendas por talla y color</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Microempresas">
-                    <h5>Microempresas</h5>
-                    <p>Gestiona fácil tu efectivo y stock</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Licorería">
-                    <h5>Licorería</h5>
-                    <p>Vende y distribuye tus bebidas</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Ferretería">
-                    <h5>Ferretería</h5>
-                    <p>Maneja fácil tu inventario</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Panaderías">
-                    <h5>Panaderías</h5>
-                    <p>Clasifica platos y factura fácil</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Autopartes">
-                    <h5>Autopartes</h5>
-                    <p>Administra y ordena tus repuestos</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Librería">
-                    <h5>Librería</h5>
-                    <p>Ordena por editorial, género y autor</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="business-card">
-                    <img src="Img/Planes/plus.png" alt="Farmacias">
-                    <h5>Farmacias</h5>
-                    <p>Ideal para Farmacias de todos los tamaños</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="slider">
-        <h1 style="text-align: center;">Aliados</h1>
+    <section id="sliderAliados">
+      <h1 class="c-appuAzul text-center">
+        Nuestros <span class="c-naranja">Aliados</span>
+      </h1>
+      <div class="slider">
         <div class="slide-track">
-            <div class="slide">
-                <img src="Img/Aliados/alcaldiaMed.png" alt="Logo Alcaldía de Medellín">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/RutaN.png" alt="Logo Ruta N">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/ces.png" alt="Logo Universidad CES">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/eafit.png" alt="Logo Universidad EAFIT">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/eia.jpg" alt="Logo Universidad EIA">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/upb.png" alt="Logo Universidad Pontificia Bolivariana">
-            </div>
-            <div class="slide"> 
-                <img src="Img/Aliados/putchi.png" alt="Logo cafeteria putchi">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/Tradiciones.jpg" alt="Logo Tradiciones de mi tierra">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/BOTY.jpg" alt="Logo Boty">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/alcaldiaMed.png" alt="Logo Alcaldía de Medellín">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/RutaN.png" alt="Logo Ruta N">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/ces.png" alt="Logo Universidad CES">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/eafit.png" alt="Logo Universidad EAFIT">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/eia.jpg" alt="Logo Universidad EIA">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/upb.png" alt="Logo Universidad Pontificia Bolivariana">
-            </div>
-            <div class="slide"> 
-                <img src="Img/Aliados/putchi.png" alt="Logo cafeteria putchi">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/Tradiciones.jpg" alt="Logo Tradiciones de mi tierra">
-            </div>
-            <div class="slide">
-                <img src="Img/Aliados/BOTY.jpg" alt="Logo Boty">
-            </div>
+          <div class="slide">
+            <img
+              src="Img/Aliados/alcaldiaMed.png"
+              alt="Logo Alcaldía de Medellín"
+            />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/RutaN.png" alt="Logo Ruta N" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/ces.png" alt="Logo Universidad CES" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
+          </div>
+          <div class="slide">
+            <img
+              src="Img/Aliados/upb.png"
+              alt="Logo Universidad Pontificia Bolivariana"
+            />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/putchi.png" alt="Logo cafeteria putchi" />
+          </div>
+          <div class="slide">
+            <img
+              src="Img/Aliados/Tradiciones.jpg"
+              alt="Logo Tradiciones de mi tierra"
+            />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/BOTY.jpg" alt="Logo Boty" />
+          </div>
+          <div class="slide">
+            <img
+              src="Img/Aliados/alcaldiaMed.png"
+              alt="Logo Alcaldía de Medellín"
+            />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/RutaN.png" alt="Logo Ruta N" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/ces.png" alt="Logo Universidad CES" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
+          </div>
+          <div class="slide">
+            <img
+              src="Img/Aliados/upb.png"
+              alt="Logo Universidad Pontificia Bolivariana"
+            />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/putchi.png" alt="Logo cafeteria putchi" />
+          </div>
+          <div class="slide">
+            <img
+              src="Img/Aliados/Tradiciones.jpg"
+              alt="Logo Tradiciones de mi tierra"
+            />
+          </div>
+          <div class="slide">
+            <img src="Img/Aliados/BOTY.jpg" alt="Logo Boty" />
+          </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-4" style="display: flex; align-items: flex-end;" >
-            <img src="Img/mujer1.png" alt="Mujer con uniforme de Appu senalando las noticias" class="moving-image" style="object-fit: contain; width: 100%; margin-left: 20px;">
+      </div>
+    </section>
+
+    <section id="why-choose-us" class="d-flex text-center">
+      <div id="wcu-1" class="bc-appuAzul c-white">
+        <div>
+          <img
+            src="Img/why-choose-us/integracion.png"
+            alt="Imagen de integracion"
+          />
+          <h2 class="text-center wcu">Integración con pagos electrónicos</h2>
+          <h3 class="wcu">Compatible con multiples plataformas.</h3>
         </div>
-        <div class="col-xl-4 col-md-8 col-sm-12">
-            <div style="padding: 25px; margin: 10px; ">
-                <div class="noticias">
-                    <form id="formulario" method="post" style="margin-top: 20px; display: flex; flex-direction: column; ">
-                        <h1 style="color: #8EC343; font-weight: 700;">¡Mantente informado!</h1>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Teléfono</label>
-                            <input type="tel" pattern="[0-9]{10}" placeholder="Ej: 3001234567" class="form-control" id="phone" name="phone" required>
-                            <div class="invalid-feedback">
-                                Por favor, ingresa un número de teléfono válido de 10 dígitos.
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="background-color: #ff6600; border: none;">Enviar</button>
-                    </form>
-                </div>
-            </div>
+        <div>
+          <img
+            src="Img/why-choose-us/seguridad.png"
+            alt="Imagen de seguridad"
+          />
+          <h2 class="text-center wcu">Seguridad garantizada</h2>
+          <h3 class="wcu">
+            Protegemos tu información con tecnología en la nube.
+          </h3>
         </div>
-    </div>
-    <footer style="background-image: url('Img/footer.png'); background-size: cover; background-repeat: no-repeat; padding: 20px; color: white; padding: 20px;">
-        <div class="row">
-            <div class="col-5">
-            </div>
-            <div class="col-4">
-                <h2>Contacto</h2>
-                <hr style="border: 2px solid #ff6600; width: 100px; margin: 10px 0;">
-                <div>
-                    <p>📍 Medellín, Colombia</p>
-                    <p>📞 +57 318 657 4668</p>
-                    <p>📧 aadministracion@appu.store </p>
-                </div>
-            </div>
-            <div class="col-2" style="display: block; text-align: center; padding: 20px;">
-                <img  src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="" width="80px">
-                <div style="display: flex; justify-content: space-evenly; margin-top: 20px;">
-                    <a href="https://www.tiktok.com/@appu_colombia" target="_blank"><img src="Img/tiktok.png" alt="" width="30"></a>
-                    <a href="https://www.instagram.com/appu_colombia/" target="_blank"><img src="Img/instagram.png" alt="" width="35"></a>
-                </div>
-            </div>
+      </div>
+      <div id="wcu-2" class="c-appuAzul">
+        <h1>¿POR QUÉ ELEGIRNOS?</h1>
+        <h2>Marcamos la diferencia</h2>
+        <img src="Img/why-choose-us/appuAzul.png" alt="Logo APPU color azul" />
+      </div>
+      <div id="wcu-3" class="bc-appuAzul c-white">
+        <div>
+          <img
+            src="Img/why-choose-us/velocidad.png"
+            alt="Imagen de velocidad"
+          />
+          <h2 class="text-center wcu">Velocidad y eficiencia</h2>
+          <h3 class="wcu">Emite facturas en segundos, sin complicaciones.</h3>
+        </div>
+        <div>
+          <img src="Img/why-choose-us/reportes.png" alt="Imagen de reportes" />
+          <h2 class="text-center wcu">Reportes avanzados</h2>
+          <h3 class="wcu">Control total de ventas, inventarios y clientes.</h3>
+        </div>
+      </div>
+    </section>
+    <!-- <hr class="hr"> -->
+    <section id="formularioInformacion" class="d-flex justify-around p-20">
+      <div class="c-appuAzul">
+        <h1>Hablemos, estamos para ayudarte</h1>
+        <p>
+          Dejanos tus datos y recibe
+          <span class="c-naranja">asesoría personalizada.</span>
+        </p>
+        <form id="formularioRegistro" action="POST" class="d-flex flex-column">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre2" required />
+          <label for="email">Correo electrónico</label>
+          <input type="email" name="email" id="email2" required />
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            pattern="[0-9]{10}"
+            placeholder="Ej: 3001234567"
+            name="telefono"
+            id="telefono2"
+            required
+          />
+          <button type="submit" class="bc-appuAzul c-white">ENVIAR</button>
+        </form>
+      </div>
+      <div>
+        <img
+          id="imgFormularioRegistro"
+          src="Img/formulario.png"
+          alt="Foto de dos chicas sonriendo"
+        />
+      </div>
+    </section>
+    <footer class="d-flex justify-around align-center bc-appuAzul c-white p-20">
+      <div>
+        <img src="Img/appuBlanco.png" alt="Logo AppuStore" height="150px" />
+      </div>
+      <div>
+        <h1>CONTACTO</h1>
+        <ul>
+          <li>+57 318 657 4668</li>
+          <li>administracion@appu.store</li>
+          <li>Medellín, Colombia</li>
+        </ul>
+      </div>
+      <div>
+        <h1>SOCIAL</h1>
+        <ul>
+          <li>siguenos y recibe novedades</li>
+          <li>
+            <img src="Img/instagram.png" alt="" width="20" /><img
+              src="Img/tiktok.png"
+              width="20"
+            />
+          </li>
+        </ul>
+      </div>
     </footer>
-    <a href="https://wa.me/+573186574668" class="whatsapp-btn" target="_blank">
-        <img src="Img/icono_wsap.png" alt="" height="60px">
-    </a>
-</body>
+  </body>
 </html>
