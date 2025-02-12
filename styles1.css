@@ -377,9 +377,13 @@ section#formularioInformacion div:first-child h1, p {
     }
 }
 
-.caracteristicas > h3 {
+.caracteristicas h3 {
     font-size: 1.7rem;
     width: 60%;
+
+    @media (width > 1200px) {
+        font-size: 1.5rem;
+    }
 
     @media (width < 992px) {
         font-size: 1.4rem;
@@ -455,6 +459,56 @@ section#formularioInformacion div:first-child h1, p {
 h3.wcu {
     margin: 10px;
 }
+
+
+.plans-container {
+    display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+  }
+
+  .plan {
+    background-color: #2d2c59;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 250px;
+    max-width: 300px;
+  }
+
+  .plan:hover {
+    transform: scale(1.05);
+    img {
+      transform: scale(1.3);
+    }
+  }
+
+  .plan h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .plan p {
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .plan button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .plan button:hover {
+    background-color: #0056b3;
+  }
 /* ↑↑ Estilos por clase ↑↑/*
 
 
