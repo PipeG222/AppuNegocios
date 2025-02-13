@@ -3,19 +3,45 @@
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
+    display: flex;
+    flex-direction: column;
 
-  .section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-  .section p {
-    font-size: 1.1rem;
+    p {
+      font-size: 1.1rem;
     line-height: 1.6;
     text-align: center;
+    }
   }
+
+  .section:nth-of-type(2) {
+
+
+    .planes-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;    
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+    }
+    
+  } 
+
 
   /* Tarjetas de Planes */
   .plans-grid {
