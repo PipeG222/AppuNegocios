@@ -19,28 +19,33 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(element);
     });
 
-    document.getElementById("formularioRegistro").addEventListener("submit", async (event) => {
-        event.preventDefault();
+    if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+        document.getElementById("formularioRegistro").addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-        const datos = {
-            nombre: document.getElementById("nombre2").value,
-            email: document.getElementById("email2").value,
-            telefono: document.getElementById("telefono2").value,
-        };
+            const datos = {
+                nombre: document.getElementById("nombre2").value,
+                email: document.getElementById("email2").value,
+                telefono: document.getElementById("telefono2").value,
+            };
 
-        console.log("Datos a enviar:", datos);
-        const response = await fetch("https://43lqqq3t4h.execute-api.us-east-1.amazonaws.com/default/appu-registroUsuarios-landing", {
-            method: "POST",
-            body: JSON.stringify(datos),
-            headers: { "Content-Type": "application/json" }
+            console.log("Datos a enviar:", datos);
+            const response = await fetch("https://43lqqq3t4h.execute-api.us-east-1.amazonaws.com/default/appu-registroUsuarios-landing", {
+                method: "POST",
+                body: JSON.stringify(datos),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            console.log("Respuesta del servidor:", response);
+            alert("¡Gracias por registrarte! Pronto nos pondremos en contacto contigo.");
+            document.getElementById("nombre2").value = "";
+            document.getElementById("email2").value = "";
+            document.getElementById("telefono2").value = "";
         });
 
-        console.log("Respuesta del servidor:", response);
-        alert("¡Gracias por registrarte! Pronto nos pondremos en contacto contigo.");
-        document.getElementById("nombre2").value = "";
-        document.getElementById("email2").value = "";
-        document.getElementById("telefono2").value = "";
-    });
+    }
+
+
 
     // function ajustarCarrusel() {
     //     const anchoPantalla = window.innerWidth;

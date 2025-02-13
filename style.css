@@ -67,11 +67,6 @@ header {
                 padding: 0;
             }
         }
-
-        li:hover {
-            color: #ff6600;
-            transform: translateY(-5px);
-        }
     }
 }
 
@@ -194,6 +189,10 @@ p {
     font-size: 24px;
     font-weight: 600;
     margin: 20px;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -416,6 +415,26 @@ img#WhatsAppAppu {
     height: 70px;
 }
 
+section#planes {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        @media (width < 768px) {
+            font-size: 1.6rem;
+        }
+    }
+
+    p {
+        @media (width < 768px) {
+            font-size: 1.2rem;
+        }
+    }
+    
+}
+
 /* Estilos por id ⬆⬆⬆*/
 
 /* ↓↓ Estilos por clase ↓↓*/
@@ -627,9 +646,14 @@ h3.wcu {
     text-align: center;
     flex: 1 1 250px;
     max-width: 300px;
+
+    p {
+        text-align: left;
+    }
 }
 
 .plan:hover {
+    cursor: pointer;
     transform: scale(1.05);
 
     img {
@@ -659,6 +683,70 @@ h3.wcu {
 
 .plan button:hover {
     background-color: #0056b3;
+}
+
+.image-container {
+    position: relative;
+    width: 100px;
+    /* Ajusta el ancho según tus necesidades */
+    height: 100px;
+    /* Ajusta la altura según tus necesidades */
+}
+
+.sequence-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sequence-image.active {
+    opacity: 1;
+}
+
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    /* Texto blanco para contrastar con el fondo */
+    transition: color 0.3s ease;
+    /* Efecto de transición al cambiar de color */
+    
+}
+
+.nav-links li a:hover {
+    color: #ff6600;
+    /* Color naranja al pasar el cursor */
+}
+
+/* Estilos del menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1000;
+    /* Asegura que el ícono esté por encima del menú */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    /* Barras blancas para contrastar con el fondo */
+    transition: all 0.3s ease;
 }
 
 /* ↑↑ Estilos por clase ↑↑/*
@@ -737,66 +825,7 @@ button:hover {
     }
 }
 
-.image-container {
-    position: relative;
-    width: 100px;
-    /* Ajusta el ancho según tus necesidades */
-    height: 100px;
-    /* Ajusta la altura según tus necesidades */
-}
 
-.sequence-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.sequence-image.active {
-    opacity: 1;
-}
-
-
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: white;
-    /* Texto blanco para contrastar con el fondo */
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #007bff;
-    /* Color azul al hacer hover */
-}
-
-/* Estilos del menú hamburguesa */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    z-index: 1000;
-    /* Asegura que el ícono esté por encima del menú */
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    /* Barras blancas para contrastar con el fondo */
-    transition: all 0.3s ease;
-}
 
 /* Estilos para pantallas pequeñas */
 @media (width < 992px) {
@@ -845,4 +874,45 @@ button:hover {
     }
 }
 
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+img.animationScale {
+    animation: scale 5s infinite;
+
+}
+
+img.animationScale:hover {
+    animation: rotate 5s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
 /* ↑↑ Animaciones ↑↑*/
+
+
+/* ↓↓ estilos paginas planes ↓↓*/
+

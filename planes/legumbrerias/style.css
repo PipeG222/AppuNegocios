@@ -1,0 +1,65 @@
+.section {
+  color:#2d2c59;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Tarjetas de Planes */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .plan-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .plan-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .plan-card h3 {
+    font-size: 1.5rem;
+    color: #2d2c59;
+    margin-bottom: 10px;
+  }
+
+  .plan-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .plan-card .btn {
+    background-color: #2d2c59;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .plan-card .btn:hover {
+    background-color: #0056b3;
+  }
