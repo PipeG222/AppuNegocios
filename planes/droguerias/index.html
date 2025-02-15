@@ -107,7 +107,37 @@
     
 
     <!-- Sección de CTA -->
-    
+    <section id="formularioInformacion" class="p-20">
+      <div class="c-appuAzul">
+        <h1>Hablemos, estamos para ayudarte</h1>
+        <p>
+          Dejanos tus datos y recibe
+          <span class="c-naranja">asesoría personalizada</span>
+        </p>
+        <form id="formularioRegistro" action="POST">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre2" required />
+          <label for="email">Correo electrónico</label>
+          <input type="email" name="email" id="email2" required />
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            pattern="[0-9]{10}"
+            name="telefono"
+            id="telefono2"
+            required
+          />
+          <button type="submit" class="bc-appuAzul c-white">ENVIAR</button>
+        </form>
+      </div>
+      <div>
+        <img
+          id="imgFormularioRegistro"
+          src="/Img/formulario.png"
+          alt="Foto de dos chicas sonriendo"
+        />
+      </div>
+    </section>
     <footer
       class="d-flex justify-around bc-appuAzul c-white p-20 content-center"
     >
