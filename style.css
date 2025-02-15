@@ -31,6 +31,15 @@ header {
             }
         }
 
+        @media (width < 992px) {
+            min-height: 70px;
+            padding: 0;
+
+            img {
+                height: 50px;
+            }
+        }
+
         a#btnHamburguesa {
             display: none;
             opacity: 0;
@@ -204,6 +213,38 @@ a.btn:hover {
     p:nth-of-type(1) {
         margin-top: 0;
         margin-bottom: 50px;
+    }
+
+    .posInteligente-prueba {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p:last-child {
+            width: 60%;
+        
+            @media (width < 992px) {
+                width: 100%;
+            }
+        
+            @media (orientation: landscape) AND (width < 992px) {
+                width: 80%;
+            }
+        }
+    
+        @media (width < 768px) {
+            width: 100%;
+        }
+    
+        #posInteligente-BtnPrueba {
+            display: flex;
+            gap: 10px;
+    
+            @media (width < 768px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     }
 }
 
@@ -540,32 +581,6 @@ section#planes {
 .infoCaracteristicas {
     margin: auto 30px;
     font-size: 20px;
-}
-
-.posInteligente-prueba {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (width < 768px) {
-        width: 100%;
-    }
-
-    #posInteligente-btnPrueba a {
-        margin: 50px;
-    }
-}
-
-.posInteligente-prueba p:last-child {
-    width: 60%;
-
-    @media (width < 992px) {
-        width: 100%;
-    }
-
-    @media (orientation: landscape) AND (width < 992px) {
-        width: 80%;
-    }
 }
 
 .slider {
