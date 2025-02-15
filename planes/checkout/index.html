@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css">
     <script src="/script.js"></script>
     <link
       rel="icon"
@@ -31,7 +32,7 @@
               >
                 INGRESAR
               </a>
-              <li><a href="">Prueba Gratis</a></li>
+              <li><a href="/index.html">Inicio</a></li>
               <li><a href="https://appu.store/">APPU Reservas</a></li>
               <li><a href="#planes">APPU Facturación</a></li>
             </ul>
@@ -56,424 +57,193 @@
         />
         <h1 id="textHeader">Elige un POS que realmente potencia tu negocio</h1>
       </header>
-    <main id="posInteligente" class="p-20">
-      <div class="posInteligente-prueba text-center">
-        <h1 class="c-appuAzul">
-          SISTEMA POS <span class="c-naranja">INTELIGENTE</span>
-        </h1>
-        <p class="c-naranja">¡Potencia tu negocio en Colombia!</p>
-        <div id="posInteligente-BtnPrueba">
-          <a href="#formularioInformacion" class="bc-appuAzul c-white btn"
-            >PRUEBA GRATIS</a
-          >
-          <a href="#planes" class="btn c-white bc-naranja">VER PLANES</a>
-        </div>
-        <p class="c-appuAzul">
-          Prueba GRATIS por 7 dias y descubre el poder de la facturación sin
-          complicaciones
-        </p>
-      </div>
-      <div class="posInteligente-Caracteristicas">
-        <div class="d-flex caracteristicas">
-          <div class="image-container">
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/grafica.png"
-              alt="Grafica frame 1"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/grafica1.png"
-              alt="Grafica frame 2"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/grafica2.png"
-              alt="Grafica frame 3"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/grafica1.png"
-              alt="Grafica frame 2"
-              height="100px"
-            />
-          </div>
-          <h3 class="c-appuAzul infoCaracteristicas">
-            <span class="c-naranja">Gestiona,</span> vende y factura fácilmente
-            desde cualquier lugar.
-          </h3>
-        </div>
-        <div class="d-flex caracteristicas">
-          <div class="image-container">
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/bombillo.png"
-              alt="Grafica frame 1"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/bombillo1.png"
-              alt="Grafica frame 2"
-              height="100px"
-            />
-          </div>
-          <h3 class="c-appuAzul infoCaracteristicas">
-            <span class="c-naranja">Optimiza</span> tu negocio con el mejor
-            software POS disenado para Colombia.
-          </h3>
-        </div>
-        <div class="d-flex caracteristicas">
-          <div class="image-container">
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/carrito/carrito1.png"
-              alt="Grafica frame 1"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/carrito/carrito4.png"
-              alt="Grafica frame 1"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/carrito/carrito8.png"
-              alt="Grafica frame 1"
-              height="100px"
-            />
-            <img
-              class="sequence-image"
-              src="Img/posInteligente/carrito/carrito4.png"
-              alt="Grafica frame 1"
-              height="100px"
-            />
-          </div>
-          <h3 class="c-appuAzul infoCaracteristicas">
-            Desde pequeños comercios hasta grandes empresas: Tenemos el
-            <span class="c-naranja">plan ideal</span> para ti.
-          </h3>
-        </div>
-      </div>
+    <main id="checkoutInit" class="p-20">
+      <h1>¡Tu nueva herramienta para vender más está a un clic de distancia!</h1>
     </main>
     <aside
       id="infoCaracteristicasAPPU"
       class="d-flex justify-around mt-2 bc-naranja c-white p-20"
     >
       <h2 class="text-center fade-in-up delay-1">
-        100% EN LA<br />
-        NUBE
+        PAGO 100%<br />
+        SEGURO
       </h2>
       <h2 class="text-center fade-in-up delay-2">
-        DISPONIBILIDAD EN<br />TODA COLOMBIA
+        GARANTÍA DE <br />SATISFACCIÓN
       </h2>
       <h2 class="text-center fade-in-up delay-3">
-        FÁCIL, RÁPIDO<br />
-        Y SEGURO
+        SOPORTE<br/>
+        24/7
       </h2>
     </aside>
     <section
-      id="formularioPrueba"
+    id="sectionOfertaEspecial"
       class="d-flex justify-around p-20 c-appuAzul"
-      style="display: none"
     >
-      <div>
-        <h1 class="text-center">Empieza ahora con tu prueba gratis</h1>
-        <form action="" class="d-flex flex-column">
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" required />
-          <label for="email">Correo electrónico</label>
-          <input type="email" name="email" id="email" required />
-          <label for="telefono">Teléfono</label>
-          <input type="tel" name="telefono" id="telefono" required />
-          <button type="submit" class="bc-appuAzul c-white">
-            SOLICITAR PRUEBA GRATIS
-          </button>
-        </form>
-      </div>
-      <div>
-        <img
-          id="imgPrueba"
-          src="Img/formulario2.png"
-          alt="chica comiendo"
-          height="500px"
-        />
-      </div>
+        <div>
+            <h1 id="ofertaEspecial" class="text-center c-naranja">¡Oferta especial por tiempo limitado! <br>
+            <span class="c-white" style="font-size: 2rem;">Contrata hoy y recibe un mes extra GRATIS.</span>
+            </h1>
+        </div>
+        <div>
+            <img
+            id="imgFormularioRegistro"
+            src="/Img/video.png"
+            alt="Foto de dos chicas sonriendo"
+            />
+        </div>
     </section>
-    <!-- <hr class="hr" > -->
-    <section id="posIdeal" class="d-flex justify-around p-20">
-      <div id="videoDemo">
-        <!-- <iframe style="padding: 20px; box-shadow: 0 4px 10px #ff6600;" width="660" height="415" src="https://www.youtube.com/embed/Gn1S6OXrTSo?si=QWFsmpKJBdBkKlM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-        <img
-          id="imgVideo"
-          src="/Img/video.png"
-          alt="Boceto de video"
-          height="500px"
-        />
-      </div>
-      <div id="caracteristicasPosIdeal">
-        <div>
-          <h1 class="c-appuAzul text-center">
-            ¡CONOCE EL <span class="c-appuVerde">POS</span> IDEAL PARA TU
-            NEGOCIO!
-          </h1>
+    <section id="beneficios" class="d-flex justify-around p-20">
+        <div id="sectionBeneficios1">
+            <h1>Lo que obtienes al comprar ahora</h1>
+            <ul>
+                <li>✅ Facturación electrónica sin errores ni demoras</li>
+                <li>✅ Reportes detallados para tomar mejores decisiones</li>
+                <li>✅ Control total de inventarios y clientes en un solo lugar</li>
+                <li>✅ Acceso desde cualquier dispositivo, en cualquier momento</li>
+            </ul>
+            <h3>📌 Sin contratos, sin ataduras. Si no te gusta, cancelas cuando quieras.</h3>
         </div>
-        <div>
-          <ul>
-            <li class="c-appuVerde">
-              Factura electrónica <span class="c-appuAzul">en segundos</span>
-            </li>
-            <li class="c-appuAzul">
-              Control total de <span class="c-appuVerde">inventarios</span> y
-              <span class="c-appuVerde">ventas</span>
-            </li>
-            <li class="c-appuVerde">
-              Reportes
-              <span class="c-appuAzul"> avanzados y</span> contabilidad<span
-                class="c-appuAzul"
-              >
-                en línea</span
-              >
-            </li>
-            <li class="c-appuAzul">
-              Integración con <span class="c-appuVerde">bancos</span> y
-              <span class="c-appuVerde">medios de pago</span>
-            </li>
-            <li class="c-appuVerde">
-              Multiusuario
-              <span class="c-appuAzul"
-                >y acceso desde cualquier dispositivo</span
-              >
-            </li>
-          </ul>
+        <div id="sectionBeneficios2">
+            <h1>Opciones de Pago Claras y Seguras</h1>
+            <ul>
+                <li>💳 Aceptamos todos los medios de pago: Tarjetas de crédito/débito, PSE, PayPal, Transferencias.</li>
+                <li>🔐 Protegemos tu información con tecnología de seguridad en la nube.</li>
+            </ul>
         </div>
-        <div>
-          <button class="bc-appuVerde c-white btn">
-            RESERVA TU DEMO AHORA
-          </button>
-        </div>
-      </div>
     </section>
 
-    <section id="planes" class="p-20 c-appuAzul text-center">
-      <h1>
-        PLANES DISEÑADOS PARA
-        <span class="c-naranja">CADA TIPO DE NEGOCIO</span>
-      </h1>
-      <p>
-        Elige el plan que mejor se adapte a tu negocio y empieza a vender sin
-        límites.
-      </p>
-      <div class="plans-container">
-        <a href="planes/legumbrerias/index.html">
-          <div class="plan">
-            <img src="/Img/Planes/restaurant.png" alt="" width="50" />
-            <h2>Restaurantes</h2>
-            <p>
-              Simplifica la facturación electrónica y controla inventarios
-              fácilmente.
-            </p>
-          </div>
-        </a>
-
-        <a href="planes/legumbrerias/index.html"
-          ><div class="plan">
-            <img src="/Img/Planes/tienda.png" alt="" width="50" />
-            <h2>Tiendas</h2>
-            <p>
-              Potencia tu tienda con un POS moderno. Facturación electrónica
-              rápida y gestión de stock.
-            </p>
-          </div></a
-        >
-
-        <a href="planes/droguerias/index.html"
-          ><div class="plan">
-            <img src="/Img/Planes/farmacy1.png" alt="" width="50" />
-            <h2>Farmacias</h2>
-            <p>
-              Controla el stock y ten una facturación electrónica sin
-              complicaciones.
-            </p>
-          </div></a
-        >
-
-        <a href="planes/legumbrerias/index.html"
-          ><div class="plan">
-            <img src="/Img/Planes/legumbreria.png" alt="" width="50" />
-            <h2>Legumbrerias</h2>
-            <p>
-              Optimiza tu negocio con un POS adaptado. Facturación electrónica
-              sencilla y eficiente.
-            </p>
-          </div></a
-        >
-      </div>
+    <section id="wompi" class="p-20 c-appuAzul text-center">
+        <div>
+            <img src="/Img/checkout/logoWompi.png" alt="Logo de Wompi" height="100px">
+        </div>
+        <h2>
+            Paga con tarjeta de crédito, débito, PSE, PayPal, transferencia bancaria y más.
+        </h2>
+        <div>
+            <button class="bc-naranja c-white btn">PAGAR CON WOMPI</button>
+        </div>
     </section>
 
-    <section id="sliderAliados">
-      <h1 class="c-appuAzul text-center">
-        Nuestros <span class="c-naranja">Aliados</span>
-      </h1>
-      <div class="slider">
-        <div class="slide-track">
-          <div class="slide">
-            <img
-              src="/Img/Aliados/alcaldiaMed.png"
-              alt="Logo Alcaldía de Medellín"
-            />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/RutaN.png" alt="Logo Ruta N" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/ces.png" alt="Logo Universidad CES" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/upb.png"
-              alt="Logo Universidad Pontificia Bolivariana"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/Tradiciones.jpg"
-              alt="Logo Tradiciones de mi tierra"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/alcaldiaMed.png"
-              alt="Logo Alcaldía de Medellín"
-            />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/RutaN.png" alt="Logo Ruta N" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/ces.png" alt="Logo Universidad CES" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/upb.png"
-              alt="Logo Universidad Pontificia Bolivariana"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/Tradiciones.jpg"
-              alt="Logo Tradiciones de mi tierra"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/alcaldiaMed.png"
-              alt="Logo Alcaldía de Medellín"
-            />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/RutaN.png" alt="Logo Ruta N" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/ces.png" alt="Logo Universidad CES" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
-          </div>
-          <div class="slide">
-            <img src="/Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/upb.png"
-              alt="Logo Universidad Pontificia Bolivariana"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/Img/Aliados/Tradiciones.jpg"
-              alt="Logo Tradiciones de mi tierra"
-            />
-          </div>
-        </div>
-      </div>
+    <section id="garantiaTranquilidad" class="p-20">
+        <h1 class="text-center">Garantía y Tranquilidad </h1>
+        <ul>
+            <li>✅ Garantía de satisfacción 100%</li>
+            <li>❌ Sin costos ocultos ni sorpresas</li>
+            <li>📞 Soporte prioritario 24/7 desde el primer día</li>
+            <li>📌 Miles de negocios en Colombia ya lo usan. ¡Únete ahora!</li>
+        </ul>
     </section>
 
-    <section id="why-choose-us" class="d-flex text-center">
-      <div id="wcu-1" class="bc-appuAzul c-white">
-        <div>
-          <img
-            class="animationScale"
-            src="Img/why-choose-us/integracion.png"
-            alt="Imagen de integracion"
-          />
-          <h2 class="text-center wcu">Integración con pagos electrónicos</h2>
-          <h3 class="wcu">Compatible con múltiples plataformas.</h3>
+    <section >
+        <h1 class="c-appuAzul text-center">
+          Nuestros <span class="c-naranja">Aliados</span>
+        </h1>
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide">
+              <img
+                src="/Img/Aliados/alcaldiaMed.png"
+                alt="Logo Alcaldía de Medellín"
+              />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/RutaN.png" alt="Logo Ruta N" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/ces.png" alt="Logo Universidad CES" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/upb.png"
+                alt="Logo Universidad Pontificia Bolivariana"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/Tradiciones.jpg"
+                alt="Logo Tradiciones de mi tierra"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/alcaldiaMed.png"
+                alt="Logo Alcaldía de Medellín"
+              />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/RutaN.png" alt="Logo Ruta N" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/ces.png" alt="Logo Universidad CES" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/upb.png"
+                alt="Logo Universidad Pontificia Bolivariana"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/Tradiciones.jpg"
+                alt="Logo Tradiciones de mi tierra"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/alcaldiaMed.png"
+                alt="Logo Alcaldía de Medellín"
+              />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/RutaN.png" alt="Logo Ruta N" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/ces.png" alt="Logo Universidad CES" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/eafit.png" alt="Logo Universidad EAFIT" />
+            </div>
+            <div class="slide">
+              <img src="/Img/Aliados/eia.jpg" alt="Logo Universidad EIA" />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/upb.png"
+                alt="Logo Universidad Pontificia Bolivariana"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/Img/Aliados/Tradiciones.jpg"
+                alt="Logo Tradiciones de mi tierra"
+              />
+            </div>
+          </div>
         </div>
-        <div>
-          <img
-            class="animationScale"
-            src="Img/why-choose-us/seguridad.png"
-            alt="Imagen de seguridad"
-          />
-          <h2 class="text-center wcu">Seguridad garantizada</h2>
-          <h3 class="wcu">
-            Protegemos tu información con tecnología en la nube.
-          </h3>
-        </div>
-      </div>
-      <div id="wcu-2" class="c-appuAzul">
-        <h1>¿POR QUÉ ELEGIRNOS?</h1>
-        <h2>Marcamos la diferencia</h2>
-        <img src="Img/why-choose-us/appuAzul.png" alt="Logo APPU color azul" />
-      </div>
-      <div id="wcu-3" class="bc-appuAzul c-white">
-        <div>
-          <img
-            class="animationScale"
-            src="Img/why-choose-us/velocidad.png"
-            alt="Imagen de velocidad"
-          />
-          <h2 class="text-center wcu">Velocidad y eficiencia</h2>
-          <h3 class="wcu">Emite facturas en segundos, sin complicaciones.</h3>
-        </div>
-        <div>
-          <img
-            class="animationScale"
-            src="Img/why-choose-us/reportes.png"
-            alt="Imagen de reportes"
-          />
-          <h2 class="text-center wcu">Reportes avanzados</h2>
-          <h3 class="wcu">Control total de ventas, inventarios y clientes.</h3>
-        </div>
-      </div>
-    </section>
-    <!-- <hr class="hr"> -->
+      </section>
+    
     <section id="formularioInformacion" class="p-20">
       <div class="c-appuAzul">
         <h1>Hablemos, estamos para ayudarte</h1>
@@ -573,7 +343,7 @@
       </div>
 
       <a href="https://wa.me/+573186574668" target="_blank"
-        ><img id="WhatsAppAppu" src="Img/icono_wsap.png" alt="Logo de WhatsApp"
+        ><img id="WhatsAppAppu" src="/Img/icono_wsap.png" alt="Logo de WhatsApp"
       /></a>
     </footer>
   </body>

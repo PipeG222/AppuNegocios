@@ -1,0 +1,137 @@
+#checkoutInit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 20vh;
+    padding: 20px;
+    border-radius: 10px;
+    animation: transform 8s infinite;
+}
+
+@keyframes transform {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#checkoutInit h1 {
+    margin-bottom: 20px;
+}
+
+#checkoutInit button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2d2c59;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#checkoutInit button:hover {
+    background-color: #ff6600;
+    color: black;
+}
+
+#sectionOfertaEspecial {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1#ofertaEspecial {
+        background-color: #2d2c59;
+        padding: 20px;
+        border-radius: 10px;
+        
+    }
+}
+
+#beneficios {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #ff6600;
+    min-height: 50vh;
+
+
+    #sectionBeneficios1, #sectionBeneficios2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        min-height: 50vh;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #2d2c59;
+        color: white;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            position: relative;
+            top: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+            margin-top: 20px;
+            li {
+                margin-bottom: 10px;
+                text-align: left;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+#wompi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 30vh;
+
+    div, h1, div button {
+        margin-top: 10px;
+    }
+}
+
+#garantiaTranquilidad {
+    background-color: #2d2c59;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+
+    ul {
+        list-style: none;
+        padding: 10px;
+        margin-top: 20px;
+
+        li {
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.2em;
+        }
+    }
+}
