@@ -4,19 +4,6 @@ body {
     padding: 0;
 }
 
-/* header div  {
-    @media (width < 768px) {
-        flex-direction: column;
-        align-items: center;
-    }
-} */
-
-/* nav {
-    @media (width < 768px) {
-        flex-direction: column;
-    }
-} */
-
 header {
     height: 40vh;
 
@@ -70,23 +57,30 @@ header {
     }
 }
 
-
-
 form {
     font-size: 20px;
 
-}
+    input {
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid #2d2c59;
+        margin: 10px;
+        width: clamp(600px, 90%); /* Ancho mínimo de 600px y máximo del 90% del contenedor */
 
-form input {
-    font-size: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 2px solid #2d2c59;
-    margin: 10px;
-    width: clamp(600px, 90%);
+        @media (width < 992px) {
+            width: 90%;
+        }
+    }
 
-    @media (width < 992px) {
-        width: 90%;
+    button {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 10px;
+        border-radius: 100px;
+        border: 2px solid #2d2c59;
+        margin: 10px;
+        cursor: pointer;
     }
 }
 
@@ -103,20 +97,6 @@ div img#imgPrueba {
         display: block;
     }
 }
-
-form button {
-    font-size: 20px;
-    font-weight: 700;
-    padding: 10px;
-    border-radius: 100px;
-    border: 2px solid #2d2c59;
-    margin: 10px;
-    cursor: pointer;
-}
-
-/* section#formularioPrueba {
-    align-items: center;
-} */
 
 section#formularioPrueba div:first-child {
     width: 55%;
@@ -226,12 +206,6 @@ a.btn:hover {
         margin-bottom: 50px;
     }
 }
-
-/* #posInteligente div:last-child {
-    @media (width < 768px) {
-        width: 100%;
-    }
-} */
 
 #infoCaracteristicasAPPU {
     @media (width < 768px) {
@@ -396,8 +370,6 @@ form#formularioRegistro {
     }
 }
 
-
-
 #wcu-2 h1 {
     margin-bottom: 0;
 }
@@ -410,7 +382,6 @@ div#wcu-1,
 div#wcu-3 {
     justify-content: space-around;
 }
-
 
 img#WhatsAppAppu {
     position: fixed;
@@ -596,7 +567,6 @@ section#planes {
         width: 80%;
     }
 }
-
 
 .slider {
     width: 100%;

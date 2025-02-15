@@ -255,9 +255,11 @@
           </ul>
         </div>
         <div>
-          <button class="bc-appuVerde c-white btn">
-            RESERVA TU DEMO AHORA
-          </button>
+          <a href="#formularioRegistro">
+            <button class="bc-appuVerde c-white btn">
+              RESERVA TU DEMO AHORA
+            </button>
+          </a>
         </div>
       </div>
     </section>
@@ -318,6 +320,89 @@
       </div>
     </section>
 
+    
+
+    <section id="why-choose-us" class="d-flex text-center">
+      <div id="wcu-1" class="bc-appuAzul c-white">
+        <div>
+          <img
+            class="animationScale"
+            src="Img/why-choose-us/integracion.png"
+            alt="Imagen de integracion"
+          />
+          <h2 class="text-center wcu">Integración con pagos electrónicos</h2>
+          <h3 class="wcu">Compatible con múltiples plataformas.</h3>
+        </div>
+        <div>
+          <img
+            class="animationScale"
+            src="Img/why-choose-us/seguridad.png"
+            alt="Imagen de seguridad"
+          />
+          <h2 class="text-center wcu">Seguridad garantizada</h2>
+          <h3 class="wcu">
+            Protegemos tu información con tecnología en la nube.
+          </h3>
+        </div>
+      </div>
+      <div id="wcu-2" class="c-appuAzul">
+        <h1>¿POR QUÉ ELEGIRNOS?</h1>
+        <h2>Marcamos la diferencia</h2>
+        <img src="Img/why-choose-us/appuAzul.png" alt="Logo APPU color azul" />
+      </div>
+      <div id="wcu-3" class="bc-appuAzul c-white">
+        <div>
+          <img
+            class="animationScale"
+            src="Img/why-choose-us/velocidad.png"
+            alt="Imagen de velocidad"
+          />
+          <h2 class="text-center wcu">Velocidad y eficiencia</h2>
+          <h3 class="wcu">Emite facturas en segundos, sin complicaciones.</h3>
+        </div>
+        <div>
+          <img
+            class="animationScale"
+            src="Img/why-choose-us/reportes.png"
+            alt="Imagen de reportes"
+          />
+          <h2 class="text-center wcu">Reportes avanzados</h2>
+          <h3 class="wcu">Control total de ventas, inventarios y clientes.</h3>
+        </div>
+      </div>
+    </section>
+    <!-- <hr class="hr"> -->
+    <section id="formularioInformacion" class="p-20">
+      <div class="c-appuAzul">
+        <h1>Hablemos, estamos para ayudarte</h1>
+        <p>
+          Dejanos tus datos y recibe
+          <span class="c-naranja">asesoría personalizada</span>
+        </p>
+        <form id="formularioRegistro" action="POST">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre2" required />
+          <label for="email">Correo electrónico</label>
+          <input type="email" name="email" id="email2" required />
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            pattern="[0-9]{10}"
+            name="telefono"
+            id="telefono2"
+            required
+          />
+          <button type="submit" class="bc-appuAzul c-white">ENVIAR</button>
+        </form>
+      </div>
+      <div>
+        <img
+          id="imgFormularioRegistro"
+          src="Img/formulario.png"
+          alt="Foto de dos chicas sonriendo"
+        />
+      </div>
+    </section>
     <section id="sliderAliados">
       <h1 class="c-appuAzul text-center">
         Nuestros <span class="c-naranja">Aliados</span>
@@ -508,9 +593,7 @@
         />
       </div>
     </section>
-    <footer
-      class="d-flex justify-around bc-appuAzul c-white p-20 content-center"
-    >
+    <footer class="d-flex justify-around bc-appuAzul c-white p-20 content-center">
       <div id="footerLogo">
         <img src="Img/appuBlanco.png" alt="Logo AppuStore" height="150px" />
       </div>
