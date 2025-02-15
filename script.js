@@ -338,13 +338,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const hamburger = document.getElementById("hamburger");
-
-    const aHamburguerLink = document.querySelector("#btnHamburguesa")
     const navLinks = document.querySelector(".nav-links");
 
     hamburger.addEventListener("click", function () {
         navLinks.classList.toggle("active");
-        aHamburguerLink.classList.toggle("active");
         hamburger.classList.toggle("active");
     });
 });

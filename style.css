@@ -733,6 +733,16 @@ h3.wcu {
     transition: color 0.3s ease;
     /* Efecto de transición al cambiar de color */
 
+
+    
+}
+
+#btnHamburguesa { 
+    color: #2d2c59;
+}
+
+#btnHamburguesa:hover {
+    color: #ff6600;
 }
 
 .nav-links li a:hover {
