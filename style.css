@@ -44,7 +44,7 @@ header {
             }
         }
 
-        button#btnHamburguesa {
+        a#btnHamburguesa {
             display: none;
             opacity: 0;
 
@@ -193,6 +193,10 @@ p {
 
 a {
     text-decoration: none;
+}
+
+a.btn:hover {
+    opacity: 0.8;
 }
 
 
@@ -432,7 +436,7 @@ section#planes {
             font-size: 1.2rem;
         }
     }
-    
+
 }
 
 /* Estilos por id ⬆⬆⬆*/
@@ -575,6 +579,10 @@ section#planes {
     @media (width < 768px) {
         width: 100%;
     }
+
+    #posInteligente-btnPrueba a {
+        margin: 50px;
+    }
 }
 
 .posInteligente-prueba p:last-child {
@@ -635,20 +643,51 @@ h3.wcu {
     gap: 20px;
     padding: 20px;
     justify-items: center;
-}
 
-.plan {
-    background-color: #2d2c59;
-    color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    text-align: center;
-    flex: 1 1 250px;
-    max-width: 300px;
+    .plan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #2d2c59;
+        color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        text-align: center;
+        flex: 1 1 250px;
+        
+        transition: transform 0.5s ease;
 
-    p {
-        text-align: left;
+        p {
+            font-size: 1.2rem;
+        }
+
+        @media (width < 768px) {
+            min-height: 32vh;
+            max-width: 300px;
+        }
+
+        @media (width > 768px) {
+            min-height: 30vh;
+            max-width: 300px;
+
+            p {
+                text-align: left;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (width > 1200px) {
+            min-height: 30vh;
+            max-width: 400px;
+
+            p {
+                font-size: 1.3rem; /* Ajusta el tamaño según tus necesidades */
+                text-align: center;
+            }
+        }
+
     }
 }
 
@@ -723,7 +762,7 @@ h3.wcu {
     /* Texto blanco para contrastar con el fondo */
     transition: color 0.3s ease;
     /* Efecto de transición al cambiar de color */
-    
+
 }
 
 .nav-links li a:hover {
@@ -911,8 +950,8 @@ img.animationScale:hover {
         transform: rotate(-5deg);
     }
 }
+
 /* ↑↑ Animaciones ↑↑*/
 
 
 /* ↓↓ estilos paginas planes ↓↓*/
-
