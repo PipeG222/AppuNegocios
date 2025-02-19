@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/../style.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="/../script.js"></script>
+    <script src="https://checkout.wompi.co/widget.js"></script>
     <link
       rel="icon"
       href="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
@@ -182,7 +183,7 @@
           </div>
         </div>
         <div class="btnPago">
-          <button class="c-white bc-appuVerde">Obten tu Plan Appu Pyme</button>
+          <button class="c-white bc-appuVerde" onclick="pagar(30000)">Obten tu Plan Appu Pyme</button>
         </div>
       </div>
       <div id="AppuPlus">
@@ -258,7 +259,7 @@
           </div>
         </div>
         <div class="btnPago">
-          <button >Obten tu Plan Appu Plus</button>
+          <button onclick="pagar(70000)">Obten tu Plan Appu Plus</button>
         </div>
       </div>
       <div id="AppuPro">
@@ -357,7 +358,7 @@
           </div>
         </div>
         <div class="btnPago">
-          <button >Obten tu Plan Appu Pro</button>
+          <button onclick="pagar(209000)">Obten tu Plan Appu Pro</button>
         </div>
       </div>
       <div id="AppuProMax">
@@ -471,7 +472,18 @@
           </div>
         </div>
         <div class="btnPago">
-          <button >Obten tu Plan Appu Pro +</button>
+          <form>
+            <script
+              src="https://checkout.wompi.co/widget.js"
+              data-render="button"
+              data-public-key="pub_test_X0zDA9xoKdePzhd8a0x9HAez7HgGO2fH"
+              data-currency="COP"
+              data-amount-in-cents="4950000"
+              data-reference="4XMPGKWWPKWQ"
+              data-signature:integrity="37c8407747e595535433ef8f6a811d853cd943046624a0ec04662b17bbf33bf5"
+            ></script>
+            <button onclick="pagar(289000)">Obten tu Plan Appu Pro +</button>
+          </form>
         </div>
       </div>
     </section>

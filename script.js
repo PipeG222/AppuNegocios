@@ -51,6 +51,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Funcion de pago de Wompi
+async function pagar(monto) {
+    const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            currency: 'COP',
+            amountInCents: monto * 100,
+            reference: 'REF123'
+        })
+    });
+
+    const data = await response.json();
+    const signature = data.signature;
+
+    WompiWidget.init({
+        currency: 'COP',
+        amountInCents: monto * 100,
+        reference: 'REF123',
+        signature: signature
+    }, function (response) {
+        if (response.success) {
+            console.log('Pago exitoso', response);
+            window.location.href = `planes/confirmacion/index.html?transactionId=${response.transactionId}`;
+        } else {
+            console.error('Error en el pago', response);
+        }
+    });
+}
 
 
 

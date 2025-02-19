@@ -1,0 +1,38 @@
+<!-- Página de confirmación (confirmacion.html) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Pago</title>
+</head>
+<body>
+    <h1>Verificando estado del pago...</h1>
+    <script>
+        const transactionId = new URLSearchParams(window.location.search).get('transactionId');
+
+        if (transactionId) {
+            fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/verify-transaction', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ transactionId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'APPROVED') {
+                    document.body.innerHTML = '<h1>¡Pago exitoso!</h1>';
+                } else {
+                    document.body.innerHTML = '<h1>El pago no fue exitoso.</h1>';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.body.innerHTML = '<h1>Error al verificar el pago.</h1>';
+            });
+        } else {
+            document.body.innerHTML = '<h1>No se encontró el ID de la transacción.</h1>';
+        }
+    </script>
+</body>
+</html>
