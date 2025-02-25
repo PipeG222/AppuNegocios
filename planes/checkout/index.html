@@ -4,65 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="/script.js"></script>
     <link
       rel="icon"
-      href="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+      href="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
     />
     <title>AppuStore Checkout</title>
   </head>
   <body>
     <header>
-        <div id="navHeader" class="d-flex justify-around align-center">
-          <div>
-            <a href="/index.html"
-              ><img
-                src="https://appu-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
-                alt="Logo AppuStore"
-                height="70px"
-            /></a>
-          </div>
-          <nav class="d-flex justify-around">
-            <ul class="nav-links">
-              <li><a
+      <div id="navHeader" class="d-flex justify-around align-center">
+        <div>
+          <a href="/index.html"
+            ><img
+              src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+              alt="Logo AppuStore"
+              height="70px"
+          /></a>
+        </div>
+        <nav class="d-flex justify-around">
+          <ul class="nav-links">
+            <li>
+              <a
                 href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
                 id="btnHamburguesa"
                 class="bc-white btn c-appuAzul"
               >
                 INGRESAR
-              </a></li>
-              <li><a href="/index.html">Inicio</a></li>
-              <li><a href="https://appu.store/">APPU Reservas</a></li>
-              <li><a href="#planes">APPU Facturación</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </div>
-          </nav>
-          <div>
-            <a href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/" target="_blank"
-              ><button class="c-appuAzul bc-white btn">INGRESAR</button></a
-            >
+              </a>
+            </li>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="https://appu.store/">APPU Reservas</a></li>
+            <li><a href="#planes">APPU Facturación</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
           </div>
+        </nav>
+        <div>
+          <a
+            href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
+            target="_blank"
+            ><button class="c-appuAzul bc-white btn">INGRESAR</button></a
+          >
         </div>
-        <img
-          id="banner"
-          src="/Img/banner1.webp"
-          alt="Banner de AppuStore"
-          width="100%"
-          height="500px"
-        />
-        <h1 id="textHeader">Elige un POS que realmente potencia tu negocio</h1>
-      </header>
-    <main id="checkoutInit" class="p-20 c-appuAzul text-center">
-      <h1>¡Tu nueva herramienta para vender más está a un clic de distancia!</h1>
-    </main>
+      </div>
+      <img
+        id="banner"
+        src="/Img/banner1.webp"
+        alt="Banner de AppuStore"
+        width="100%"
+        height="500px"
+      />
+      <h1 id="textHeader">Elige un POS que realmente potencia tu negocio</h1>
+    </header>
     <aside
       id="infoCaracteristicasAPPU"
-      class="d-flex justify-around mt-2 bc-naranja c-white p-20"
+      class="d-flex justify-around bc-naranja c-white p-20"
     >
       <h2 class="text-center fade-in-up delay-1">
         PAGO 100%<br />
@@ -72,174 +73,184 @@
         GARANTÍA DE <br />SATISFACCIÓN
       </h2>
       <h2 class="text-center fade-in-up delay-3">
-        SOPORTE<br/>
+        SOPORTE<br />
         24/7
       </h2>
     </aside>
-    <section
-    id="sectionOfertaEspecial"
-      class="d-flex justify-around p-20 c-appuAzul"
-    >
-        <div>
-            <h1 id="ofertaEspecial" class="text-center c-naranja">¡Oferta especial por tiempo limitado! <br>
-            <span >Contrata hoy y recibe un mes extra GRATIS.</span>
-            </h1>
-        </div>
+    <section id="checkoutMain">
+      <div class="texto">
+        <h1 id="ofertaEspecial" class="text-center c-naranja">
+          <span class="Oferta">¡Oferta especial</span> por tiempo limitado!
+          <br />
+          <span>Contrata hoy y recibe un mes extra GRATIS.</span>
+        </h1>
+      </div>
+      <div class="apartados">
         <div id="videoDemo">
-          <iframe id="imgVideo" src="https://www.youtube.com/embed/qSGyleXWM1A?si=-JVHn2KjTNsGcCCC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe
+            id="imgVideo"
+            src="https://www.youtube.com/embed/qSGyleXWM1A?si=-JVHn2KjTNsGcCCC"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-    </section>
-    <section id="beneficios" class="d-flex justify-around p-20">
         <div id="sectionBeneficios1">
-            <h1>Lo que obtienes al comprar ahora</h1>
-            <ul>
-                <li>✅ Facturación electrónica sin errores ni demoras</li>
-                <li>✅ Reportes detallados para tomar mejores decisiones</li>
-                <li>✅ Control total de inventarios y clientes en un solo lugar</li>
-                <li>✅ Acceso desde cualquier dispositivo, en cualquier momento</li>
-            </ul>
-            <h3>📌 Sin contratos, sin ataduras. Si no te gusta, cancelas cuando quieras.</h3>
+          <h1>Lo que obtienes al comprar</h1>
+          <ul>
+            <li><span class="c-appuVerde">Facturación electrónica</span> sin errores ni demoras</li>
+            <li><span class="c-appuVerde">Reportes</span> detallados</li>
+            <li>Control total de <span class="c-appuVerde">inventarios y clientes</span> en un solo lugar</li>
+            <li>Acceso desde <span class="c-appuVerde">cualquier dispositivo,</span> en cualquier momento</li>
+          </ul>
         </div>
         <div id="sectionBeneficios2">
-            <h1>Opciones de Pago Claras y Seguras</h1>
-            <ul>
-                <li>💳 Aceptamos todos los medios de pago: Tarjetas de crédito/débito, PSE, PayPal, Transferencias.</li>
-                <li>🔐 Protegemos tu información con tecnología de seguridad en la nube.</li>
-            </ul>
+          <h1>Opciones de Pago Claras y Seguras</h1>
+          <ul>
+            <li>
+              <span class="c-appuVerde">Aceptamos todos los medios de pago:</span> Tarjetas de crédito/débito,
+              PSE, PayPal, Transferencias.
+            </li>
+            <li>
+              Protegemos tu información con <span class="c-appuVerde">tecnología de seguridad en la nube.</span>
+            </li>
+            <li>
+              <span class="c-naranja">Sin contratos, sin ataduras.</span> Si no te gusta, cancelas cuando
+              quieras.
+            </li>
+          </ul>
         </div>
+      </div>
     </section>
 
     <section id="wompi" class="p-20 c-appuAzul text-center">
-        <div>
-            <img src="/Img/checkout/logoWompi.webp" alt="Logo de Wompi" height="100px">
-        </div>
-        <h2>
-            Paga con tarjeta de crédito, débito, PSE, PayPal, transferencia bancaria y más.
-        </h2>
-        <div>
-            <button class="bc-naranja c-white btn">PAGAR CON WOMPI</button>
-        </div>
+      <div>
+        <img
+          src="/Img/checkout/logoWompi.webp"
+          alt="Logo de Wompi"
+          height="100px"
+        />
+      </div>
+      <h2>
+        Paga con tarjeta de crédito, débito, PSE, PayPal, transferencia bancaria
+        y más.
+      </h2>
+      <div>
+        <button class="bc-naranja c-white btn">PAGAR CON WOMPI</button>
+      </div>
     </section>
 
-    <section id="garantiaTranquilidad" class="p-20">
-        <h1 class="text-center">Garantía y Tranquilidad </h1>
-        <ul>
-            <li>✅ Garantía de satisfacción 100%</li>
-            <li>❌ Sin costos ocultos ni sorpresas</li>
-            <li>📞 Soporte prioritario 24/7 desde el primer día</li>
-            <li>📌 Miles de negocios en Colombia ya lo usan. ¡Únete ahora!</li>
-        </ul>
-    </section>
-
-    <section >
-        <h1 class="c-appuAzul text-center">
-          Nuestros <span class="c-naranja">Aliados</span>
-        </h1>
-        <div class="slider">
-          <div class="slide-track">
-            <div class="slide">
-              <img
-                src="/Img/Aliados/alcaldiaMed.webp"
-                alt="Logo Alcaldía de Medellín"
-              />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/ces.webp" alt="Logo Universidad CES" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/upb.webp"
-                alt="Logo Universidad Pontificia Bolivariana"
-              />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/Tradiciones.webp"
-                alt="Logo Tradiciones de mi tierra"
-              />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/alcaldiaMed.webp"
-                alt="Logo Alcaldía de Medellín"
-              />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/ces.webp" alt="Logo Universidad CES" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/upb.webp"
-                alt="Logo Universidad Pontificia Bolivariana"
-              />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/Tradiciones.webp"
-                alt="Logo Tradiciones de mi tierra"
-              />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/alcaldiaMed.webp"
-                alt="Logo Alcaldía de Medellín"
-              />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/ces.webp" alt="Logo Universidad CES" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
-            </div>
-            <div class="slide">
-              <img src="/Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/upb.webp"
-                alt="Logo Universidad Pontificia Bolivariana"
-              />
-            </div>
-            <div class="slide">
-              <img
-                src="/Img/Aliados/Tradiciones.webp"
-                alt="Logo Tradiciones de mi tierra"
-              />
-            </div>
+    <section>
+      <h1 class="c-appuAzul text-center">
+        Nuestros <span class="c-naranja">Aliados</span>
+      </h1>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img
+              src="/Img/Aliados/alcaldiaMed.webp"
+              alt="Logo Alcaldía de Medellín"
+            />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/ces.webp" alt="Logo Universidad CES" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/upb.webp"
+              alt="Logo Universidad Pontificia Bolivariana"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/Tradiciones.webp"
+              alt="Logo Tradiciones de mi tierra"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/alcaldiaMed.webp"
+              alt="Logo Alcaldía de Medellín"
+            />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/ces.webp" alt="Logo Universidad CES" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/upb.webp"
+              alt="Logo Universidad Pontificia Bolivariana"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/Tradiciones.webp"
+              alt="Logo Tradiciones de mi tierra"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/alcaldiaMed.webp"
+              alt="Logo Alcaldía de Medellín"
+            />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/ces.webp" alt="Logo Universidad CES" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
+          </div>
+          <div class="slide">
+            <img src="/Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/upb.webp"
+              alt="Logo Universidad Pontificia Bolivariana"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="/Img/Aliados/Tradiciones.webp"
+              alt="Logo Tradiciones de mi tierra"
+            />
           </div>
         </div>
-      </section>
-    
+      </div>
+    </section>
+
     <section id="formularioInformacion" class="p-20">
       <div class="c-appuAzul">
         <h1>Hablemos, estamos para ayudarte</h1>
@@ -339,7 +350,10 @@
       </div>
 
       <a href="https://wa.me/+573186574668" target="_blank"
-        ><img id="WhatsAppAppu" src="/Img/icono_wsap.webp" alt="Logo de WhatsApp"
+        ><img
+          id="WhatsAppAppu"
+          src="/Img/icono_wsap.webp"
+          alt="Logo de WhatsApp"
       /></a>
     </footer>
   </body>
