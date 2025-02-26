@@ -1,172 +1,158 @@
-#checkoutInit {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    min-height: 20vh;
-    padding: 20px;
-    border-radius: 10px;
-    animation: transform 8s infinite;
-}
 
-@keyframes transform {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-#checkoutInit h1 {
-    margin-bottom: 20px;
-}
-
-#checkoutInit button {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #2d2c59;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#checkoutInit button:hover {
-    background-color: #ff6600;
-    color: black;
-}
-
-#sectionOfertaEspecial {
-    padding: 20px;
-    margin-bottom: 20px;
+section#checkoutMain {
+    color: #2d2c59;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    h1#ofertaEspecial {
-        background-color: #2d2c59;
-        padding: 20px;
-        border-radius: 10px;
-
-        span {
-            color: #fff;
-            font-size: 2rem;
-
-            @media (width < 768px) {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (width < 768px) {
-            font-size: 1.6rem;
-        }
-        
-    }
-
-    #imgVideo {
-        width: 860px;
-        height: 500px;
-        object-fit: cover;
-        border-radius: 20px;
-    
-        @media (width < 992px) {
-            width: 600px;
-            height: 350px;
-        }
-    
-        @media (width < 768px) {
-            width: 350px;
-            height: 200px;
-        }
-
-        @media (width < 576px) {
-            width: 300px;
-            height: 150px;
-        }
-    }
-}
-
-#beneficios {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-
-    @media (width < 992px) {
-        grid-template-columns: 1fr;
-    }
-
-    #sectionBeneficios1, #sectionBeneficios2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 40vh;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #2d2c59;
-        color: white;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        transition: 0.3s;
-
-        &:hover {
-            transform: scale(1.02);
-        }
+    div.texto {
+        margin-block: 40px;
 
         h1 {
-            position: relative;
-            top: 10px;
-        }
+            font-size: 2.5rem;
+            color: #2d2c59;
+            margin: 0;
 
-        ul {
-            list-style: none;
-            padding: 10px;
-            margin-top: 20px;
+            span {
+                &.Oferta {
+                    color: #ff6600;
+                }
 
-            li {
-                margin-bottom: 10px;
-                text-align: left;
-                font-size: 1.2em;
+                &:nth-of-type(2) {
+                    font-size: 1.5rem;
+                }
             }
         }
     }
-}
 
-#wompi {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-    min-height: 30vh;
+    div.apartados {
+        display: flex;
+        margin-inline: 20px;
+        gap: 10px;
+        width: 90%;
+        min-height: 50vh;
 
-    div, h1, div button {
-        margin-top: 10px;
-    }
-}
+        div:nth-child(1) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
 
-#garantiaTranquilidad {
-    background-color: #2d2c59;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-
-    ul {
-        list-style: none;
-        padding: 10px;
-        margin-top: 20px;
-
-        li {
-            margin-bottom: 10px;
-            text-align: left;
-            font-size: 1.2em;
+            iframe {
+                width: 100%;
+                height: 400px;
+            }
         }
+
+        div:nth-child(2), div:nth-child(3) {
+            background-color: #e7eedc;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 30px 30px 0;
+            box-shadow: 0 0 5px rgb(231, 238, 220, 0.5);
+            width: 70%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                margin-block: 20px;
+                width: 50%;
+
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+                padding: 10px;
+                margin-top: 20px;
+                gap: 10px;
+
+                li {
+                    margin-bottom: 10px;
+                    width: 70%;
+                    font-size: 1.2em;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        @media (width < 1024px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    div#wompi {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin-block: 20px;
+
+        div.logoWompi {
+            img {
+                aspect-ratio: 16/9;
+                width: 400px;
+            }
+        }
+
+        div.beneficiosWompi {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: space-evenly;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1;
+
+                span {
+                    background-color: #ff6600;
+                    padding: 30px;
+                    border-radius: 100%;
+
+                    @media (width < 1024px) {
+                        padding: 20px;
+                    }
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin-block: 10px;
+                    width: 70%;
+                }
+            }
+            @media (width < 800px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        button {
+            background-color: #2d2c59;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 90%;
+
+            @media (width < 1024px) {
+                margin-block: 20px;
+            }
+        };
     }
 }
