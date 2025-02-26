@@ -139,5 +139,20 @@ section#checkoutMain {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        button {
+            background-color: #2d2c59;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 90%;
+
+            @media (width < 1024px) {
+                margin-block: 20px;
+            }
+        };
     }
 }
