@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/../style.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="/../script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://checkout.wompi.co/widget.js"
+    ></script>
     <link
       rel="icon"
       href="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
     />
-    <title>Plan Appu Droguerías</title>
+    <title>Plan Appu Farmacias</title>
   </head>
   <body>
     <header>
@@ -25,13 +29,15 @@
         </div>
         <nav class="d-flex justify-around">
           <ul class="nav-links">
-            <li><a
-              href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
-              id="btnHamburguesa"
-              class="bc-white btn c-appuAzul"
-            >
-              INGRESAR
-            </a></li>
+            <li>
+              <a
+                href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
+                id="btnHamburguesa"
+                class="bc-white btn c-appuAzul"
+              >
+                INGRESAR
+              </a>
+            </li>
             <li><a href="/index.html">Inicio</a></li>
             <li><a href="https://appu.store/">APPU Reservas</a></li>
             <li><a href="/index.html#planes">APPU Facturación</a></li>
@@ -43,7 +49,9 @@
           </div>
         </nav>
         <div>
-          <a href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/" target="_blank"
+          <a
+            href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
+            target="_blank"
             ><button class="c-appuAzul bc-white btn">INGRESAR</button></a
           >
         </div>
@@ -57,56 +65,96 @@
       />
       <h1 id="textHeader">Elige un POS que realmente potencia tu negocio</h1>
     </header>
-    <section class="cta">
-        <h2>¡Obtén tu Plan Appu Droguerías!</h2>
-        <p>Precio: desde $80.000</p>
-        <a href="#contacto" class="btn">Obtener ahora</a>
-      </section>
 
+    <!-- Sección de Detalles de Planes -->
+    <section class="planesSuscripcion">
       
-    <section class="section">
-      <h2>Optimiza tu droguería con Appu</h2>
-      <p>
-        El Plan Appu Plus está diseñado para droguerías que desean implementar
-        facturación electrónica y reservas digitales, cumpliendo con normativas
-        legales y mejorando su eficiencia operativa.
-      </p>
-    </section>
-    <section class="benefits">
-        <h2>Beneficios</h2>
-        <ul>
-          <li>Mejora la experiencia de los clientes con reservas digitales.</li>
-          <li>Aumenta la eficiencia operativa con herramientas integradas.</li>
-          <li>Facilita el cumplimiento legal con facturación electrónica.</li>
-        </ul>
-      </section>
-    <!-- Sección de Características -->
-    <section class="section">
-      <h2>Características Principales</h2>
-      <div class="features">
-        <div class="feature-card">
-          <h3>Sistema POS</h3>
-          <p>Facturación electrónica y gestión de inventarios integrada.</p>
+      <div id="AppuPlus">
+        <div class="encabezado">
+          <h1>Plan Appu Droguerías</h1>
+          <p>
+            El Plan Appu Droguerías esta diseñado para negocios que desean implementar
+            facturación electrónica y reservas digitales, cumpliendo con las
+            normativas legales y mejorando su eficiencia operativa.
+          </p>
         </div>
-        <div class="feature-card">
-          <h3>Inteligencia Artificial</h3>
-          <p>Proyecciones de ventas basadas en datos históricos.</p>
+        <div class="contenido">
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Sistema POS</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Gestión de Inventarios</h2>
+              <ul>
+                <li>Productos de baja existencia</li>
+                <li>Sistema por gramaje</li>
+                <li>Productos dados de baja</li>
+                <li>Adicionar y eliminar productos</li>
+                <li>Productos con fecha de vencimiento</li>
+                <li>Asignación de lotes en los productos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Appu Reservas</h2>
+              <p>Modelo con menú y pagos digitales</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Módulo para fiar a clientes</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Inteligencia Artificial Plus</h2>
+              <p>Proyecciones de ventas a partir de la información que la droguería genere</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Módulo de proveedores</h2>
+              <ul>
+                <li>Gestión contable</li>
+                <li>Gestión de inventarios</li>
+              </ul>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Contabilidad</h2>
+              <ul>
+                <li>Compras</li>
+                <li>Ventas</li>
+                <li>Gastos</li>
+                <li>Utilidades</li>
+              </ul>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Facturación electrónica</h2>
+            </div>
+          </div>
+          <div class="col-2">
+            <div>
+              <h2>Beneficios</h2>
+              <ul>
+                <li>
+                  Mejora la experiencia de los clientes con reservas digitales
+                </li>
+                <li>
+                  Aumenta la eficiencia operativa con herramientas integradas
+                </li>
+                <li>
+                  Facilita el cumplimiento legal con la facturación electrónica
+                </li>
+              </ul>
+              <h2 class="textPrecio">Precio</h2>
+              <h1 class="precio">$80.000</h1>
+            </div>
+          </div>
         </div>
-        <div class="feature-card">
-          <h3>Appu Reservas</h3>
-          <p>Reservas digitales con menú y pagos en línea.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Módulo de Fiado</h3>
-          <p>Gestiona créditos a clientes de manera eficiente.</p>
+        <div class="btnPago">
+          <button onclick="pagar(80000)">Obten tu Plan Appu Droguerías</button>
         </div>
       </div>
+      
     </section>
 
-    <!-- Sección de Beneficios -->
-    
-
-    <!-- Sección de CTA -->
     <section id="formularioInformacion" class="p-20">
       <div class="c-appuAzul">
         <h1>Hablemos, estamos para ayudarte</h1>
@@ -138,6 +186,7 @@
         />
       </div>
     </section>
+
     <footer
       class="d-flex justify-around bc-appuAzul c-white p-20 content-center"
     >
