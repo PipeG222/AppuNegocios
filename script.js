@@ -54,15 +54,17 @@ document.addEventListener('DOMContentLoaded', function () {
 // Funcion de pago de Wompi
 async function pagar(monto) {
 
-    const costo = monto * 100;
-    const reference = generarReferencia();
-    console.log('Referencia:', reference);
+    const costo = monto * 100; // Convertir a centavos
+    const reference = generarReferencia(); // Generar referencia a partir de la marca de tiempo y un número aleatorio con la función generarReferencia
+    console.log('Referencia:', reference); // Imprimir referencia en consola
 
+    // Llamar a la API de Wompi para generar la firma
     const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
+        // Enviamos los datos necesarios para generar la firma
         body: JSON.stringify({
             currency: 'COP',
             amountInCents: costo,
@@ -80,8 +82,9 @@ async function pagar(monto) {
         currency: 'COP',
         amountInCents: costo,
         reference: reference,
-        publicKey: 'pub_test_AvVRqBQmU5yG9Dotd6K4BX8sf5jOYzD7',
-        signature: { integrity: signature }
+        publicKey: 'pub_test_AvVRqBQmU5yG9Dotd6K4BX8sf5jOYzD7', // "pub_prod_QoWdrRWpXVDd9GMwZrqKAtyy56Er45YU" 
+        signature: { integrity: signature },
+
     })
 
     // 
