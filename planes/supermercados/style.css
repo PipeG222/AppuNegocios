@@ -137,6 +137,13 @@
   
         h1 {
           font-size: 2rem;
+
+          span {
+            background-color: var(--color-boton);
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+          }
         }
   
         p {
@@ -216,6 +223,11 @@
           li {
             font-size: 1.1rem;
             font-weight: 600;
+
+            span {
+                font-weight: 700;
+                color: var(--color-boton);
+            }
           }
         }
   
@@ -250,6 +262,8 @@
             font-size: 1.3rem;
             width: 70%;
   
+
+            
   
             @media(width < 1200px) {
               font-size: 1.1rem;
