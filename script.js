@@ -82,16 +82,20 @@ async function pagar(monto) {
         currency: 'COP',
         amountInCents: costo,
         reference: reference,
-        publicKey: 'pub_test_AvVRqBQmU5yG9Dotd6K4BX8sf5jOYzD7', // "pub_prod_QoWdrRWpXVDd9GMwZrqKAtyy56Er45YU" 
+        publicKey: 'pub_prod_QoWdrRWpXVDd9GMwZrqKAtyy56Er45YU',
         signature: { integrity: signature },
-
     })
 
     // 
     checkout.open(function (result) {
         let transaction = result.transaction;
-        console.log("Transaction ID: ", transaction.id);
-        console.log("Transaction object: ", transaction);
+        // console.log("Transaction ID: ", transaction.id);
+        // console.log("Transaction object: ", transaction);
+
+        if (transaction.status === 'APPROVED') {
+            alert("¡Pago exitoso!");
+            window.location.href = "/planes/checkout/index.html";
+        }
     });
 
 }
