@@ -49,6 +49,25 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.classList.toggle("active");
         hamburger.classList.toggle("active");
     });
+
+
+    // Función para mostrar y ocultar el chat de WhatsApp
+    document.getElementById('whatsappButton').addEventListener('click', function () {
+        let chatBox = document.getElementById('chatBox'); // Obtener el chat de WhatsApp  
+
+        // Si el chat está abierto, cerrarlo. Si está cerrado, abrirlo.
+        if (chatBox.classList.contains('open')) {
+            chatBox.classList.remove('open');
+            setTimeout(() => {
+                chatBox.style.display = 'none';
+            }, 300);
+        } else {
+            chatBox.style.display = 'flex';
+            setTimeout(() => {
+                chatBox.classList.add('open');
+            }, 10);
+        }
+    });
 });
 
 // Funcion de pago de Wompi

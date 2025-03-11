@@ -825,6 +825,91 @@ h3.wcu {
     transition: all 0.3s ease;
 }
 
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.chat-box.open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chat-header {
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chat-body {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.message {
+    color: #000;
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    
+    p {
+        font-size: medium;
+        text-align: left;
+    }
+}
+
+.message.received {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+}
+
+.send-button-container {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    display: flex;
+
+    a {
+        width: 100%;
+        padding: 10px;
+        background-color: #25D366;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    a:hover {
+        background-color: #128C7E;
+    }
+}
+
 /* ↑↑ Estilos por clase ↑↑/*
 
 
