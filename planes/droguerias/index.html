@@ -65,15 +65,140 @@
       />
       <h1 id="textHeader">Elige un POS que realmente potencia tu negocio</h1>
     </header>
+    <section class="section">
+      <h2>Nuestros Planes</h2>
+      <div class="plans-grid">
+        <!-- Plan Appu Pyme -->
+        <div class="plan-card">
+          <h3>Appu Pyme</h3>
+          <p>
+            Ideal para pequeños negocios que necesitan un sistema básico de
+            ventas.
+          </p>
+          <p><strong>Precio:</strong> desde $30.000</p>
+          <a href="#AppuPyme" class="btn">Más información</a>
+        </div>
+
+        <!-- Plan Appu Plus -->
+        <div class="plan-card">
+          <h3>Appu Plus</h3>
+          <p>
+            Para negocios que desean facturación electrónica y reservas
+            digitales.
+          </p>
+          <p><strong>Precio:</strong> desde $70.000</p>
+          <a href="#AppuPlus" class="btn">Más información</a>
+        </div>
+
+        <!-- Plan Appu Pro -->
+        <div class="plan-card">
+          <h3>Appu Pro</h3>
+          <p>Herramientas avanzadas para negocios en crecimiento.</p>
+          <p><strong>Precio:</strong> desde $209.000</p>
+          <a href="#AppuPro" class="btn">Más información</a>
+        </div>
+
+        <!-- Plan Appu Pro+ -->
+        <div class="plan-card">
+          <h3>Appu Pro+</h3>
+          <p>
+            Tecnología avanzada para negocios exigentes con personalización
+            parcial.
+          </p>
+          <p><strong>Precio:</strong> desde $289.000</p>
+          <a href="#AppuProMax" class="btn">Más información</a>
+        </div>
+      </div>
+    </section>
 
     <!-- Sección de Detalles de Planes -->
     <section class="planesSuscripcion">
-      
+      <div id="AppuPyme">
+        <div class="encabezado">
+          <h1>Plan Appu Pyme</h1>
+          <p>
+            El Plan Appu Pyme es perfecto para cafeterías pequeñas o medianas
+            que necesitan un sistema básico de ventas. Ideal para comenzar tu
+            digitalización con herramientas sencillas y eficientes
+          </p>
+        </div>
+        <div class="contenido">
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Sistema POS</h2>
+              <p>Sistema POS básico</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Gestión de Inventarios</h2>
+              <ul>
+                <li>Productos de baja existencia</li>
+                <li>Sistema por gramaje</li>
+                <li>Sistema de subrecetas</li>
+                <li>Productos dados de baja</li>
+                <li>Adicionar y eliminar productos</li>
+                <li>Creación de sub-recetas por gramaje</li>
+                <li>Creación de compuestos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Appu Reservas</h2>
+              <p>Modelo con menú y pagos digitales</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Fiado a clientes</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Inteligencia Artificial Pyme</h2>
+              <ul>
+                <li>Proyecciones de ventas en sus productos</li>
+                <li>Máximos y mínimos de ventas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Módulo de proveedores</h2>
+              <p>Gestión contable de inventarios</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Contabilidad</h2>
+              <ul>
+                <li>Compras</li>
+                <li>Ventas</li>
+                <li>Gastos</li>
+                <li>Utilidades</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <div>
+              <h2>Beneficios</h2>
+              <ul>
+                <li>Ahorra tiempo en la gestión operativa</li>
+                <li>Reduce errores en inventarios y ventas</li>
+                <li>
+                  Optimiza tus recursos sin invertir dinero en software costoso
+                  y complejo
+                </li>
+              </ul>
+              <h2 class="textPrecio">Precio</h2>
+              <h1 class="precio">$40.000</h1>
+            </div>
+          </div>
+        </div>
+        <div class="btnPago">
+          <button class="c-white bc-appuVerde" onclick="pagar(40000)">
+            Obten tu Plan Appu Pyme
+          </button>
+        </div>
+      </div>
       <div id="AppuPlus">
         <div class="encabezado">
-          <h1>Plan Appu Droguerías</h1>
+          <h1>Plan Appu Plus</h1>
           <p>
-            El Plan Appu Droguerías esta diseñado para negocios que desean implementar
+            El Plan Appu Plus esta diseñado para negocios que desean implementar
             facturación electrónica y reservas digitales, cumpliendo con las
             normativas legales y mejorando su eficiencia operativa.
           </p>
@@ -88,10 +213,11 @@
               <ul>
                 <li>Productos de baja existencia</li>
                 <li>Sistema por gramaje</li>
+                <li>Sistema de subrecetas</li>
                 <li>Productos dados de baja</li>
                 <li>Adicionar y eliminar productos</li>
-                <li>Productos con fecha de vencimiento</li>
-                <li>Asignación de lotes en los productos</li>
+                <li>Creación de sub-recetas por gramaje</li>
+                <li>Creación de compuestos</li>
               </ul>
             </div>
           </div>
@@ -101,20 +227,20 @@
               <p>Modelo con menú y pagos digitales</p>
             </div>
             <div class="caracteristicasPlan">
-              <h2 class="categoriaPlan">Módulo para fiar a clientes</h2>
+              <h2 class="categoriaPlan">Fiado a clientes</h2>
             </div>
             <div class="caracteristicasPlan">
-              <h2 class="categoriaPlan">Inteligencia Artificial Plus</h2>
-              <p>Proyecciones de ventas a partir de la información que la droguería genere</p>
+              <h2 class="categoriaPlan">Inteligencia Artificial Pyme</h2>
+              <ul>
+                <li>Proyecciones de ventas en sus productos</li>
+                <li>Máximos y mínimos de ventas</li>
+              </ul>
             </div>
           </div>
           <div class="col">
             <div class="caracteristicasPlan">
               <h2 class="categoriaPlan">Módulo de proveedores</h2>
-              <ul>
-                <li>Gestión contable</li>
-                <li>Gestión de inventarios</li>
-              </ul>
+              <p>Gestión contable de inventarios</p>
             </div>
             <div class="caracteristicasPlan">
               <h2 class="categoriaPlan">Contabilidad</h2>
@@ -149,10 +275,241 @@
           </div>
         </div>
         <div class="btnPago">
-          <button onclick="pagar(80000)">Obten tu Plan Appu Droguerías</button>
+          <button onclick="pagar(80000)">Obten tu Plan Appu Plus</button>
         </div>
       </div>
-      
+      <div id="AppuPro">
+        <div class="encabezado">
+          <h1>Plan Appu Pro</h1>
+          <p>
+            El Plan Appu Pro ofrece herramientas avanzadas para negocios
+            medianos que buscan optimizar su gestión interna, análisis operativo
+            y visibilidad en el mercado.
+          </p>
+        </div>
+        <div class="contenido">
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Sistema POS</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Gestión de Inventarios</h2>
+              <ul>
+                <li>Por fecha de vencimiento</li>
+                <li>Productos de baja existencia</li>
+                <li>Sistema por gramaje</li>
+                <li>Sistema de subrecetas</li>
+                <li>Productos dados de baja</li>
+                <li>Adicionar y eliminar productos</li>
+                <li>Creación de sub-recetas por gramaje</li>
+                <li>Gestión de productos sobrantes del día</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Appu Reservas</h2>
+              <p>Modelo con menú y pagos digitales</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Fiado a clientes</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Inteligencia Artificial Pyme</h2>
+              <ul>
+                <li>Informes de ventas</li>
+                <li>Proyecciones de ventas en sus productos</li>
+                <li>Planeación de la demanda y abastecimiento</li>
+                <li>Definición de nivel de inventario</li>
+                <li>Máximos y mínimos de ventas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Módulo de proveedores</h2>
+              <p>Gestión contable de inventarios</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Contabilidad</h2>
+              <ul>
+                <li>Cuentas contables</li>
+                <li>Movimientos contables</li>
+                <li>Saldos contables</li>
+                <li>Estados contables</li>
+                <li>Estados financieros</li>
+                <li>Estados tributarios</li>
+                <li>Balances</li>
+                <li>Auditorias</li>
+                <li>Remisiones</li>
+                <li>Impuestos detallados</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Sistema de análisis de inventarios</h2>
+              <p>Con reportes generados mediante IA</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Facturación electrónica</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Gestión gastos del día</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Opción de selección de cajero</h2>
+            </div>
+          </div>
+          <div class="col-2">
+            <div>
+              <h2>Beneficios</h2>
+              <ul>
+                <li>Toma decisiones estratégicas con reportes avanzados</li>
+                <li>
+                  Mejora la eficiencia operativa con herramientas integradas
+                </li>
+                <li>
+                  Aumenta tu visibilidad y tráfico con campañas publicitarias
+                </li>
+              </ul>
+              <h2 class="textPrecio">Precio</h2>
+              <h1 class="precio">$219.000</h1>
+            </div>
+          </div>
+        </div>
+        <div class="btnPago">
+          <button onclick="pagar(219000)">Obten tu Plan Appu Pro</button>
+        </div>
+      </div>
+      <div id="AppuProMax">
+        <div class="encabezado">
+          <h1>Plan Appu Pro +</h1>
+          <p>
+            El Plan Appu Pro + combina herramientas avanzadas de gestión,
+            marketing ajustado y personalización parcial para cubrir necesidades
+            de cafeterías en crecimiento.
+          </p>
+        </div>
+        <div class="contenido">
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Sistema POS</h2>
+              <p>
+                Personalización del sistema POS en base a los colores
+                corporativos y logos de tu empresa
+              </p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Gestión de Inventarios</h2>
+              <ul>
+                <li>Por fecha de vencimiento</li>
+                <li>Productos de baja existencia</li>
+                <li>Sistema por gramaje</li>
+                <li>Sistema de subrecetas</li>
+                <li>Productos dados de baja</li>
+                <li>Adicionar y eliminar productos</li>
+                <li>Creación de sub-recetas por gramaje</li>
+                <li>Creación de compuestos</li>
+                <li>Gestión de productos sobrantes del día</li>
+                <li>Adiciones e ingredientes de productos</li>
+              </ul>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Fiado a clientes</h2>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Appu Reservas</h2>
+              <p>Modelo con menú y pagos digitales</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Facturación electrónica</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Inteligencia Artificial Pyme</h2>
+              <ul>
+                <li>Informes de ventas</li>
+                <li>Sugerencias de planes de acción</li>
+                <li>Proyecciones de ventas en sus productos</li>
+                <li>Ejecución prespuestal</li>
+                <li>Márgenes de rentabilidad</li>
+                <li>Planeación de la demanda y abastecimiento</li>
+                <li>Definición de nivel de inventario</li>
+                <li>Máximos y mínimos de ventas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Módulo de proveedores</h2>
+              <p>Gestión contable de inventarios</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Contabilidad Pro (SIIGO)</h2>
+              <ul>
+                <li>Cuentas contables</li>
+                <li>Movimientos contables</li>
+                <li>Saldos contables</li>
+                <li>Estados contables</li>
+                <li>Estados financieros</li>
+                <li>Estados tributarios</li>
+                <li>Balances</li>
+                <li>Auditorias</li>
+                <li>Remisiones</li>
+                <li>Impuestos detallados</li>
+              </ul>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Personalización y API</h2>
+            </div>
+          </div>
+          <div class="col">
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Sistema de análisis de inventarios</h2>
+              <p>Con reportes generados mediante IA</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Opción de selección de cajero</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Marketing y visibilidad</h2>
+              <p>Creación de producto publicitario (1xMes)</p>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Soporte tecnico inmediato</h2>
+            </div>
+            <div class="caracteristicasPlan">
+              <h2 class="categoriaPlan">Gestión gastos del día</h2>
+            </div>
+          </div>
+          <div class="col-2">
+            <div>
+              <h2>Beneficios</h2>
+              <ul>
+                <li>
+                  Personalización de herramientas para satisfacer las
+                  necesidades de tu cafetería
+                </li>
+                <li>
+                  Generar mayor rentabilidad con datos precisos y reportes
+                  avanzados
+                </li>
+                <li>
+                  Mejora tu presencia en el mercado con marketing ajustado y
+                  herramientas exclusivas
+                </li>
+              </ul>
+              <h2 class="textPrecio">Precio</h2>
+              <h1 class="precio">$299.000</h1>
+            </div>
+          </div>
+        </div>
+        <div class="btnPago">
+          <button onclick="pagar(299000)">Obten tu Plan Appu Pro +</button>
+        </div>
+      </div>
     </section>
 
     <section id="formularioInformacion" class="p-20">
