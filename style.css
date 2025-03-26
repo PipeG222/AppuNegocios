@@ -2,6 +2,7 @@
     --verde-whatsapp: #00AD5A;
     --azul-appu: #2d2c59;
     --naranja-appu: #ff6600;
+    
 }
 
 
@@ -26,6 +27,22 @@ header {
         border-radius: 70px;
         padding: 15px 20px;
         margin-left: 10%;
+
+        img {
+            height: 70px
+        }
+
+        @media (width < 992px) {
+            min-height: 70px;
+            padding: 10px 15px;
+            margin-left: 10%;
+            margin-top: 2.5%;
+
+
+            img {
+                height: 50px;
+            }
+        }
     }
 
     div#navHeader{
@@ -42,19 +59,10 @@ header {
         min-height: 60px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
-        div:nth-child(3) {
-            @media (width < 992px) {
-                display: none;
-            }
-        }
-
         @media (width < 992px) {
             min-height: 70px;
             padding: 0;
-
-            img {
-                height: 50px;
-            }
+            margin-left: 40px;
         }
 
         a#btnHamburguesa {
@@ -76,6 +84,10 @@ header {
             cursor: pointer;
             font-size: 1.3rem;
             font-weight: 700;
+
+            @media (width < 992px) {
+                padding: 3px 20px;
+            }
         }
     }
 
