@@ -7,7 +7,22 @@ body {
 header {
     height: 40vh;
 
-    div#navHeader {
+    div#logoHeader {
+        display: flex;
+        position: fixed;
+        z-index: 1001;
+        background-color: #2d2c59;
+        margin-top: 0.4rem;
+        min-height: 90px;
+        align-items: center;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 70px;
+        padding: 15px 20px;
+        margin-left: 10%;
+
+    }
+
+    div#navHeader{
         background-color: #2d2c59 !important;
         color: white;
         border-radius: 100px;
@@ -19,7 +34,7 @@ header {
         margin-right: 5%;
         display: flex;
         position: fixed;
-        inset: 0% 0% auto;
+        inset: 1% 14% auto;
         z-index: 1000;
         min-height: 90px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -52,6 +67,21 @@ header {
     }
 
     nav {
+        select {
+            padding: 5px 40px;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: white;
+            font-weight: 600;
+            font-size: 16px;
+
+            option {
+                font-weight: 500;
+                font-size: 14px;
+            }
+            
+        }
+
         ul {
             list-style: none;
             font-size: 20px;
