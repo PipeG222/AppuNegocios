@@ -304,6 +304,9 @@ a.btn:hover {
 }
 
 #infoCaracteristicasAPPU {
+    border: solid var(--naranja-appu);
+    border-width: 2px 0;
+    color: var(--naranja-appu);
     @media (width < 768px) {
         flex-direction: column;
     }
