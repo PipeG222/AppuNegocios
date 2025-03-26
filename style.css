@@ -1,3 +1,10 @@
+:root {
+    --verde-whatsapp: #00AD5A;
+    --azul-appu: #2d2c59;
+    --naranja-appu: #ff6600;
+}
+
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -11,7 +18,7 @@ header {
         display: flex;
         position: fixed;
         z-index: 1001;
-        background-color: #2d2c59;
+        background-color: var(--azul-appu);
         margin-top: 0.4rem;
         min-height: 90px;
         align-items: center;
@@ -22,16 +29,15 @@ header {
     }
 
     div#navHeader{
-        background-color: #2d2c59 !important;
+        background-color: var(--azul-appu) !important;
         color: white;
         border-radius: 100px;
         justify-content: center;
         align-content: center;
         align-items: center;
-        margin-top: 0.4rem;
         display: flex;
         position: fixed;
-        inset: 3% 20% auto;
+        inset: 3.5% 20% auto;
         z-index: 1000;
         min-height: 60px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -109,7 +115,7 @@ form {
         font-size: 20px;
         padding: 5px;
         border-radius: 5px;
-        border: 2px solid #2d2c59;
+        border: 2px solid var(--azul-appu);
         margin: 10px;
         width: clamp(600px, 90%);
         /* Ancho mínimo de 600px y máximo del 90% del contenedor */
@@ -892,7 +898,7 @@ h3.wcu {
 }
 
 .chat-header {
-    background-color: #25D366;
+    background-color: var(--verde-whatsapp);
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -933,7 +939,7 @@ h3.wcu {
     a {
         width: 100%;
         padding: 10px;
-        background-color: #25D366;
+        background-color: var(--verde-whatsapp);
         color: #fff;
         border: none;
         border-radius: 5px;
