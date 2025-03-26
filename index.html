@@ -13,15 +13,16 @@
   </head>
   <body>
     <header>
+      <div id="logoHeader">
+        <a href="/index.html"
+          ><img
+            src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+            alt="Logo AppuStore"
+            height="70px"
+        /></a>
+      </div>
       <div id="navHeader" class="d-flex justify-around align-center">
-        <div>
-          <a href="/index.html"
-            ><img
-              src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
-              alt="Logo AppuStore"
-              height="70px"
-          /></a>
-        </div>
+        
         <nav class="d-flex justify-around">
           <ul class="nav-links">
             <li>
@@ -33,6 +34,12 @@
                 INGRESAR
               </a>
             </li>
+            
+            <select name="ciudad" id="ciduadSelect">
+              <option value="Ciudad" hidden>Ciudad</option>
+              <option value="Bogotá">Bogotá</option>
+              <option value="Medellín">Medellín</option>
+            </select>
 
             <li><a href="#formularioInformacion">Inicio</a></li>
             <li><a href="#formularioInformacion">¿Quiénes somos?</a></li>
