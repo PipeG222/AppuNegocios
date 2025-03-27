@@ -2,6 +2,10 @@
     --verde-whatsapp: #00AD5A;
     --azul-appu: #2d2c59;
     --naranja-appu: #ff6600;
+    --Desktop: 1920px;
+    --laptop: 1366px;
+    --tablet: 768px;
+    --mobile: 480px;
 
 }
 
@@ -243,8 +247,6 @@ a.btn:hover {
     opacity: 0.8;
 }
 
-
-
 /* Estilos por id ↓↓↓*/
 
 main#posInteligenteMain {
@@ -277,11 +279,11 @@ main#posInteligenteMain {
             height: 400px;
             object-fit: cover;
             object-position: 65% 50%;
-            left: 10px;
+            left: 5px;
             margin-top: 6%;
 
-            @media (width < 1300px) {
-                height: 300px;
+            @media (width <= 1366px) {
+                height: 350px;
             }
 
             @media (width < 1092px) {
@@ -296,7 +298,7 @@ main#posInteligenteMain {
             position: relative;
             left: 15%;
 
-            @media(width < 1300px) {
+            @media(width <= 1366px) {
                 left: 25%;
 
                 h1 {
@@ -309,7 +311,7 @@ main#posInteligenteMain {
 
                 p:nth-of-type(1) {
                     margin-top: 0;
-                    margin-bottom: 25px;
+                    margin-bottom: 10px;
                 }
             }
 
@@ -354,27 +356,32 @@ main#posInteligenteMain {
         /* Caracteristicas que optienes con APPU */
         #posInteligente-Caracteristicas {
 
+            div:nth-child(2) {
+
+                h3 {
+                    border: var(--naranja-appu) solid;
+                    border-width: 2px 0;
+                    margin-block: 10px;
+                    padding-block: 15px;
+                }
+            }
+
             .caracteristicas {
-                margin: 20px 0;
+                margin: 5px 0;
                 text-align: left;
                 justify-content: center;
 
-                @media (width < 1300px) {
+                @media (width < 1366px) {
                     text-align: left;
                     justify-content: right;
                 }
 
                 h3 {
                     font-size: 1.7rem;
-                    width: 60%;
+                    width: 80%;
 
-                    @media (width > 1300px) {
-                        font-size: 1.5rem;
-                    }
-
-                    @media (width < 1300px) {
-                        font-size: 1.3rem;
-                        width: 80%;
+                    @media (width <= 1366px) {
+                        font-size: 1.17rem;
                     }
 
                     @media (width < 1092px) {
@@ -412,12 +419,6 @@ main#posInteligenteMain {
             .infoCaracteristicas {
                 margin: auto 30px;
                 font-size: 20px;
-
-                &:nth-child(2) {
-                    border: var(--naranja-appu) solid;
-                    border-width: 2px 0;
-                    margin-block: 10px;
-                }
             }
         }
 
@@ -428,6 +429,11 @@ main#posInteligenteMain {
     div#posInteligente2 {
         p {
             font-size: 1.5rem;
+
+            @media (width <= 1366px) {
+                font-size: 1.2rem;
+                margin: 10px;
+            }
 
             @media (width < 1092px) {
                 font-size: 1.1rem;
