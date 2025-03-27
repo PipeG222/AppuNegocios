@@ -2,7 +2,7 @@
     --verde-whatsapp: #00AD5A;
     --azul-appu: #2d2c59;
     --naranja-appu: #ff6600;
-    
+
 }
 
 
@@ -45,7 +45,7 @@ header {
         }
     }
 
-    div#navHeader{
+    div#navHeader {
         background-color: var(--azul-appu) !important;
         color: white;
         border-radius: 100px;
@@ -104,7 +104,7 @@ header {
                 font-weight: 500;
                 font-size: 14px;
             }
-            
+
         }
 
         ul {
@@ -247,151 +247,202 @@ a.btn:hover {
 
 /* Estilos por id ↓↓↓*/
 
-#posInteligente {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columnas de igual ancho */
-    justify-items: center;
-    align-items: center;
-    min-height: 50vh;
-
-    /* Pantallas de menos de 768px (tablets y móviles) */
-    @media (width < 992px) {
-        grid-template-columns: 1fr;
-        /* 1 columna */
-    }
-
-    h1 {
-        margin-bottom: 0;
-    }
-
-    p:nth-of-type(1) {
-        margin-top: 0;
-        margin-bottom: 50px;
-    }
-
-    p:last-child {
-        width: 60%;
-        text-align: center;
-
-        @media (width < 992px) {
-            width: 100%;
-        }
-
-        @media (orientation: landscape) AND (width < 992px) {
-            width: 80%;
-        }
-    }
-
-    img#personaje1 {
-        position: absolute;
-        height: 400px;
-        object-fit: cover;
-        object-position: 65% 50%;
-        left: 10px;
-        margin-top: 5%;
-    }
-
-    .posInteligente-prueba {
-        display: flex;
-        flex-direction: column;
+main#posInteligenteMain {
+    #posInteligente {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas de igual ancho */
+        justify-items: center;
         align-items: center;
-        position: relative;
-        left: 15%;
+        min-height: 50vh;
 
-        /* p:last-child {
-            width: 60%;
+        /* Pantallas de menos de 768px (tablets y móviles) */
+        @media (width < 992px) {
+            grid-template-columns: 1fr;
+            /* 1 columna */
+        }
 
-            @media (width < 992px) {
+        h1 {
+            margin-bottom: 0;
+        }
+
+        p:nth-of-type(1) {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+
+        img#personaje1 {
+            position: absolute;
+            height: 400px;
+            object-fit: cover;
+            object-position: 65% 50%;
+            left: 10px;
+            margin-top: 6%;
+
+            @media (width < 1300px) {
+                height: 300px;
+            }
+
+            @media (width < 1092px) {
+                height: 220px;
+            }
+        }
+
+        .posInteligente-prueba {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            left: 15%;
+
+            @media(width < 1300px) {
+                left: 25%;
+
+                h1 {
+                    font-size: 1.8rem;
+                }
+
+                p {
+                    font-size: 1.3rem;
+                }
+
+                p:nth-of-type(1) {
+                    margin-top: 0;
+                    margin-bottom: 25px;
+                }
+            }
+
+            @media (width < 1092px) {
+                left: 24%;
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: 1.15rem;
+                }
+
+                p:nth-of-type(1) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            @media (width < 768px) {
                 width: 100%;
             }
 
-            @media (orientation: landscape) AND (width < 992px) {
-                width: 80%;
-            }
-        } */
+            #posInteligente-BtnPrueba {
+                display: flex;
+                gap: 10px;
 
-        @media (width < 768px) {
-            width: 100%;
-        }
-
-        #posInteligente-BtnPrueba {
-            display: flex;
-            gap: 10px;
-
-            @media (width < 768px) {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    }
-
-    #posInteligente-Caracteristicas {
-
-        .caracteristicas {
-            margin: 20px 0;
-            text-align: left;
-            justify-content: center;
-        
-            h3 {
-                font-size: 1.7rem;
-                width: 60%;
-        
-                @media (width > 1200px) {
-                    font-size: 1.5rem;
+                @media (width < 1092px) {
+                    .btn {
+                        font-size: 1.2rem;
+                        padding: 5px 15px;
+                    }
                 }
-        
-                @media (width < 992px) {
-                    font-size: 1.4rem;
-                    width: 60%;
-                    text-align: left;
-                }
-        
+
                 @media (width < 768px) {
-                    font-size: 1.2rem;
-                    width: 90%;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+
+        /* Caracteristicas que optienes con APPU */
+        #posInteligente-Caracteristicas {
+
+            .caracteristicas {
+                margin: 20px 0;
+                text-align: left;
+                justify-content: center;
+
+                @media (width < 1300px) {
+                    text-align: left;
+                    justify-content: right;
+                }
+
+                h3 {
+                    font-size: 1.7rem;
+                    width: 60%;
+
+                    @media (width > 1300px) {
+                        font-size: 1.5rem;
+                    }
+
+                    @media (width < 1300px) {
+                        font-size: 1.3rem;
+                        width: 80%;
+                    }
+
+                    @media (width < 1092px) {
+                        font-size: 1.1rem;
+                    }
+
+                    @media (width < 992px) {
+                        font-size: 1.4rem;
+                        width: 60%;
+                        text-align: left;
+                    }
+
+                    @media (width < 768px) {
+                        font-size: 1.2rem;
+                        width: 90%;
+                        text-align: center;
+                    }
+
+                    @media (orientation: landscape) AND (width < 992px) {
+                        width: 70%;
+                    }
+                }
+
+                /* Pantallas de menos de 768px (tablets y móviles) */
+                @media (width < 992px) {
+                    justify-content: center;
                     text-align: center;
                 }
-        
+
                 @media (orientation: landscape) AND (width < 992px) {
-                    width: 70%;
+                    text-align: left;
                 }
             }
-        
-            /* &:hover {
-                animation: scale 10s infinite;
-            } */
-        
-            /* Pantallas de menos de 768px (tablets y móviles) */
-            @media (width < 992px) {
-                justify-content: center;
-                text-align: center;
-            }
-        
-            @media (orientation: landscape) AND (width < 992px) {
-                text-align: left;
-        
+
+            .infoCaracteristicas {
+                margin: auto 30px;
+                font-size: 20px;
+
+                &:nth-child(2) {
+                    border: var(--naranja-appu) solid;
+                    border-width: 2px 0;
+                    margin-block: 10px;
+                }
             }
         }
 
-        .infoCaracteristicas {
-            margin: auto 30px;
-            font-size: 20px;
 
-            &:nth-child(2) {
-                border: var(--naranja-appu) solid;
-                border-width: 2px 0;
-                margin-block: 10px;
+    }
+
+    /* Texto de prueba gratis */
+    div#posInteligente2 {
+        p {
+            font-size: 1.5rem;
+
+            @media (width < 1092px) {
+                font-size: 1.1rem;
+                margin: 0;
             }
         }
     }
-
 }
+
 
 #infoCaracteristicasAPPU {
     border: solid var(--naranja-appu);
     border-width: 2px 0;
     color: var(--naranja-appu);
+
     @media (width < 768px) {
         flex-direction: column;
     }
@@ -426,7 +477,7 @@ a.btn:hover {
         flex-flow: column wrap;
         align-items: center;
         padding: 20px;
-    
+
         @media (width < 992px) {
             width: 90%;
         }
@@ -445,7 +496,7 @@ a.btn:hover {
             font-size: 1.2rem;
             font-weight: 600;
         }
-        
+
         div ul li {
             margin: 10px 0;
         }
@@ -670,7 +721,8 @@ section#planes {
 
             img {
                 position: relative;
-                height: calc(200px - 50px);;
+                height: calc(200px - 50px);
+                ;
                 top: -50px;
             }
 
@@ -724,7 +776,7 @@ section#planes {
         @media (width < 772px) {
             grid-template-columns: 1fr;
             justify-items: center;
-            
+
         }
 
 
@@ -951,7 +1003,7 @@ h3.wcu {
     border-radius: 10px;
     margin-bottom: 10px;
     position: relative;
-    
+
     p {
         font-size: medium;
         text-align: left;
