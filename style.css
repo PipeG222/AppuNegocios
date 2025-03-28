@@ -257,6 +257,8 @@ main#posInteligenteMain {
         justify-items: center;
         align-items: center;
         min-height: 50vh;
+        margin-bottom: 20px;
+
 
         /* Pantallas de menos de 768px (tablets y móviles) */
         @media (width < 992px) {
