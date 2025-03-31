@@ -2,10 +2,6 @@
     --verde-whatsapp: #00AD5A;
     --azul-appu: #2d2c59;
     --naranja-appu: #ff6600;
-    --Desktop: 1920px;
-    --laptop: 1366px;
-    --tablet: 768px;
-    --mobile: 480px;
 
 }
 
@@ -36,7 +32,7 @@ header {
             height: 70px
         }
 
-        @media (width <= 1366px) {
+        @media (width <= 1600px) {
             margin-left: 3%;
 
         }
@@ -45,12 +41,17 @@ header {
             min-height: 70px;
             padding: 10px 15px;
             margin-left: 10%;
-            margin-top: 2.5%;
+            margin-top: 2%;
 
 
             img {
                 height: 50px;
             }
+        }
+
+        @media (width <= 600px) {
+            margin-left: 5%;
+            margin-top: 5.5%;
         }
     }
 
@@ -68,8 +69,8 @@ header {
         min-height: 60px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
-        @media (width <= 1366px) {
-            inset: 4.5% 13% auto;
+        @media (width <= 1600px) {
+            inset: 3.5% 13% auto;
             right: 45px;
         }
 
@@ -77,6 +78,8 @@ header {
             min-height: 70px;
             padding: 0;
             margin-left: 40px;
+            inset: 3.5% 21% auto;
+            right: 5%;
         }
 
         a#btnHamburguesa {
@@ -99,6 +102,10 @@ header {
             font-size: 1.3rem;
             font-weight: 700;
 
+            @media (width <= 1300px) {
+                padding: 3px 20px;
+            }
+
             @media (width < 992px) {
                 padding: 3px 20px;
             }
@@ -117,6 +124,10 @@ header {
             option {
                 font-weight: 500;
                 font-size: 14px;
+            }
+
+            @media (width <= 1300px) {
+                padding: 5px 25px;
             }
 
         }
@@ -294,7 +305,7 @@ main#posInteligenteMain {
             left: 5px;
             margin-top: 6%;
 
-            @media (width <=1366px) {
+            @media (width <=1600px) {
                 height: 350px;
             }
 
@@ -310,7 +321,7 @@ main#posInteligenteMain {
             position: relative;
             left: 15%;
 
-            @media(width <=1366px) {
+            @media(width <=1600px) {
                 left: 25%;
 
                 h1 {
@@ -383,7 +394,7 @@ main#posInteligenteMain {
                 text-align: left;
                 justify-content: center;
 
-                @media (width < 1366px) {
+                @media (width < 1600px) {
                     text-align: left;
                     justify-content: right;
                 }
@@ -392,7 +403,7 @@ main#posInteligenteMain {
                     font-size: 1.7rem;
                     width: 80%;
 
-                    @media (width <=1366px) {
+                    @media (width <=1600px) {
                         font-size: 1.17rem;
                     }
 
@@ -442,7 +453,7 @@ main#posInteligenteMain {
         p {
             font-size: 1.5rem;
 
-            @media (width <=1366px) {
+            @media (width <=1600px) {
                 font-size: 1.2rem;
                 margin: 10px;
             }
@@ -571,7 +582,7 @@ main#posInteligenteMain {
     object-fit: cover;
     border-top: 30px solid #9997F8;
 
-    @media (width <= 1366px) {
+    @media (width <= 1600px) {
         border-top: 50px solid #9997F8;
     }
 }
