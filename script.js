@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.classList.toggle("active");
     });
 
-
     // Función para mostrar y ocultar el chat de WhatsApp
     document.getElementById('whatsappButton').addEventListener('click', function () {
         let chatBox = document.getElementById('chatBox'); // Obtener el chat de WhatsApp  
@@ -67,6 +66,92 @@ document.addEventListener('DOMContentLoaded', function () {
                 chatBox.classList.add('open');
             }, 10);
         }
+    });
+
+    // Manejo del menú select
+    const menuSelect = document.getElementById('menuSelect');
+    if (menuSelect) {
+        menuSelect.addEventListener('change', function () {
+            const selectedValue = this.value;
+            if (selectedValue.startsWith('http')) {
+                window.open(selectedValue, '_blank');
+            } else {
+                window.location.href = selectedValue;
+            }
+        });
+    }
+
+    // Manejo del select de ciudad
+    const ciudadSelect = document.getElementById('ciduadSelect');
+    if (ciudadSelect) {
+        ciudadSelect.addEventListener('change', function () {
+            const selectedCity = this.value;
+            // Aquí puedes agregar la lógica para manejar el cambio de ciudad
+            console.log('Ciudad seleccionada:', selectedCity);
+        });
+    }
+
+    // Manejo unificado del menú modal
+    const menuBtn = document.getElementById('menuBtn');
+    const menuModal = document.getElementById('menuModal');
+    let modalVisible = false;
+
+    // Función para abrir el modal
+    function openModal(clickEvent) {
+        clickEvent.stopPropagation();
+
+        if (window.innerWidth >= 992) {
+            // Para pantallas medianas, posicionar debajo del botón
+            const buttonRect = menuBtn.getBoundingClientRect();
+            menuModal.style.top = (buttonRect.bottom + 10) + 'px';
+            menuModal.style.left = (buttonRect.left) + 'px';
+        }
+
+        menuModal.style.display = 'block';
+        setTimeout(() => {
+            menuModal.classList.add('active');
+        }, 10);
+        modalVisible = true;
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+        menuModal.classList.remove('active');
+        hamburger.classList.remove('active');
+        setTimeout(() => {
+            menuModal.style.display = 'none';
+        }, 300);
+        modalVisible = false;
+    }
+
+    // Event listeners para el botón de menú y hamburguesa
+    if (menuBtn) {
+        menuBtn.addEventListener('click', openModal);
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', function (e) {
+            if (!modalVisible) {
+                openModal(e);
+                this.classList.add('active');
+            } else {
+                closeModal();
+            }
+        });
+    }
+
+    // Cerrar el modal al hacer clic fuera
+    document.addEventListener('click', function (e) {
+        if (modalVisible && !menuModal.contains(e.target) &&
+            e.target !== menuBtn && e.target !== hamburger &&
+            !hamburger.contains(e.target)) {
+            closeModal();
+        }
+    });
+
+    // Cerrar el modal al hacer clic en un enlace
+    menuModal.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeModal);
     });
 });
 

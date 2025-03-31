@@ -21,21 +21,26 @@
         /></a>
       </div>
       <div id="navHeader" class="d-flex justify-around align-center">
-        
         <nav class="d-flex justify-around">
-          <ul class="nav-links">            
+          <ul class="nav-links">
             <select name="ciudad" id="ciduadSelect">
               <option value="Ciudad" hidden>Ciudad</option>
               <option value="Bogotá">Bogotá</option>
               <option value="Medellín">Medellín</option>
             </select>
-
-            <li><a href="#formularioInformacion">Inicio</a></li>
-            <li><a href="#formularioInformacion">¿Quiénes somos?</a></li>
-            <li><a href="https://appu.store/">APPU Reservas</a></li>
-            <li><a href="#planes">APPU Facturación</a></li>
-            <li><a href="#formularioInformacion">Contacto</a></li>
-
+            <li><a href="#formularioInformacion" class="dirNav">Inicio</a></li>
+            <li>
+              <a href="#formularioInformacion" class="dirNav"
+                >¿Quiénes somos?</a
+              >
+            </li>
+            <li>
+              <a href="https://appu.store/" class="dirNav">APPU Reservas</a>
+            </li>
+            <li><a href="#planes" class="dirNav">APPU Facturación</a></li>
+            <li>
+              <a href="#formularioInformacion" class="dirNav">Contacto</a>
+            </li>
             
           </ul>
           <div class="hamburger" id="hamburger">
@@ -43,13 +48,24 @@
             <span class="bar"></span>
             <span class="bar"></span>
           </div>
+          <button id="menuBtn" class="menu-btn">Menú</button>
+          <!-- Modal del menú -->
+          <div id="menuModal" class="menu-modal">
+            <div class="menu-content">
+              <a href="#formularioInformacion">Inicio</a>
+              <a href="#formularioInformacion">¿Quiénes somos?</a>
+              <a href="https://appu.store/">APPU Reservas</a>
+              <a href="#planes">APPU Facturación</a>
+              <a href="#formularioInformacion">Contacto</a>
+            </div>
+          </div>
         </nav>
         <div>
           <a
             class="c-appuAzul bc-white btnHeader"
             href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
             target="_blank"
-            >INGRESAR</a
+            >Ingresar</a
           >
         </div>
       </div>
@@ -62,8 +78,8 @@
       height="500px"
     />
     <main id="posInteligenteMain" class="p-20">
-      <div id="posInteligente" >
-        <img id="personaje1" src="Img/posInteligente/personaje1.webp" alt="">
+      <div id="posInteligente">
+        <img id="personaje1" src="Img/posInteligente/personaje1.webp" alt="" />
         <div class="posInteligente-prueba text-center">
           <h1 class="c-appuAzul">
             SISTEMA POS <span class="c-naranja">INTELIGENTE</span>
@@ -73,9 +89,7 @@
             <a href="#formularioInformacion" class="bc-appuAzul c-white btn"
               >PRUEBA GRATIS</a
             >
-            <a href="#planes" class="btn c-white bc-naranja"
-              >VER PLANES</a
-            >
+            <a href="#planes" class="btn c-white bc-naranja">VER PLANES</a>
           </div>
         </div>
         <div id="posInteligente-Caracteristicas">
@@ -93,13 +107,13 @@
           </div>
           <div class="d-flex caracteristicas">
             <h3 class="c-appuAzul infoCaracteristicas">
-              <span class="c-naranja">Gestiona,</span> vende y factura fácilmente
-              desde cualquier lugar.
+              <span class="c-naranja">Gestiona,</span> vende y factura
+              fácilmente desde cualquier lugar.
             </h3>
           </div>
         </div>
       </div>
-      
+
       <div id="posInteligente2">
         <p class="c-appuAzul">
           Prueba GRATIS por 7 dias y descubre el poder de la facturación sin
@@ -107,10 +121,7 @@
         </p>
       </div>
     </main>
-    <aside
-      id="infoCaracteristicasAPPU"
-      class="d-flex justify-around mt-2 p-20"
-    >
+    <aside id="infoCaracteristicasAPPU" class="d-flex justify-around mt-2 p-20">
       <h2 class="text-center fade-in-up delay-1">
         100% EN LA<br />
         NUBE
@@ -547,7 +558,13 @@
         </div>
         <!-- Botón de enviar -->
         <div class="send-button-container">
-          <a id="sendButton" href="https://wa.me/+573186574668" target="_blank" alt="Logo de WhatsApp">Enviar mensaje</a>
+          <a
+            id="sendButton"
+            href="https://wa.me/+573186574668"
+            target="_blank"
+            alt="Logo de WhatsApp"
+            >Enviar mensaje</a
+          >
         </div>
       </div>
     </footer>

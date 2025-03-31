@@ -29,7 +29,7 @@ header {
         margin-left: 10%;
 
         img {
-            height: 70px
+            height: 70px;
         }
 
         @media (width <= 1600px) {
@@ -37,11 +37,10 @@ header {
 
         }
 
-        @media (width < 992px) {
-            min-height: 70px;
-            padding: 10px 15px;
+        @media (width <= 1230px) {
+            margin-top: 1.5%;
             margin-left: 10%;
-            margin-top: 2%;
+            padding: 2px 20px;
 
 
             img {
@@ -49,9 +48,16 @@ header {
             }
         }
 
-        @media (width <= 600px) {
-            margin-left: 5%;
-            margin-top: 5.5%;
+        @media (width < 992px) {
+            min-height: 70px;
+            padding: 10px 15px;
+            margin-left: 20%;
+            margin-top: 2%;
+        }
+
+        @media (width <= 630px) {
+            margin-left: 8%;
+            margin-top: 3.5%;
         }
     }
 
@@ -74,7 +80,23 @@ header {
             right: 45px;
         }
 
-        @media (width < 992px) {
+        @media (width <= 1230px) {
+            inset: 3.5% 20% auto;
+        }
+
+        @media (width <= 1024px) {
+            inset: 3.5% 23% auto;
+        }
+
+        @media (width <= 992px) {
+            min-height: 70px;
+            padding: 0;
+            margin-left: 40px;
+            inset: 3.5% 30% auto;
+            right: 30%;
+        }
+
+        @media (width < 630px) {
             min-height: 70px;
             padding: 0;
             margin-left: 40px;
@@ -1236,3 +1258,149 @@ img.animationScale:hover {
 
 
 /* ↓↓ estilos paginas planes ↓↓*/
+
+/* Estilos del menú modal y navegación responsiva */
+@media (width >= 1230px) {
+    .menu-btn, .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--naranja-appu);
+    }
+}
+
+@media (width < 1230px) and (width >= 992px) {
+    .hamburger {
+        display: none;
+    }
+
+    .menu-btn {
+        padding: 5px 40px;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: white;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0 10px;
+        border: 2px solid var(--azul-appu);
+        outline: none;
+        transition: all 0.3s ease;
+        color: var(--azul-appu);
+    }
+
+    .dirNav {
+        display: none;
+    }
+
+    .menu-btn:hover {
+        background-color: var(--azul-appu);
+        color: white;
+    }
+}
+
+@media (width < 992px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Estilos comunes del modal para ambos casos */
+.menu-modal {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    background-color: rgba(45, 44, 89, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-modal.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-content a:hover {
+    background-color: var(--naranja-appu);
+    color: white;
+}
+
+/* Estilos específicos del modal según el tamaño de pantalla */
+@media (width < 992px) {
+    .menu-modal {
+        top: 100px !important;
+        right: 20px;
+        left: auto !important;
+        width: 250px;
+    }
+}
+
+@media (width >= 992px) and (width < 1200px) {
+    .menu-modal {
+        width: 200px;
+    }
+}
+
+/* Ajustes del menú hamburguesa */
+.hamburger {
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1000;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
