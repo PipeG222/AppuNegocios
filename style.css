@@ -755,141 +755,113 @@ img#WhatsAppAppu {
 }
 
 section#planes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 80px 40px;
+    background-color: white;
 
     h1 {
+        font-size: 2.8rem;
+        text-align: center;
+        color: var(--azul-appu);
+        margin-bottom: 15px;
+        
         @media (width < 768px) {
-            font-size: 1.6rem;
+            font-size: 2rem;
         }
     }
 
     p {
+        font-size: 1.1rem;
+        text-align: center;
+        color: #666;
+        margin-bottom: 60px;
+        
         @media (width < 768px) {
-            font-size: 1.2rem;
+            font-size: 1rem;
+            padding: 0 20px;
         }
     }
 
     .plans-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
 
-        .plan {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--azul-appu);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            flex: 1 1 250px;
-
-            & h2 {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-                z-index: 1002;
-            }
-
-            & p {
-                font-size: 1rem;
-                color: #fff;
-            }
-
-            & button {
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                margin-top: 15px;
-            }
-
-            & button:hover {
-                background-color: #0056b3;
-            }
-
-            p {
-                position: relative;
-                font-size: 1.2rem;
-            }
-
-            img {
-                position: relative;
-                height: calc(250px - 50px);
-                width: calc(250px - 50px);
-                background-color: #A2A1CC;
-                border-radius: 120px;
-                padding: 20px;
-
-                transition: transform 0.5s ease;
-
-                &:hover {
-                    transform: scale(1.1);
-                    cursor: pointer;
-                }
-
-                @media (width <= 1024px) {
-                    height: calc(200px - 50px);
-                    width: calc(200px - 50px);
-                }
-            }
-
-            @media (width < 768px) {
-                min-height: 32vh;
-                min-width: 300px;
-            }
-
-            @media (width > 768px) and (width < 992px) {
-                min-height: 30vh;
-
-                p {
-                    font-size: 1.3rem;
-                    text-align: center;
-                }
-            }
-
-            @media (width > 768px) and (width < 992px) and (orientation: landscape) {
-                min-height: 68vh;
-
-                p {
-                    font-size: 1.3rem;
-                    text-align: center;
-                }
-            }
-
-            @media (width > 992px) and (width < 1200px) {
-                min-height: 15vh;
-
-                p {
-                    font-size: 1.3rem;
-                    text-align: center;
-                }
-            }
-
-            @media (width > 1200px) {
-                min-height: 32vh;
-
-                p {
-                    font-size: 1.3rem;
-                    text-align: center;
-                }
-            }
+        @media (width < 1200px) {
+            grid-template-columns: repeat(3, 1fr);
         }
 
         @media (width < 992px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (width < 772px) {
+        @media (width < 576px) {
             grid-template-columns: 1fr;
-            justify-items: center;
         }
     }
 
+    .plan-link {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-15px);
+
+            .plan {
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .icon-container {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .plan {
+        border-radius: 20px;
+        padding: 25px 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .icon-container {
+        width: 180px;
+        height: 180px;
+        background-color: #A2A1CC;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2 {
+        color: var(--azul-appu);
+        font-size: 1.3rem;
+        margin: 0;
+        font-weight: 600;
+    }
 }
 
 /* Estilos por id ⬆⬆⬆*/
@@ -1456,4 +1428,5 @@ img.animationScale:hover {
 
 .hamburger.active .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
 }
