@@ -561,15 +561,54 @@ main#posInteligenteMain {
 
 #why-choose-us {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columnas de igual ancho */
-    width: 100%;
-    min-height: 100vh;
-
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: var(--azul-appu);
+    color: white;
+    text-align: center;
 
     @media (width < 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width < 576px) {
         grid-template-columns: 1fr;
-        /* 1 columna */
+    }
+
+    .feature-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+
+        img {
+            width: 64px;
+            height: 64px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: white;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 0;
+            color: #A2A1CC;
+            font-weight: normal;
+        }
     }
 }
 
@@ -730,9 +769,6 @@ section#planes {
             text-align: center;
             flex: 1 1 250px;
 
-            
-
-
             & h2 {
                 font-size: 1.5rem;
                 margin-bottom: 10px;
@@ -824,7 +860,6 @@ section#planes {
                     text-align: center;
                 }
             }
-
         }
 
         @media (width < 992px) {
@@ -834,10 +869,7 @@ section#planes {
         @media (width < 772px) {
             grid-template-columns: 1fr;
             justify-items: center;
-
         }
-
-
     }
 
 }
