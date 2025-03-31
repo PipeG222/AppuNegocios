@@ -671,17 +671,14 @@ section#planes {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        padding: 20px;
 
         .plan {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #2d2c59;
-            color: #fff;
+            color: var(--azul-appu);
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             padding: 20px;
             text-align: center;
             flex: 1 1 250px;
@@ -730,8 +727,8 @@ section#planes {
             img {
                 position: relative;
                 height: calc(200px - 50px);
-                ;
-                top: -50px;
+                background-color: #A2A1CC;
+                border-radius: 100px;
             }
 
             @media (width < 768px) {
