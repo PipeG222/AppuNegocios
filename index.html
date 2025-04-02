@@ -13,123 +13,134 @@
   </head>
   <body>
     <header>
+      <div id="logoHeader">
+        <a href="/index.html"
+          ><img
+            src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+            alt="Logo AppuStore"
+        /></a>
+      </div>
       <div id="navHeader" class="d-flex justify-around align-center">
-        <div>
-          <a href="/index.html"
-            ><img
-              src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
-              alt="Logo AppuStore"
-              height="70px"
-          /></a>
-        </div>
         <nav class="d-flex justify-around">
           <ul class="nav-links">
-            <li>
-              <a
-                href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
-                id="btnHamburguesa"
-                class="bc-white btn c-appuAzul"
+            <select name="ciudad" id="ciduadSelect">
+              <option value="Ciudad" hidden>Ciudad</option>
+              <option value="Bogotá">Bogotá</option>
+              <option value="Medellín">Medellín</option>
+            </select>
+            <li><a href="#formularioInformacion" class="dirNav">Inicio</a></li>
+            <!-- <li>
+              <a href="#formularioInformacion" class="dirNav"
+                >¿Quiénes somos?</a
               >
-                INGRESAR
-              </a>
+            </li> -->
+            <li>
+              <a href="https://appu.store/" class="dirNav">APPU Reservas</a>
             </li>
-
-            <li><a href="#formularioInformacion">Prueba Gratis</a></li>
-            <li><a href="https://appu.store/">APPU Reservas</a></li>
-            <li><a href="#planes">APPU Facturación</a></li>
+            <li><a href="#planes" class="dirNav">APPU Facturación</a></li>
+            <li>
+              <a href="#formularioInformacion" class="dirNav">Contacto</a>
+            </li>
+            
           </ul>
           <div class="hamburger" id="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
           </div>
+          <button id="menuBtn" class="menu-btn">Menú</button>
+          <!-- Modal del menú -->
+          <div id="menuModal" class="menu-modal">
+            <div class="menu-content">
+              <a href="#formularioInformacion">Inicio</a>
+              <!-- <a href="#formularioInformacion">¿Quiénes somos?</a> -->
+              <a href="https://appu.store/">APPU Reservas</a>
+              <a href="#planes">APPU Facturación</a>
+              <a href="#formularioInformacion">Contacto</a>
+            </div>
+          </div>
         </nav>
         <div>
           <a
-            class="c-appuAzul bc-white btn"
+            class="c-appuAzul bc-white btnHeader"
             href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
             target="_blank"
-            >INGRESAR</a
+            >Ingresar</a
           >
         </div>
       </div>
-      <img
-        id="banner"
-        src="Img/banner1.webp"
-        alt="Banner de AppuStore"
-        width="100%"
-        height="500px"
-      />
-      <h1 id="textHeader">Elige un POS que realmente potencia tu negocio</h1>
     </header>
-    <main id="posInteligente" class="p-20">
-      <div class="posInteligente-prueba text-center">
-        <h1 class="c-appuAzul">
-          SISTEMA POS <span class="c-naranja">INTELIGENTE</span>
-        </h1>
-        <p class="c-naranja">¡Potencia tu negocio en Colombia!</p>
-        <div id="posInteligente-BtnPrueba">
-          <a href="#formularioInformacion" class="bc-appuAzul c-white btn"
-            >PRUEBA GRATIS</a
-          >
-          <a href="#planes" class="btn c-white bc-naranja"
-            >VER PLANES</a
-          >
+    <img
+      id="banner"
+      src="Img/banner1.webp"
+      alt="Banner de AppuStore"
+      width="100%"
+      height="500px"
+    />
+    <main id="posInteligenteMain" class="p-20">
+      <div id="posInteligente">
+        <img id="personaje1" src="Img/posInteligente/personaje1.webp" alt="" />
+        <div class="posInteligente-prueba text-center">
+          <h1 class="c-appuAzul">
+            SISTEMA POS <span class="c-naranja">INTELIGENTE</span>
+          </h1>
+          <p class="c-naranja">¡Potencia tu negocio en Colombia!</p>
+          <div id="posInteligente-BtnPrueba">
+            <a href="#formularioInformacion" class="bc-appuAzul c-white btn"
+              >PRUEBA GRATIS</a
+            >
+            <a href="#planes" class="btn c-white bc-naranja">VER PLANES</a>
+          </div>
         </div>
+        <div class="posInteligente-Caracteristicas">
+          <div class="d-flex caracteristicas">
+            <div class="image-container">
+              <img
+                src="Img/posInteligente/grafica2.webp"
+                alt="Grafica frame 3"
+              />
+            </div>
+            <h3 class="c-appuAzul infoCaracteristicas">
+              <span class="c-naranja">Gestiona,</span> vende y factura fácilmente
+              desde cualquier lugar.
+            </h3>
+          </div>
+          <div class="d-flex caracteristicas">
+            <div class="image-container">
+              <img
+                src="Img/posInteligente/bombillo1.webp"
+                alt="Grafica frame 2"
+              />
+            </div>
+            <h3 class="c-appuAzul infoCaracteristicas">
+              <span class="c-naranja">Optimiza</span> tu negocio con el mejor
+              software POS diseñado para Colombia.
+            </h3>
+          </div>
+          <div class="d-flex caracteristicas">
+            <div class="image-container">
+              <img
+                src="Img/posInteligente/carrito1.webp"
+                alt="Grafica frame 1"
+              />
+            </div>
+            <h3 class="c-appuAzul infoCaracteristicas">
+              Desde pequeños comercios hasta grandes empresas: Tenemos el
+              <span class="c-naranja">plan ideal</span> para ti.
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="posInteligente2">
         <p class="c-appuAzul">
           Prueba GRATIS por 7 dias y descubre el poder de la facturación sin
           complicaciones
         </p>
       </div>
-      <div class="posInteligente-Caracteristicas">
-        <div class="d-flex caracteristicas">
-          <div class="image-container">
-            <img
-              src="Img/posInteligente/grafica2.webp"
-              alt="Grafica frame 3"
-              height="100px"
-              width="100px"
-            />
-          </div>
-          <h3 class="c-appuAzul infoCaracteristicas">
-            <span class="c-naranja">Gestiona,</span> vende y factura fácilmente
-            desde cualquier lugar.
-          </h3>
-        </div>
-        <div class="d-flex caracteristicas">
-          <div class="image-container">
-            <img
-              src="Img/posInteligente/bombillo1.webp"
-              alt="Grafica frame 2"
-              height="100px"
-              width="100px"
-            />
-          </div>
-          <h3 class="c-appuAzul infoCaracteristicas">
-            <span class="c-naranja">Optimiza</span> tu negocio con el mejor
-            software POS diseñado para Colombia.
-          </h3>
-        </div>
-        <div class="d-flex caracteristicas">
-          <div class="image-container">
-            <img
-              src="Img/posInteligente/carrito1.webp"
-              alt="Grafica frame 1"
-              height="100px"
-              width="100px"
-            />
-          </div>
-          <h3 class="c-appuAzul infoCaracteristicas">
-            Desde pequeños comercios hasta grandes empresas: Tenemos el
-            <span class="c-naranja">plan ideal</span> para ti.
-          </h3>
-        </div>
-      </div>
     </main>
-    <aside
-      id="infoCaracteristicasAPPU"
-      class="d-flex justify-around mt-2 bc-naranja c-white p-20"
-    >
+
+    <aside id="infoCaracteristicasAPPU" class="d-flex justify-around mt-2 p-20">
       <h2 class="text-center fade-in-up delay-1">
         100% EN LA<br />
         NUBE
@@ -142,10 +153,10 @@
         Y SEGURO
       </h2>
     </aside>
-    <section
+
+    <!-- <section
       id="formularioPrueba"
       class="d-flex justify-around p-20 c-appuAzul"
-      style="display: none"
     >
       <div>
         <h1 class="text-center">Empieza ahora con tu prueba gratis</h1>
@@ -169,7 +180,8 @@
           height="500px"
         />
       </div>
-    </section>
+    </section> -->
+
     <!-- <hr class="hr" > -->
     <section id="posIdeal" class="d-flex justify-around p-20">
       <div id="videoDemo">
@@ -227,84 +239,92 @@
       </div>
     </section>
 
-    <section id="planes" class="p-20 c-appuAzul text-center">
-      <h1>
-        PLANES DISEÑADOS PARA
-        <span class="c-naranja">CADA TIPO DE NEGOCIO</span>
-      </h1>
-      <p>
-        Elige el plan que mejor se adapte a tu negocio y empieza a vender sin
-        límites.
-      </p>
+    <section id="planes">
+      <h1>PLANES DISEÑADOS PARA <span class="c-naranja">CADA TIPO DE NEGOCIO</span></h1>
+      <p>Elige el plan que mejor se adapte a tu negocio y empieza a vender sin límites.</p>
       <div class="plans-container">
-        <a href="planes/restaurantes/index.html">
+        <a href="planes/restaurantes/index.html" class="plan-link">
           <div class="plan">
-            <img src="Img/Planes/restaurante.webp" alt="" />
+            <div class="icon-container">
+              <img src="Img/Planes/restaurante.webp" alt="Icono de restaurantes" />
+            </div>
             <h2>Restaurantes</h2>
           </div>
         </a>
 
-        <a href="planes/tiendas/index.html"
-          ><div class="plan">
-            <img src="Img/Planes/tiendas.webp" alt="" />
-            <h2>Tiendas</h2>
-          </div></a
-        >
-
-        <a href="planes/fruvers/index.html"
-          ><div class="plan">
-            <img src="Img/Planes/fruvers.webp" alt="" />
-            <h2>Fruvers</h2>
-          </div></a
-        >
-        <a href="planes/droguerias/index.html"
-          ><div class="plan">
-            <img src="Img/Planes/farmacias.webp" alt="" />
-            <h2>Farmacias</h2>
-          </div></a
-        >
-
-        <a href="planes/retails/index.html">
+        <a href="planes/tiendas/index.html" class="plan-link">
           <div class="plan">
-            <img src="Img/Planes/retails.webp" alt="" />
-            <h2>Retails</h2>
+            <div class="icon-container">
+              <img src="Img/Planes/tiendas.webp" alt="Icono de tiendas" />
+            </div>
+            <h2>Tiendas</h2>
           </div>
         </a>
 
-        <a href="planes/supermercados/index.html"
-          ><div class="plan">
-            <img src="Img/Planes/supermercados.webp" alt="" />
+        <a href="planes/fruvers/index.html" class="plan-link">
+          <div class="plan">
+            <div class="icon-container">
+              <img src="Img/Planes/fruvers.webp" alt="Icono de fruvers" />
+            </div>
+            <h2>Fruvers</h2>
+          </div>
+        </a>
+
+        <a href="planes/farmacias/index.html" class="plan-link">
+          <div class="plan">
+            <div class="icon-container">
+              <img src="Img/Planes/farmacias.webp" alt="Icono de farmacias" />
+            </div>
+            <h2>Farmacias</h2>
+          </div>
+        </a>
+
+        <a href="planes/retail/index.html" class="plan-link">
+          <div class="plan">
+            <div class="icon-container">
+              <img src="Img/Planes/retails.webp" alt="Icono de retail" />
+            </div>
+            <h2>Retail</h2>
+          </div>
+        </a>
+
+        <a href="planes/supermercados/index.html" class="plan-link">
+          <div class="plan">
+            <div class="icon-container">
+              <img src="Img/Planes/supermercados.webp" alt="Icono de supermercados" />
+            </div>
             <h2>Supermercados</h2>
-          </div></a
-        >
+          </div>
+        </a>
 
-        <a href="planes/cafeterias/index.html"
-          ><div class="plan">
-            <img src="Img/Planes/cafeterias.webp" alt="" />
+        <a href="planes/cafeterias/index.html" class="plan-link">
+          <div class="plan">
+            <div class="icon-container">
+              <img src="Img/Planes/cafeterias.webp" alt="Icono de cafeterías" />
+            </div>
             <h2>Cafeterías</h2>
-          </div></a
-        >
+          </div>
+        </a>
 
-        <a href="planes/carnicerias/index.html"
-          ><div class="plan">
-            <img src="Img/Planes/carnicerias.webp" alt="Img de carnicerias" />
+        <a href="planes/carnicerias/index.html" class="plan-link">
+          <div class="plan">
+            <div class="icon-container">
+              <img src="Img/Planes/carnicerias.webp" alt="Icono de carnicerías" />
+            </div>
             <h2>Carnicerías</h2>
-          </div></a
-        >
+          </div>
+        </a>
       </div>
     </section>
 
     <section id="sliderAliados">
-      <h1 class="c-appuAzul text-center">
-        Nuestros <span class="c-naranja">Aliados</span>
+      <h1 class="c-appuAzul">
+        NUESTROS <span class="c-naranja">ALIADOS</span>
       </h1>
       <div class="slider">
         <div class="slide-track">
           <div class="slide">
-            <img
-              src="Img/Aliados/alcaldiaMed.webp"
-              alt="Logo Alcaldía de Medellín"
-            />
+            <img src="Img/Aliados/alcaldiaMed.webp" alt="Logo Alcaldía de Medellín" />
           </div>
           <div class="slide">
             <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
@@ -322,82 +342,10 @@
             <img src="Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
           </div>
           <div class="slide">
-            <img
-              src="Img/Aliados/upb.webp"
-              alt="Logo Universidad Pontificia Bolivariana"
-            />
+            <img src="Img/Aliados/upb.webp" alt="Logo Universidad Pontificia Bolivariana" />
           </div>
           <div class="slide">
-            <img
-              src="Img/Aliados/Tradiciones.webp"
-              alt="Logo Tradiciones de mi tierra"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="Img/Aliados/alcaldiaMed.webp"
-              alt="Logo Alcaldía de Medellín"
-            />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/ces.webp" alt="Logo Universidad CES" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
-          </div>
-          <div class="slide">
-            <img
-              src="Img/Aliados/upb.webp"
-              alt="Logo Universidad Pontificia Bolivariana"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="Img/Aliados/Tradiciones.webp"
-              alt="Logo Tradiciones de mi tierra"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="Img/Aliados/alcaldiaMed.webp"
-              alt="Logo Alcaldía de Medellín"
-            />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/fenalco.png" alt="Logo Fenalco Antioquia" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/RutaN.webp" alt="Logo Ruta N" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/ces.webp" alt="Logo Universidad CES" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/eafit.webp" alt="Logo Universidad EAFIT" />
-          </div>
-          <div class="slide">
-            <img src="Img/Aliados/eia.webp" alt="Logo Universidad EIA" />
-          </div>
-          <div class="slide">
-            <img
-              src="Img/Aliados/upb.webp"
-              alt="Logo Universidad Pontificia Bolivariana"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="Img/Aliados/Tradiciones.webp"
-              alt="Logo Tradiciones de mi tierra"
-            />
+            <img src="Img/Aliados/Tradiciones.webp" alt="Logo Tradiciones de mi tierra" />
           </div>
         </div>
       </div>
@@ -452,7 +400,8 @@
         </div>
       </div>
     </section>
-    <!-- <hr class="hr"> -->
+  
+
     <section id="formularioInformacion" class="p-20">
       <div class="c-appuAzul">
         <h1>Hablemos, estamos para ayudarte</h1>
@@ -484,6 +433,7 @@
         />
       </div>
     </section>
+
     <footer
       class="d-flex justify-around bc-appuAzul c-white p-20 content-center"
     >
@@ -493,9 +443,9 @@
       <div class="footerInfo">
         <h1>CONTACTO</h1>
         <ul>
-          <li>📞+57 318 657 4668</li>
-          <li>📧administracion@appu.store</li>
-          <li>📍Medellín, Colombia</li>
+          <li>+57 318 657 4668</li>
+          <li>administracion@appu.store</li>
+          <li>Medellín, Colombia</li>
         </ul>
       </div>
       <div class="footerInfo">
@@ -566,7 +516,13 @@
         </div>
         <!-- Botón de enviar -->
         <div class="send-button-container">
-          <a id="sendButton" href="https://wa.me/+573186574668" target="_blank" alt="Logo de WhatsApp">Enviar mensaje</a>
+          <a
+            id="sendButton"
+            href="https://wa.me/+573186574668"
+            target="_blank"
+            alt="Logo de WhatsApp"
+            >Enviar mensaje</a
+          >
         </div>
       </div>
     </footer>

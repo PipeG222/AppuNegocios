@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.classList.toggle("active");
     });
 
-
     // Función para mostrar y ocultar el chat de WhatsApp
     document.getElementById('whatsappButton').addEventListener('click', function () {
         let chatBox = document.getElementById('chatBox'); // Obtener el chat de WhatsApp  
@@ -67,6 +66,92 @@ document.addEventListener('DOMContentLoaded', function () {
                 chatBox.classList.add('open');
             }, 10);
         }
+    });
+
+    // Manejo del menú select
+    const menuSelect = document.getElementById('menuSelect');
+    if (menuSelect) {
+        menuSelect.addEventListener('change', function () {
+            const selectedValue = this.value;
+            if (selectedValue.startsWith('http')) {
+                window.open(selectedValue, '_blank');
+            } else {
+                window.location.href = selectedValue;
+            }
+        });
+    }
+
+    // Manejo del select de ciudad
+    const ciudadSelect = document.getElementById('ciduadSelect');
+    if (ciudadSelect) {
+        ciudadSelect.addEventListener('change', function () {
+            const selectedCity = this.value;
+            // Aquí puedes agregar la lógica para manejar el cambio de ciudad
+            console.log('Ciudad seleccionada:', selectedCity);
+        });
+    }
+
+    // Manejo unificado del menú modal
+    const menuBtn = document.getElementById('menuBtn');
+    const menuModal = document.getElementById('menuModal');
+    let modalVisible = false;
+
+    // Función para abrir el modal
+    function openModal(clickEvent) {
+        clickEvent.stopPropagation();
+
+        if (window.innerWidth >= 992) {
+            // Para pantallas medianas, posicionar debajo del botón
+            const buttonRect = menuBtn.getBoundingClientRect();
+            menuModal.style.top = (buttonRect.bottom + 10) + 'px';
+            menuModal.style.left = (buttonRect.left) + 'px';
+        }
+
+        menuModal.style.display = 'block';
+        setTimeout(() => {
+            menuModal.classList.add('active');
+        }, 10);
+        modalVisible = true;
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+        menuModal.classList.remove('active');
+        hamburger.classList.remove('active');
+        setTimeout(() => {
+            menuModal.style.display = 'none';
+        }, 300);
+        modalVisible = false;
+    }
+
+    // Event listeners para el botón de menú y hamburguesa
+    if (menuBtn) {
+        menuBtn.addEventListener('click', openModal);
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', function (e) {
+            if (!modalVisible) {
+                openModal(e);
+                this.classList.add('active');
+            } else {
+                closeModal();
+            }
+        });
+    }
+
+    // Cerrar el modal al hacer clic fuera
+    document.addEventListener('click', function (e) {
+        if (modalVisible && !menuModal.contains(e.target) &&
+            e.target !== menuBtn && e.target !== hamburger &&
+            !hamburger.contains(e.target)) {
+            closeModal();
+        }
+    });
+
+    // Cerrar el modal al hacer clic en un enlace
+    menuModal.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeModal);
     });
 });
 
@@ -119,11 +204,78 @@ async function pagar(monto) {
 
 }
 
-
 function generarReferencia() {
     const timestamp = Date.now(); // Marca de tiempo en milisegundos
     const random = Math.floor(Math.random() * 1000000); // Número aleatorio
     return `REF-${timestamp}-${random}`;
 }
+
+// Slider de Aliados
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    const slideTrack = document.querySelector('.slide-track');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevButton = document.querySelector('.slider-arrow.prev');
+    const nextButton = document.querySelector('.slider-arrow.next');
+
+    // Clonar slides si hay menos de 4
+    if (slides.length < 4) {
+        const slidesToAdd = 4 - slides.length;
+        for (let i = 0; i < slidesToAdd; i++) {
+            const clonedSlide = slides[i % slides.length].cloneNode(true);
+            slideTrack.appendChild(clonedSlide);
+        }
+    }
+
+    const originalSlidesCount = slideTrack.children.length;
+    const totalGroups = Math.ceil(originalSlidesCount / 4);
+
+    // Función para ir a un grupo específico de slides
+    function goToGroup(groupIndex) {
+        const slideWidth = slider.offsetWidth / 4;
+        const offset = -(groupIndex * 4) * slideWidth;
+        slideTrack.style.transform = `translateX(${offset}px)`;
+
+        // Actualizar estado de los dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === groupIndex);
+        });
+
+        // Actualizar estado de los botones
+        prevButton.style.opacity = groupIndex === 0 ? '0.5' : '1';
+        prevButton.style.cursor = groupIndex === 0 ? 'default' : 'pointer';
+        nextButton.style.opacity = groupIndex === totalGroups - 1 ? '0.5' : '1';
+        nextButton.style.cursor = groupIndex === totalGroups - 1 ? 'default' : 'pointer';
+    }
+
+    let currentGroup = 0;
+
+    // Event listeners para los botones de navegación
+    prevButton.addEventListener('click', () => {
+        if (currentGroup > 0) {
+            currentGroup--;
+            goToGroup(currentGroup);
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentGroup < totalGroups - 1) {
+            currentGroup++;
+            goToGroup(currentGroup);
+        }
+    });
+
+    // Event listeners para los dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentGroup = index;
+            goToGroup(currentGroup);
+        });
+    });
+
+    // Inicializar el slider
+    goToGroup(0);
+});
 
 
