@@ -1259,10 +1259,10 @@ button:hover {
     .nav-links {
         font-size: 16px;
         position: absolute;
-        top: 95%;
+        top: 100%;
         /* Se expande desde la parte inferior del header */
-        right: 95px;
-        width: 200px;
+        right: 15%;
+        width: 180px;
         /* Ancho del menú */
         background-color: #2d2c59;
         /* Mismo color que el navHeader */
@@ -1383,7 +1383,7 @@ img.animationScale:hover {
 
 @media (width < 1230px) and (width >= 992px) {
     .hamburger {
-        display: none;
+        display: flex;
     }
 
     .menu-btn {
