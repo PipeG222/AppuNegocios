@@ -393,7 +393,6 @@ main#posInteligenteMain {
             }
 
             @media (width <= 1024px) {
-                width: 100%;
                 max-width: 600px;
                 margin: 40px auto 0;
                 padding: 0 20px;
@@ -690,15 +689,128 @@ main#posInteligenteMain {
     width: 75%;
 }
 
-#sliderAliados h1 {
-    font-size: 40px;
-    margin: 20px;
-}
-
 #sliderAliados {
     min-height: 40vh;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 20px 0 40px;
+        text-align: center;
+        
+        @media (width < 768px) {
+            font-size: 2rem;
+        }
+    }
 }
 
+.slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    align-items: center;
+}
+
+.slide {
+    min-width: 25%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (width < 992px) {
+        min-width: 33.333%;
+    }
+
+    @media (width < 768px) {
+        min-width: 50%;
+    }
+
+    @media (width < 576px) {
+        min-width: 100%;
+    }
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #A2A1CC;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.active {
+        background-color: var(--azul-appu);
+    }
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--azul-appu);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+
+    &:hover {
+        background-color: var(--naranja-appu);
+    }
+
+    &.prev {
+        left: 20px;
+    }
+
+    &.next {
+        right: 20px;
+    }
+
+    @media (width < 768px) {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
 
 #banner {
     /* filter: brightness(0.5); */
@@ -1473,5 +1585,4 @@ img.animationScale:hover {
 
 .hamburger.active .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-}
 }

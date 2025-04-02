@@ -210,4 +210,72 @@ function generarReferencia() {
     return `REF-${timestamp}-${random}`;
 }
 
+// Slider de Aliados
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    const slideTrack = document.querySelector('.slide-track');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevButton = document.querySelector('.slider-arrow.prev');
+    const nextButton = document.querySelector('.slider-arrow.next');
+
+    // Clonar slides si hay menos de 4
+    if (slides.length < 4) {
+        const slidesToAdd = 4 - slides.length;
+        for (let i = 0; i < slidesToAdd; i++) {
+            const clonedSlide = slides[i % slides.length].cloneNode(true);
+            slideTrack.appendChild(clonedSlide);
+        }
+    }
+
+    const originalSlidesCount = slideTrack.children.length;
+    const totalGroups = Math.ceil(originalSlidesCount / 4);
+
+    // Función para ir a un grupo específico de slides
+    function goToGroup(groupIndex) {
+        const slideWidth = slider.offsetWidth / 4;
+        const offset = -(groupIndex * 4) * slideWidth;
+        slideTrack.style.transform = `translateX(${offset}px)`;
+
+        // Actualizar estado de los dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === groupIndex);
+        });
+
+        // Actualizar estado de los botones
+        prevButton.style.opacity = groupIndex === 0 ? '0.5' : '1';
+        prevButton.style.cursor = groupIndex === 0 ? 'default' : 'pointer';
+        nextButton.style.opacity = groupIndex === totalGroups - 1 ? '0.5' : '1';
+        nextButton.style.cursor = groupIndex === totalGroups - 1 ? 'default' : 'pointer';
+    }
+
+    let currentGroup = 0;
+
+    // Event listeners para los botones de navegación
+    prevButton.addEventListener('click', () => {
+        if (currentGroup > 0) {
+            currentGroup--;
+            goToGroup(currentGroup);
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentGroup < totalGroups - 1) {
+            currentGroup++;
+            goToGroup(currentGroup);
+        }
+    });
+
+    // Event listeners para los dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentGroup = index;
+            goToGroup(currentGroup);
+        });
+    });
+
+    // Inicializar el slider
+    goToGroup(0);
+});
+
 
