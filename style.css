@@ -81,6 +81,7 @@ header {
         }
 
         @media (width <= 1230px) {
+            justify-content: space-evenly;
             inset: 3.5% 20% auto;
         }
 
@@ -135,6 +136,8 @@ header {
     }
 
     nav {
+        align-items: center;
+
         select {
             padding: 5px 40px;
             border-radius: 15px;
