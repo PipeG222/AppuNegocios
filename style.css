@@ -604,12 +604,6 @@ main#posInteligenteMain {
 }
 
 #why-choose-us {
-    padding: 60px 20px;
-    background-color: var(--azul-appu);
-    text-align: center;
-}
-
-#why-choose-us {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* 3 columnas de igual ancho */
