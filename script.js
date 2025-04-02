@@ -45,10 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.querySelector(".nav-links");
 
-    hamburger.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("active");
-    });
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", function () {
+            console.log('Hamburger clicked'); // Para debugging
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+    }
 
     // Función para mostrar y ocultar el chat de WhatsApp
     document.getElementById('whatsappButton').addEventListener('click', function () {
@@ -90,69 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Ciudad seleccionada:', selectedCity);
         });
     }
-
-    // Manejo unificado del menú modal
-    const menuBtn = document.getElementById('menuBtn');
-    const menuModal = document.getElementById('menuModal');
-    let modalVisible = false;
-
-    // Función para abrir el modal
-    function openModal(clickEvent) {
-        clickEvent.stopPropagation();
-
-        if (window.innerWidth >= 992) {
-            // Para pantallas medianas, posicionar debajo del botón
-            const buttonRect = menuBtn.getBoundingClientRect();
-            menuModal.style.top = (buttonRect.bottom + 10) + 'px';
-            menuModal.style.left = (buttonRect.left) + 'px';
-        }
-
-        menuModal.style.display = 'block';
-        setTimeout(() => {
-            menuModal.classList.add('active');
-        }, 10);
-        modalVisible = true;
-    }
-
-    // Función para cerrar el modal
-    function closeModal() {
-        menuModal.classList.remove('active');
-        hamburger.classList.remove('active');
-        setTimeout(() => {
-            menuModal.style.display = 'none';
-        }, 300);
-        modalVisible = false;
-    }
-
-    // Event listeners para el botón de menú y hamburguesa
-    if (menuBtn) {
-        menuBtn.addEventListener('click', openModal);
-    }
-
-    if (hamburger) {
-        hamburger.addEventListener('click', function (e) {
-            if (!modalVisible) {
-                openModal(e);
-                this.classList.add('active');
-            } else {
-                closeModal();
-            }
-        });
-    }
-
-    // Cerrar el modal al hacer clic fuera
-    document.addEventListener('click', function (e) {
-        if (modalVisible && !menuModal.contains(e.target) &&
-            e.target !== menuBtn && e.target !== hamburger &&
-            !hamburger.contains(e.target)) {
-            closeModal();
-        }
-    });
-
-    // Cerrar el modal al hacer clic en un enlace
-    menuModal.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeModal);
-    });
 });
 
 // Funcion de pago de Wompi

@@ -1258,129 +1258,49 @@ button:hover {
 
 
 /* Estilos para pantallas pequeñas */
-@media (width < 992px) {
+
+
+@media (width < 1230px) {
     .nav-links {
         font-size: 16px;
         position: absolute;
         top: 100%;
-        /* Se expande desde la parte inferior del header */
-        right: 15%;
-        width: 180px;
-        /* Ancho del menú */
+        right: 45%;
+        width: 195px;
         background-color: #2d2c59;
-        /* Mismo color que el navHeader */
         flex-direction: column;
         align-items: center;
         gap: 15px;
         padding: 0;
         max-height: 0;
-        /* Inicialmente oculto */
         overflow: hidden;
         transition: max-height 0.7s ease, padding 0.3s ease;
         border-radius: 0 0 20px 20px;
-        /* Bordes redondeados en la parte inferior */
     }
 
     .nav-links.active {
         max-height: 300px;
-        /* Altura máxima del menú desplegado */
         padding: 20px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a.dirNav {
+        display: block !important;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-links a.dirNav:hover {
+        color: var(--naranja-appu);
     }
 
     .hamburger {
         display: flex;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
-
-
-@keyframes scale {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-img.animationScale {
-    animation: scale 5s infinite;
-}
-
-img.animationScale:hover {
-    animation: rotate 5s infinite;
-}
-
-
-@keyframes rotate {
-    0% {
-        transform: rotate(-5deg);
-    }
-
-    50% {
-        transform: rotate(5deg);
-    }
-
-    100% {
-        transform: rotate(-5deg);
-    }
-}
-
-@keyframes rotateInverse {
-    0% {
-        transform: rotate(5deg);
-    }
-
-    50% {
-        transform: rotate(-5deg);
-    }
-
-    100% {
-        transform: rotate(5deg);
-    }
-}
-
-/* ↑↑ Animaciones ↑↑*/
-
-
-/* ↓↓ estilos paginas planes ↓↓*/
-
-/* Estilos del menú modal y navegación responsiva */
-@media (width >= 1230px) {
-    .menu-btn, .hamburger {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        color: var(--naranja-appu);
     }
 }
 
@@ -1404,12 +1324,31 @@ img.animationScale:hover {
     }
 
     .dirNav {
-        display: none;
+        display: block !important;
     }
 
     .menu-btn:hover {
         background-color: var(--azul-appu);
         color: white;
+    }
+}
+
+@media (width < 992px) {
+    .nav-links {
+        font-size: 16px;
+        position: absolute;
+        top: 100%;
+        right: 15%;
+        width: 165px;
+        background-color: #2d2c59;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.7s ease, padding 0.3s ease;
+        border-radius: 0 0 20px 20px;
     }
 }
 
