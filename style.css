@@ -731,12 +731,12 @@ main#posInteligenteMain {
 
 #banner {
     /* filter: brightness(0.5); */
-    height: 60vh;
+    /* height: 60vh; */
     object-fit: cover;
     border-top: 30px solid #9997F8;
 
     @media (width <= 1600px) {
-        border-top: 50px solid #9997F8;
+        border-top: 100px solid #9997F8;
     }
 }
 
