@@ -357,101 +357,6 @@ main#posInteligenteMain {
             }
         }
 
-        #posInteligente-Caracteristicas {
-            div:nth-child(2) {
-                h3 {
-                    border: var(--naranja-appu) solid;
-                    border-width: 2px 0;
-                    margin-block: 10px;
-                    padding-block: 15px;
-                }
-            }
-
-            .caracteristicas {
-                margin: 5px 0;
-                text-align: left;
-                justify-content: center;
-
-                @media (width < 1600px) {
-                    text-align: left;
-                    justify-content: right;
-                }
-
-                h3 {
-                    font-size: 1.7rem;
-                    width: 80%;
-
-                    @media (width <= 1600px) {
-                        font-size: 1.17rem;
-                    }
-                }
-            }
-
-            .infoCaracteristicas {
-                margin: auto 30px;
-                font-size: 20px;
-            }
-
-            @media (width <= 1024px) {
-                max-width: 600px;
-                margin: 40px auto 0;
-                padding: 0 20px;
-
-                .caracteristicas {
-                    position: relative;
-                    text-align: center;
-                    padding: 15px 0;
-
-                    &:not(:last-child)::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: 80%;
-                        height: 1px;
-                        background: linear-gradient(to right, transparent, var(--naranja-appu), transparent);
-                    }
-
-                    h3 {
-                        font-size: 1.2rem;
-                        color: var(--azul-appu);
-                        margin: 0 auto;
-                        width: 90%;
-                        line-height: 1.4;
-
-                        span.c-naranja {
-                            display: inline-block;
-                            margin-right: 5px;
-                        }
-                    }
-                }
-
-                div:nth-child(2) h3 {
-                    border: none;
-                    position: relative;
-                    padding: 20px 0;
-                    
-                    &::before, &::after {
-                        content: '';
-                        position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: 80%;
-                        height: 2px;
-                    }
-                    
-                    &::before {
-                        top: 0;
-                    }
-                    
-                    &::after {
-                        bottom: 0;
-                    }
-                }
-            }
-        }
-
         /* Estilos responsivos para pantallas de 1024px y menores */
         @media (width <= 1024px) {
             grid-template-columns: 1fr;
@@ -481,12 +386,12 @@ main#posInteligenteMain {
                 }
 
                 #posInteligente-BtnPrueba {
+                    display: flex;
                     margin-top: 20px;
                     gap: 20px;
 
                     @media (width < 768px) {
                         flex-direction: column;
-                        align-items: center;
                     }
 
                     .btn {
@@ -495,24 +400,84 @@ main#posInteligenteMain {
                     }
                 }
             }
+        }
+    }
 
-            #posInteligente-Caracteristicas {
-                text-align: center;
-                margin-top: 20px;
+    .caracteristicas {
+        margin: 20px 0;
+        text-align: left;
+        justify-content: center;
+    
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
 
-                .caracteristicas {
-                    justify-content: center;
-                    text-align: center;
+            width: 100px;
+            /* Ajusta el ancho según tus necesidades */
+            height: 100px;
+    
+            &:nth-child(1),
+            &:nth-child(3) {
+                animation: rotate 5s infinite;
+            }
 
-                    h3 {
-                        font-size: 1.2rem;
-                        width: 100%;
-                        max-width: 80%;
-                        margin: 0 auto;
-                    }
+            img {
+                width: 100px;
+                height: 100px;
+
+                @media (width < 1300px) {
+                    width: 80px;
+                    height: 80px;
                 }
             }
+            
         }
+    
+        h3 {
+            font-size: 1.7rem;
+            width: 60%;
+    
+            @media (width > 1200px) {
+                font-size: 1.5rem;
+            }
+    
+            @media (width < 992px) {
+                font-size: 1.4rem;
+                width: 60%;
+                text-align: left;
+            }
+    
+            @media (width < 768px) {
+                font-size: 1.2rem;
+                width: 90%;
+                text-align: center;
+            }
+    
+            @media (orientation: landscape) AND (width < 992px) {
+                width: 70%;
+            }
+        }
+    
+        &:hover {
+            animation: scale 10s infinite;
+        }
+    
+        /* Pantallas de menos de 768px (tablets y móviles) */
+        @media (width < 992px) {
+            justify-content: center;
+            text-align: center;
+        }
+    
+        @media (orientation: landscape) AND (width < 992px) {
+            text-align: left;
+    
+        }
+    }
+    
+    .infoCaracteristicas {
+        margin: auto 30px;
+        font-size: 20px;
     }
 
     #posInteligente2 {
