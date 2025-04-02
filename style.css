@@ -369,6 +369,10 @@ main#posInteligenteMain {
                 height: 250px;
                 margin: 0 auto;
                 left: 0;
+
+                @media (width < 500px) {
+                    height: 200px;
+                }
             }
 
             .posInteligente-prueba {
@@ -563,6 +567,12 @@ main#posInteligenteMain {
 
         div:last-child {
             margin-top: 30px;
+
+            @media (width < 500px) {
+                .btn {
+                    font-size: 1.1rem;
+                }
+            }
         }
 
     }
