@@ -609,85 +609,33 @@ main#posInteligenteMain {
     text-align: center;
 }
 
-.section-header {
-    margin-block: 60px;
-    text-align: center;
-
-    h1 {
-        color: var(--azul-appu);
-        font-size: 2.5rem;
-        margin: 0 0 10px 0;
-    }
-
-    p {
-        color: #A2A1CC;
-        font-size: 1.2rem;
-        margin: 0;
-        font-style: italic;
-    }
-}
-
-#why-choose-us .features-container {
+#why-choose-us {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas de igual ancho */
+    width: 100%;
+    min-height: 100vh;
 
-@media (width < 992px) {
-    #why-choose-us .features-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (width < 576px) {
-    #why-choose-us .features-container {
+    @media (width < 992px) {
         grid-template-columns: 1fr;
+        /* 1 columna */
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        img {
+            height: 120px;
+        }
     }
 }
 
-#why-choose-us .feature-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
 
-#why-choose-us .feature-card .icon-container {
-    width: 120px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-#why-choose-us .feature-card .icon-container img {
-    width: 150px;
-    height: 150px;
-    transition: transform 0.3s ease;
-}
-
-#why-choose-us .feature-card:hover .icon-container img {
-    transform: scale(1.1);
-}
-
-#why-choose-us .feature-card h2 {
-    color: white;
-    font-size: 1.2rem;
-    margin: 0;
-    width: 80%;
-}
-
-#why-choose-us .feature-card p {
-    color: #A2A1CC;
-    font-size: 1rem;
-    margin: 0;
-    font-weight: normal;
-    width: 75%;
-}
 
 #sliderAliados {
     min-height: 40vh;
