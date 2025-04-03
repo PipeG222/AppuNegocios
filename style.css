@@ -1042,7 +1042,7 @@ section#planes {
     align-items: center;
     width: calc(200px * 10);
     /* Ajusta el ancho según el número de imágenes */
-    animation: scroll 30s linear infinite;
+    animation: scroll 40s linear infinite;
 }
 
 .slider .slide {
