@@ -147,6 +147,16 @@
             animation: pulse 2s infinite;
         }
 
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        .shake-animation {
+            animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
         .btn-vote i {
             margin-right: 10px;
         }
@@ -402,5 +412,25 @@
             <img src="https://appu-negocios-landing-bucket-s3.s3.us-east-1.amazonaws.com/Img/StartCo/StartCoAppu.webp" alt="Chico con camiseta de Appu sosteniendo una bandeja con comida" class="hero-image">
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const voteButton = document.querySelector('.btn-vote');
+            
+            function triggerShake() {
+                voteButton.classList.add('shake-animation');
+                
+                voteButton.addEventListener('animationend', function() {
+                    voteButton.classList.remove('shake-animation');
+                }, { once: true });
+            }
+
+            // Iniciar la primera animación después de 3 segundos
+            setTimeout(triggerShake, 3000);
+
+            // Configurar el intervalo para repetir cada 3 segundos
+            setInterval(triggerShake, 3000);
+        });
+    </script>
 </body>
 </html>
