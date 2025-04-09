@@ -133,13 +133,45 @@
         </div>
       </div>
 
-      <!-- Formulario de registro integrado -->
+      <div id="wompi">
+        <div class="logoWompi">
+          <img src="/Img/checkout/logoWompi.webp" alt="Logo de Wompi" />
+        </div>
+        <div class="beneficiosWompi">
+          <div>
+            <span class="puntoNaranja"></span>
+            <p>Tarjeta de crédito</p>
+          </div>
+          <div>
+            <span class="puntoNaranja"></span>
+            <p>Débito</p>
+          </div>
+          <div>
+            <span class="puntoNaranja"></span>
+            <p>PSE</p>
+          </div>
+          <div>
+            <span class="puntoNaranja"></span>
+            <p>PayPal</p>
+          </div>
+          <div>
+            <span class="puntoNaranja"></span>
+            <p>Transferencia bancaria</p>
+          </div>
+          <div>
+            <span class="puntoNaranja"></span>
+            <p>Muchos más</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de registro después de Wompi -->
       <div id="registration-form" class="registration-form">
-        <div class="progress-bar">
-          <div class="progress-step active" id="step-1">Plan</div>
-          <div class="progress-step" id="step-2">Datos personales</div>
-          <div class="progress-step" id="step-3">Datos del comercio</div>
-          <div class="progress-step" id="step-4">Confirmación</div>
+        <div class="progress-bar" data-step="1">
+          <div class="progress-step active" id="step-1" data-number="1">Plan</div>
+          <div class="progress-step" id="step-2" data-number="2">Datos personales</div>
+          <div class="progress-step" id="step-3" data-number="3">Datos del comercio</div>
+          <div class="progress-step" id="step-4" data-number="4">Confirmación</div>
         </div>
 
         <form id="user-form">
@@ -188,32 +220,37 @@
               <div class="form-group">
                 <label for="primer_nombre">Primer nombre</label>
                 <input type="text" id="primer_nombre" name="primer_nombre" required>
+                <div class="error-message" id="primer_nombre-error">Este campo es obligatorio</div>
               </div>
               <div class="form-group">
                 <label for="primer_apellido">Primer apellido</label>
                 <input type="text" id="primer_apellido" name="primer_apellido" required>
+                <div class="error-message" id="primer_apellido-error">Este campo es obligatorio</div>
               </div>
             </div>
             <div class="form-group">
               <label for="email">Correo electrónico</label>
               <input type="email" id="email" name="email" required>
+              <div class="error-message" id="email-error">Por favor, ingresa un correo electrónico válido</div>
             </div>
             <div class="form-group">
               <label for="numero">Número de teléfono</label>
               <input type="tel" id="numero" name="numero" pattern="[0-9]{10}" required>
+              <div class="error-message" id="numero-error">Por favor, ingresa un número de teléfono válido</div>
             </div>
             <div class="form-group">
               <label for="usuario">Nombre de usuario</label>
               <input type="text" id="usuario" name="usuario" required>
+              <div class="error-message" id="usuario-error">Este campo es obligatorio</div>
             </div>
             <div class="form-group">
               <label for="password">Contraseña</label>
               <input type="password" id="password" name="password" required>
+              <div class="error-message" id="password-error">Las contraseñas no coinciden</div>
             </div>
             <div class="form-group">
               <label for="confirm_password">Confirmar contraseña</label>
               <input type="password" id="confirm_password" name="confirm_password" required>
-              <div id="password-error" class="error-message" style="display: none;">Las contraseñas no coinciden</div>
             </div>
             <div class="form-navigation">
               <button type="button" class="btn btn-secondary" id="back-2">Anterior</button>
@@ -227,6 +264,7 @@
             <div class="form-group">
               <label for="nombre">Nombre del comercio</label>
               <input type="text" id="nombre" name="nombre" required>
+              <div class="error-message" id="nombre-error">Este campo es obligatorio</div>
             </div>
             <div class="form-group">
               <label for="logo">URL del logo (opcional)</label>
@@ -236,20 +274,24 @@
               <div class="form-group">
                 <label for="horario_apertura_am">Hora de apertura (AM)</label>
                 <input type="time" id="horario_apertura_am" name="horario_apertura_am" required>
+                <div class="error-message" id="horario_apertura_am-error">Este campo es obligatorio</div>
               </div>
               <div class="form-group">
                 <label for="horario_cierre_am">Hora de cierre (AM)</label>
                 <input type="time" id="horario_cierre_am" name="horario_cierre_am" required>
+                <div class="error-message" id="horario_cierre_am-error">Este campo es obligatorio</div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="horario_apertura_pm">Hora de apertura (PM)</label>
                 <input type="time" id="horario_apertura_pm" name="horario_apertura_pm" required>
+                <div class="error-message" id="horario_apertura_pm-error">Este campo es obligatorio</div>
               </div>
               <div class="form-group">
                 <label for="horario_cierre_pm">Hora de cierre (PM)</label>
                 <input type="time" id="horario_cierre_pm" name="horario_cierre_pm" required>
+                <div class="error-message" id="horario_cierre_pm-error">Este campo es obligatorio</div>
               </div>
             </div>
             <div class="form-group">
@@ -285,67 +327,12 @@
               </div>
             </div>
 
-            <div id="payment-methods">
-              <h3>Métodos de pago disponibles</h3>
-              <div class="payment-icons">
-                <img src="/Img/checkout/logoWompi.webp" alt="Logo de Wompi" class="payment-logo">
-                <div class="payment-types">
-                  <span>Tarjeta de crédito</span>
-                  <span>Débito</span>
-                  <span>PSE</span>
-                  <span>PayPal</span>
-                  <span>Transferencia bancaria</span>
-                </div>
-              </div>
-            </div>
-
             <div class="form-navigation">
               <button type="button" class="btn btn-secondary" id="back-4">Anterior</button>
               <button type="button" class="btn" id="proceder-pago">Proceder al pago</button>
             </div>
           </div>
         </form>
-      </div>
-
-      <div id="wompi">
-        <div class="logoWompi">
-          <img
-            src="/Img/checkout/logoWompi.webp"
-            alt="Logo de Wompi"
-          />
-        </div>
-        <div class="beneficiosWompi">
-          <div>
-            <span class="puntoNaranja"></span>
-            <p>Tarjeta de crédito</p>
-          </div>
-          <div>
-            <span class="puntoNaranja"></span>
-            <p>Débito</p>
-          </div>
-          <div>
-            <span class="puntoNaranja"></span>
-            <p>PSE</p>
-          </div>
-          <div>
-            <span class="puntoNaranja"></span>
-            <p>PayPal</p>
-          </div>
-          <div>
-            <span class="puntoNaranja"></span>
-            <p>Transferencia bancaria</p>
-          </div>
-          <div>
-            <span class="puntoNaranja"></span>
-            <p>Muchos más</p>
-          </div>
-        </div>
-        <div id="resumenPago">
-          <h2>Resumen de tu compra</h2>
-          <p>Plan seleccionado: <span id="planSeleccionado">-</span></p>
-          <p>Monto a pagar: <span id="montoPagar">-</span></p>
-          <button id="btnPagar" class="c-white bc-appuVerde">PROCEDER AL PAGO</button>
-        </div>
       </div>
     </section>
 
@@ -469,11 +456,12 @@
     </footer>
 
     <script>
+      // Variables globales
       let selectedPlan = '';
       let selectedMonto = 0;
 
       document.addEventListener('DOMContentLoaded', function() {
-        // Selección de plan
+        // Selección de plan con efectos visuales
         const planCards = document.querySelectorAll('.plan-card');
         planCards.forEach(card => {
           card.addEventListener('click', function() {
@@ -481,10 +469,15 @@
             this.classList.add('selected');
             selectedPlan = this.dataset.plan;
             selectedMonto = parseInt(this.dataset.monto);
+            
+            // Efecto visual de selección
+            this.classList.add('pulse');
+            setTimeout(() => this.classList.remove('pulse'), 500);
           });
         });
 
-        // Navegación entre pasos
+        // Manejo de la navegación entre pasos
+        const progressBar = document.querySelector('.progress-bar');
         const next1Btn = document.getElementById('next-1');
         const next2Btn = document.getElementById('next-2');
         const next3Btn = document.getElementById('next-3');
@@ -493,9 +486,12 @@
         const back4Btn = document.getElementById('back-4');
         const procederPagoBtn = document.getElementById('proceder-pago');
 
+        // Manejo de las secciones del formulario
         next1Btn.addEventListener('click', function() {
           if (!selectedPlan) {
-            alert('Por favor, selecciona un plan para continuar.');
+            showErrorNotification('Por favor, selecciona un plan para continuar');
+            planCards.forEach(card => card.classList.add('shake'));
+            setTimeout(() => planCards.forEach(card => card.classList.remove('shake')), 500);
             return;
           }
           showSection(2);
@@ -520,57 +516,156 @@
           procesarPago(selectedMonto);
         });
 
-        // Funciones auxiliares
-        function showSection(number) {
-          document.querySelectorAll('.form-section').forEach(section => {
-            section.style.display = 'none';
+        // Manejo de inputs para efectos visuales
+        document.querySelectorAll('input, select').forEach(input => {
+          input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
           });
-          document.getElementById(`section-${number}`).style.display = 'block';
-
-          document.querySelectorAll('.progress-step').forEach((step, index) => {
-            if (index + 1 < number) {
-              step.classList.add('completed');
-              step.classList.remove('active');
-            } else if (index + 1 === number) {
-              step.classList.add('active');
-              step.classList.remove('completed');
+          
+          input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+            if (this.value.trim() !== '') {
+              this.classList.add('filled');
             } else {
-              step.classList.remove('active', 'completed');
+              this.classList.remove('filled');
             }
           });
+          
+          // Inicializar estado
+          if (input.value.trim() !== '') {
+            input.classList.add('filled');
+          }
+        });
+
+        // Funciones auxiliares
+        function showSection(number) {
+          // Actualizar barra de progreso
+          progressBar.setAttribute('data-step', number);
+          
+          // Animación de salida
+          const currentSection = document.querySelector('.form-section:not([style*="display: none"])');
+          currentSection.style.opacity = '0';
+          currentSection.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.form-section').forEach(section => {
+              section.style.display = 'none';
+              section.style.opacity = '0';
+              section.style.transform = 'translateY(20px)';
+            });
+            
+            // Mostrar la sección actual con animación
+            const sectionToShow = document.getElementById(`section-${number}`);
+            sectionToShow.style.display = 'block';
+            
+            setTimeout(() => {
+              sectionToShow.style.opacity = '1';
+              sectionToShow.style.transform = 'translateY(0)';
+            }, 50);
+            
+            // Actualizar estados de los pasos
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+              if (index + 1 < number) {
+                step.classList.add('completed');
+                step.classList.remove('active');
+              } else if (index + 1 === number) {
+                step.classList.add('active');
+                step.classList.remove('completed');
+              } else {
+                step.classList.remove('active', 'completed');
+              }
+            });
+          }, 300);
         }
 
         function validatePersonalData() {
+          let isValid = true;
+          
+          // Validación de campos requeridos
+          const requiredInputs = document.querySelectorAll('#section-2 input[required]');
+          requiredInputs.forEach(input => {
+            if (!input.value.trim()) {
+              showInputError(input, 'Este campo es obligatorio');
+              isValid = false;
+            } else {
+              hideInputError(input);
+            }
+          });
+          
+          // Validación de email
+          const emailInput = document.getElementById('email');
+          if (emailInput.value && !validateEmail(emailInput.value)) {
+            showInputError(emailInput, 'Por favor, ingresa un correo electrónico válido');
+            isValid = false;
+          }
+          
+          // Validación de teléfono
+          const telefonoInput = document.getElementById('numero');
+          if (telefonoInput.value && !validatePhone(telefonoInput.value)) {
+            showInputError(telefonoInput, 'Por favor, ingresa un número de teléfono válido (10 dígitos)');
+            isValid = false;
+          }
+          
+          // Validación de contraseñas
           const password = document.getElementById('password').value;
           const confirmPassword = document.getElementById('confirm_password').value;
-
-          if (password !== confirmPassword) {
-            alert('Las contraseñas no coinciden. Por favor, verifica.');
-            return false;
+          if (password && password !== confirmPassword) {
+            showInputError(document.getElementById('password'), 'Las contraseñas no coinciden');
+            showInputError(document.getElementById('confirm_password'), '');
+            isValid = false;
+          } else if (password.length < 8) {
+            showInputError(document.getElementById('password'), 'La contraseña debe tener al menos 8 caracteres');
+            isValid = false;
           }
-
-          if (password.length < 8) {
-            alert('La contraseña debe tener al menos 8 caracteres.');
-            return false;
-          }
-
-          return true;
+          
+          return isValid;
         }
 
         function validateBusinessData() {
-          const nombre = document.getElementById('nombre').value;
-          if (!nombre) {
-            alert('Por favor, ingresa el nombre del comercio.');
-            return false;
-          }
+          let isValid = true;
+          
+          // Validación de campos requeridos
+          const requiredInputs = document.querySelectorAll('#section-3 input[required]');
+          requiredInputs.forEach(input => {
+            if (!input.value.trim()) {
+              showInputError(input, 'Este campo es obligatorio');
+              isValid = false;
+            } else {
+              hideInputError(input);
+            }
+          });
+          
+          return isValid;
+        }
 
-          const horarioAM = document.getElementById('horario_apertura_am').value;
-          if (!horarioAM) {
-            alert('Por favor, ingresa el horario de apertura AM.');
-            return false;
+        function showInputError(input, message) {
+          input.classList.add('error');
+          const errorElement = document.getElementById(`${input.id}-error`);
+          if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
           }
+          
+          // Efecto de shake
+          input.classList.add('shake');
+          setTimeout(() => input.classList.remove('shake'), 500);
+        }
 
-          return true;
+        function hideInputError(input) {
+          input.classList.remove('error');
+          const errorElement = document.getElementById(`${input.id}-error`);
+          if (errorElement) {
+            errorElement.classList.remove('show');
+          }
+        }
+
+        function validateEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function validatePhone(phone) {
+          return /^\d{10}$/.test(phone);
         }
 
         function updateSummary() {
@@ -589,193 +684,215 @@
           const cierrePM = document.getElementById('horario_cierre_pm').value;
           document.getElementById('summary-horario').textContent = `${aperturaAM} - ${cierreAM} y ${aperturaPM} - ${cierrePM}`;
         }
+        
+        function showErrorNotification(message) {
+          const notification = document.createElement('div');
+          notification.className = 'error-notification';
+          notification.textContent = message;
+          document.body.appendChild(notification);
+          
+          setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => notification.remove(), 300);
+          }, 3000);
+        }
       });
 
-      // Función para obtener parámetros de la URL
-      function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      // Funciones para procesar pagos y enviar datos
+      function generarReferencia() {
+        const timestamp = Date.now();
+        const random = Math.floor(Math.random() * 1000000);
+        return `REF-${timestamp}-${random}`;
       }
 
-      // Función para enviar datos a la Lambda
-      async function enviarDatosALambda(transactionId, monto, plan) {
-        try {
-            alert('Iniciando proceso de creación de cuenta...');
-
-            // Recopilar datos del usuario
-            const datosUsuario = {
-                password: document.getElementById('password').value,
-                primer_nombre: document.getElementById('primer_nombre').value,
-                primer_apellido: document.getElementById('primer_apellido').value,
-                usuario: document.getElementById('usuario').value,
-                email: document.getElementById('email').value,
-                numero: document.getElementById('numero').value
-            };
-
-            // Recopilar datos del comercio
-            const datosCafeteria = {
-                nombre: document.getElementById('nombre').value,
-                logo: document.getElementById('logo').value || '',
-                horario_apertura_am: document.getElementById('horario_apertura_am').value,
-                horario_cierre_am: document.getElementById('horario_cierre_am').value,
-                horario_apertura_pm: document.getElementById('horario_apertura_pm').value,
-                horario_cierre_pm: document.getElementById('horario_cierre_pm').value,
-                precio_para_llevar: document.getElementById('precio_para_llevar').value || 0
-            };
-
-            // Estructura completa del body
-            const bodyData = {
-                usuario: datosUsuario,
-                cafeteria: datosCafeteria
-            };
-
-            alert('Enviando datos al servidor...');
-            console.log('Datos a enviar:', bodyData);
-
-            // Enviar datos a la Lambda
-            const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/Appu-landing-creacionComercio', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(bodyData),
-                credentials: 'omit'
-            });
-
-            // Verificar si la respuesta es exitosa
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => null);
-                throw new Error(errorData?.message || `Error ${response.status}: ${response.statusText}`);
-            }
-
-            const result = await response.json();
-            
-            if (result.success) {
-                alert('¡Cuenta creada exitosamente! Te redirigiremos al inicio de sesión.');
-
-                // Guardar credenciales temporalmente
-                const loginData = {
-                    usuario: datosUsuario.usuario,
-                    password: datosUsuario.password,
-                    timestamp: Date.now()
-                };
-                sessionStorage.setItem('tempLoginData', JSON.stringify(loginData));
-
-                // Redirigir a la página de login
-                window.location.href = 'https://appu.store/951f23030e1f79e1f026dea76a93d2bc/';
-            } else {
-                throw new Error(result.message || 'Error al crear la cuenta');
-            }
-        } catch (error) {
-            console.error('Error al enviar datos:', error);
-            
-            let errorMessage = 'Hubo un problema al crear tu cuenta.';
-            
-            if (!navigator.onLine) {
-                errorMessage = 'No hay conexión a internet. Por favor, verifica tu conexión.';
-            } else if (error.message.includes('NetworkError')) {
-                errorMessage = 'Error de conexión con el servidor. Por favor, intenta nuevamente.';
-            } else if (error.message.includes('429')) {
-                errorMessage = 'Demasiados intentos. Por favor, espera un momento.';
-            } else if (error.message.includes('401')) {
-                errorMessage = 'Error de autorización. Por favor, intenta nuevamente.';
-            }
-
-            alert(`Error: ${errorMessage}\nSi el problema persiste, contacta a soporte.`);
-        }
-      }
-
-      // Función para procesar el pago con Wompi
       async function procesarPago(monto) {
         try {
-            alert('Iniciando proceso de pago...');
-            
-            const costo = monto * 100;
-            const reference = generarReferencia();
-            console.log('Referencia de pago:', reference);
+          const costo = monto * 100;
+          const reference = generarReferencia();
+          console.log('Referencia de pago:', reference);
+          
+          // Llamar a la API de Wompi para generar la firma
+          const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              currency: 'COP',
+              amountInCents: costo,
+              reference: reference
+            })
+          });
 
-            alert('Generando firma para el pago seguro...');
-            
-            // Llamar a la API de Wompi para generar la firma
-            const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    currency: 'COP',
-                    amountInCents: costo,
-                    reference: reference
-                })
-            });
+          if (!response.ok) {
+            throw new Error('Error al generar la firma de pago');
+          }
 
-            if (!response.ok) {
-                throw new Error('Error al generar la firma de pago');
+          const data = await response.json();
+          const signature = data.signature;
+
+          let checkout = new WidgetCheckout({
+            currency: 'COP',
+            amountInCents: costo,
+            reference: reference,
+            publicKey: 'pub_test_AvVRqBQmU5yG9Dotd6K4BX8sf5jOYzD7',
+            signature: { integrity: signature },
+          });
+
+          checkout.open(function (result) {
+            let transaction = result.transaction;
+            console.log('Resultado de la transacción:', transaction);
+
+            if (transaction.status === 'APPROVED') {
+              enviarDatosALambda(transaction.id, monto, selectedPlan);
+            } else {
+              // Mostrar mensaje de error
+              const statusDiv = document.createElement('div');
+              statusDiv.className = 'status-notification';
+              statusDiv.textContent = 'El pago no fue exitoso. Por favor, intenta nuevamente.';
+              document.body.appendChild(statusDiv);
+              
+              setTimeout(() => {
+                statusDiv.style.opacity = '0';
+                setTimeout(() => statusDiv.remove(), 300);
+              }, 5000);
             }
-
-            const data = await response.json();
-            const signature = data.signature;
-
-            alert('Abriendo ventana de pago...');
-
-            let checkout = new WidgetCheckout({
-                currency: 'COP',
-                amountInCents: costo,
-                reference: reference,
-                publicKey: 'pub_test_AvVRqBQmU5yG9Dotd6K4BX8sf5jOYzD7',
-                signature: { integrity: signature },
-            });
-
-            checkout.open(function (result) {
-                let transaction = result.transaction;
-                console.log('Resultado de la transacción:', transaction);
-
-                if (transaction.status === 'APPROVED') {
-                    alert('¡Pago aprobado! Procediendo a crear tu cuenta...');
-                    enviarDatosALambda(transaction.id, monto, selectedPlan);
-                } else {
-                    alert(`Pago no completado. Estado: ${transaction.status}\nPor favor, intenta nuevamente.`);
-                }
-            });
+          });
         } catch (error) {
-            console.error('Error en el proceso de pago:', error);
-            alert(`Error en el proceso de pago: ${error.message}\nPor favor, intenta nuevamente.`);
+          console.error('Error en el proceso de pago:', error);
+          
+          // Mostrar mensaje de error
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'error-notification';
+          errorDiv.textContent = 'Hubo un problema al procesar el pago. Por favor, intenta nuevamente.';
+          document.body.appendChild(errorDiv);
+          
+          setTimeout(() => {
+            errorDiv.style.opacity = '0';
+            setTimeout(() => errorDiv.remove(), 300);
+          }, 5000);
         }
       }
 
-      // Función para generar referencia
-      function generarReferencia() {
-        const timestamp = Date.now(); // Marca de tiempo en milisegundos
-        const random = Math.floor(Math.random() * 1000000); // Número aleatorio
-        return `REF-${timestamp}-${random}`;
+      async function enviarDatosALambda(transactionId, monto, plan) {
+        try {
+          // Recopilar datos del usuario
+          const datosUsuario = {
+            password: document.getElementById('password').value,
+            primer_nombre: document.getElementById('primer_nombre').value,
+            primer_apellido: document.getElementById('primer_apellido').value,
+            usuario: document.getElementById('usuario').value,
+            email: document.getElementById('email').value,
+            numero: document.getElementById('numero').value
+          };
+
+          // Recopilar datos del comercio
+          const datosCafeteria = {
+            nombre: document.getElementById('nombre').value,
+            logo: document.getElementById('logo').value || '',
+            horario_apertura_am: document.getElementById('horario_apertura_am').value,
+            horario_cierre_am: document.getElementById('horario_cierre_am').value,
+            horario_apertura_pm: document.getElementById('horario_apertura_pm').value,
+            horario_cierre_pm: document.getElementById('horario_cierre_pm').value,
+            precio_para_llevar: document.getElementById('precio_para_llevar').value || 0
+          };
+
+          // Estructura completa del body
+          const bodyData = {
+            usuario: datosUsuario,
+            cafeteria: datosCafeteria,
+            transaccion: {
+              id: transactionId,
+              monto: monto,
+              plan: plan
+            }
+          };
+
+          console.log('Datos a enviar:', bodyData);
+
+          // Enviar datos a la Lambda
+          const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/Appu-landing-creacionComercio', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodyData),
+            credentials: 'omit'
+          });
+
+          // Verificar si la respuesta es exitosa
+          if (!response.ok) {
+            const errorData = await response.json().catch(() => null);
+            throw new Error(errorData?.message || `Error ${response.status}: ${response.statusText}`);
+          }
+
+          const result = await response.json();
+          
+          if (result.success) {
+            // Guardar credenciales temporalmente
+            const loginData = {
+              usuario: datosUsuario.usuario,
+              password: datosUsuario.password,
+              timestamp: Date.now()
+            };
+            sessionStorage.setItem('tempLoginData', JSON.stringify(loginData));
+
+            // Mostrar mensaje de éxito
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-notification';
+            successDiv.textContent = '¡Cuenta creada exitosamente! Redirigiendo al inicio de sesión...';
+            document.body.appendChild(successDiv);
+            
+            // Redirigir a la página de login después de mostrar el mensaje
+            setTimeout(() => {
+              window.location.href = 'https://appu.store/951f23030e1f79e1f026dea76a93d2bc/';
+            }, 2000);
+          } else {
+            throw new Error(result.message || 'Error al crear la cuenta');
+          }
+        } catch (error) {
+          console.error('Error al enviar datos:', error);
+          
+          // Mostrar mensaje de error
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'error-notification';
+          errorDiv.textContent = 'Hubo un problema al crear tu cuenta. Por favor, intenta nuevamente.';
+          document.body.appendChild(errorDiv);
+          
+          setTimeout(() => {
+            errorDiv.style.opacity = '0';
+            setTimeout(() => errorDiv.remove(), 300);
+          }, 5000);
+        }
       }
 
       // Script para auto-completar el login
       const autoLoginScript = document.createElement('script');
       autoLoginScript.innerHTML = `
-          document.addEventListener('DOMContentLoaded', function() {
-              const tempLoginData = sessionStorage.getItem('tempLoginData');
-              if (tempLoginData) {
-                  const data = JSON.parse(tempLoginData);
-                  
-                  if (Date.now() - data.timestamp < 15 * 60 * 1000) {
-                      alert('Auto-completando datos de inicio de sesión...');
-                      
-                      const usuarioInput = document.querySelector('input[name="usuario"]');
-                      const passwordInput = document.querySelector('input[name="password"]');
-                      
-                      if (usuarioInput && passwordInput) {
-                          usuarioInput.value = data.usuario;
-                          passwordInput.value = data.password;
-                          alert('Datos auto-completados. Ya puedes iniciar sesión.');
-                      }
-                  }
-                  
-                  sessionStorage.removeItem('tempLoginData');
+        document.addEventListener('DOMContentLoaded', function() {
+          const tempLoginData = sessionStorage.getItem('tempLoginData');
+          if (tempLoginData) {
+            const data = JSON.parse(tempLoginData);
+            
+            if (Date.now() - data.timestamp < 15 * 60 * 1000) {
+              const usuarioInput = document.querySelector('input[name="usuario"]');
+              const passwordInput = document.querySelector('input[name="password"]');
+              
+              if (usuarioInput && passwordInput) {
+                usuarioInput.value = data.usuario;
+                passwordInput.value = data.password;
+                
+                // Añadir efecto visual
+                [usuarioInput, passwordInput].forEach(input => {
+                  input.classList.add('auto-filled');
+                  setTimeout(() => input.classList.remove('auto-filled'), 1500);
+                });
               }
-          });
+            }
+            
+            sessionStorage.removeItem('tempLoginData');
+          }
+        });
       `;
       document.head.appendChild(autoLoginScript);
     </script>
