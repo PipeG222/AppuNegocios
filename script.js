@@ -97,50 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Funcion de pago de Wompi
 async function pagar(monto) {
-
-    const costo = monto * 100; // Convertir a centavos
-    const reference = generarReferencia(); // Generar referencia a partir de la marca de tiempo y un número aleatorio con la función generarReferencia
-    console.log('Referencia:', reference); // Imprimir referencia en consola
-
-    // Llamar a la API de Wompi para generar la firma
-    const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        // Enviamos los datos necesarios para generar la firma
-        body: JSON.stringify({
-            currency: 'COP',
-            amountInCents: costo,
-            reference: reference
-        })
-    });
-
-    const data = await response.json();
-    console.log('Firma:', data);
-    const signature = data.signature;
-    console.log('Firma:', signature);
-
-
-    let checkout = new WidgetCheckout({
-        currency: 'COP',
-        amountInCents: costo,
-        reference: reference,
-        publicKey: 'pub_prod_QoWdrRWpXVDd9GMwZrqKAtyy56Er45YU',
-        signature: { integrity: signature },
-    })
-
-    checkout.open(function (result) {
-        let transaction = result.transaction;
-        // console.log("Transaction ID: ", transaction.id);
-        // console.log("Transaction object: ", transaction);
-
-        if (transaction.status === 'APPROVED') {
-            alert("¡Pago exitoso!");
-            window.location.href = "/planes/checkout/index.html";
-        }
-    });
-
+    // Redirigir al checkout con el monto como parámetro
+    window.location.href = `/planes/checkout/index.html?monto=${monto}`;
 }
 
 function generarReferencia() {

@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="/script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://checkout.wompi.co/widget.js"
+    ></script>
     <link
       rel="icon"
       href="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/barra/favicon.png"
@@ -162,8 +166,12 @@
             <p>Muchos más</p>
           </div>
         </div>
-        <button>RESERVA TU DEMO AHORA</button>
-
+        <div id="resumenPago">
+          <h2>Resumen de tu compra</h2>
+          <p>Plan seleccionado: <span id="planSeleccionado">-</span></p>
+          <p>Monto a pagar: <span id="montoPagar">-</span></p>
+          <button id="btnPagar" class="c-white bc-appuVerde">PROCEDER AL PAGO</button>
+        </div>
       </div>
     </section>
 
@@ -285,5 +293,97 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Función para obtener parámetros de la URL
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      // Función para procesar el pago con Wompi
+      async function procesarPago(monto) {
+        const costo = monto * 100; // Convertir a centavos
+        const reference = generarReferencia(); // Generar referencia a partir de la marca de tiempo y un número aleatorio
+        console.log('Referencia:', reference); // Imprimir referencia en consola
+
+        // Llamar a la API de Wompi para generar la firma
+        const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          // Enviamos los datos necesarios para generar la firma
+          body: JSON.stringify({
+            currency: 'COP',
+            amountInCents: costo,
+            reference: reference
+          })
+        });
+
+        const data = await response.json();
+        console.log('Firma:', data);
+        const signature = data.signature;
+        console.log('Firma:', signature);
+
+        let checkout = new WidgetCheckout({
+          currency: 'COP',
+          amountInCents: costo,
+          reference: reference,
+          publicKey: 'pub_test_AvVRqBQmU5yG9Dotd6K4BX8sf5jOYzD7',
+          signature: { integrity: signature },
+        });
+
+        checkout.open(function (result) {
+          let transaction = result.transaction;
+          // console.log("Transaction ID: ", transaction.id);
+          // console.log("Transaction object: ", transaction);
+
+          if (transaction.status === 'APPROVED') {
+            alert("¡Pago exitoso!");
+            alert(transaction.status);
+            window.location.href = `/planes/confirmacion/index.html?transactionId=${transaction.id}&monto=${monto}&plan=${planSeleccionado}`;
+          }
+        });
+      }
+
+      // Función para generar referencia
+      function generarReferencia() {
+        const timestamp = Date.now(); // Marca de tiempo en milisegundos
+        const random = Math.floor(Math.random() * 1000000); // Número aleatorio
+        return `REF-${timestamp}-${random}`;
+      }
+
+      // Cuando el documento esté listo
+      document.addEventListener('DOMContentLoaded', function() {
+        // Obtener el monto de la URL
+        const monto = getUrlParameter('monto');
+        
+        // Mostrar el monto en la página
+        if (monto) {
+          document.getElementById('montoPagar').textContent = `$${parseInt(monto).toLocaleString('es-CO')}`;
+          
+          // Determinar el plan seleccionado basado en el monto
+          let planSeleccionado = '';
+          if (monto == 30000) planSeleccionado = 'Appu Pyme';
+          else if (monto == 70000) planSeleccionado = 'Appu Plus';
+          else if (monto == 209000) planSeleccionado = 'Appu Pro';
+          else if (monto == 289000) planSeleccionado = 'Appu Pro +';
+          else planSeleccionado = 'Plan Personalizado';
+          
+          document.getElementById('planSeleccionado').textContent = planSeleccionado;
+          
+          // Agregar evento al botón de pago
+          document.getElementById('btnPagar').addEventListener('click', function() {
+            procesarPago(parseInt(monto));
+          });
+        } else {
+          // Si no hay monto, mostrar mensaje de error
+          document.getElementById('resumenPago').innerHTML = '<p>No se ha seleccionado ningún plan. Por favor, regresa a la página de planes.</p>';
+        }
+      });
+    </script>
   </body>
 </html>

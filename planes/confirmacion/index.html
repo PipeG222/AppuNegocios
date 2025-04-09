@@ -3,36 +3,350 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Confirmación de Pago</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Pago - AppuStore</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/barra/favicon.png">
 </head>
 <body>
-    <h1>Verificando estado del pago...</h1>
-    <script>
-        const transactionId = new URLSearchParams(window.location.search).get('transactionId');
+    <header>
+        <div class="logo-container">
+            <a href="/index.html">
+                <img src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="Logo AppuStore">
+            </a>
+        </div>
+    </header>
 
-        if (transactionId) {
-            fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/verify-transaction', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ transactionId })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'APPROVED') {
-                    document.body.innerHTML = '<h1>¡Pago exitoso!</h1>';
-                } else {
-                    document.body.innerHTML = '<h1>El pago no fue exitoso.</h1>';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.body.innerHTML = '<h1>Error al verificar el pago.</h1>';
+    <div class="container">
+        <div id="loading-section" class="confirmation-section">
+            <h1>Verificando estado del pago...</h1>
+            <p>Por favor, espera un momento mientras confirmamos tu transacción.</p>
+        </div>
+
+        <div id="success-section" class="confirmation-section" style="display: none;">
+            <h1>¡Pago exitoso!</h1>
+            <p>Tu pago ha sido confirmado. Ahora, completa el formulario para configurar tu cuenta.</p>
+            <button id="start-registration" class="btn">Configurar mi cuenta</button>
+        </div>
+
+        <div id="error-section" class="confirmation-section" style="display: none;">
+            <h1>El pago no fue exitoso</h1>
+            <p>Lo sentimos, hubo un problema con tu pago. Por favor, intenta nuevamente.</p>
+            <a href="/index.html" class="btn">Volver al inicio</a>
+        </div>
+
+        <div id="registration-form" class="registration-form" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-step active" id="step-1">Datos personales</div>
+                <div class="progress-step" id="step-2">Datos del comercio</div>
+                <div class="progress-step" id="step-3">Confirmación</div>
+            </div>
+
+            <form id="user-form">
+                <!-- Paso 1: Datos personales -->
+                <div class="form-section" id="section-1">
+                    <h2>Datos personales</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="primer_nombre">Primer nombre</label>
+                            <input type="text" id="primer_nombre" name="primer_nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="primer_apellido">Primer apellido</label>
+                            <input type="text" id="primer_apellido" name="primer_apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número de teléfono</label>
+                        <input type="tel" id="numero" name="numero" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">Nombre de usuario</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirmar contraseña</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <div id="password-error" class="error-message" style="display: none;">Las contraseñas no coinciden</div>
+                    </div>
+                    <div class="form-navigation">
+                        <div></div>
+                        <button type="button" class="btn" id="next-1">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Datos del comercio -->
+                <div class="form-section" id="section-2" style="display: none;">
+                    <h2>Datos del comercio</h2>
+                    <div class="form-group">
+                        <label for="nombre">Nombre del comercio</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="logo">URL del logo (opcional)</label>
+                        <input type="url" id="logo" name="logo">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="horario_apertura_am">Hora de apertura (AM)</label>
+                            <input type="time" id="horario_apertura_am" name="horario_apertura_am" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="horario_cierre_am">Hora de cierre (AM)</label>
+                            <input type="time" id="horario_cierre_am" name="horario_cierre_am" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="horario_apertura_pm">Hora de apertura (PM)</label>
+                            <input type="time" id="horario_apertura_pm" name="horario_apertura_pm" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="horario_cierre_pm">Hora de cierre (PM)</label>
+                            <input type="time" id="horario_cierre_pm" name="horario_cierre_pm" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio_para_llevar">Precio para llevar (opcional)</label>
+                        <input type="number" id="precio_para_llevar" name="precio_para_llevar" min="0">
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="back-2">Anterior</button>
+                        <button type="button" class="btn" id="next-2">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- Paso 3: Confirmación -->
+                <div class="form-section" id="section-3" style="display: none;">
+                    <h2>Confirmación</h2>
+                    <div class="form-group">
+                        <p>Por favor, revisa los datos que has ingresado antes de continuar:</p>
+                    </div>
+                    <div id="summary-user" class="form-group">
+                        <h3>Datos personales</h3>
+                        <p><strong>Nombre:</strong> <span id="summary-nombre"></span> <span id="summary-apellido"></span></p>
+                        <p><strong>Email:</strong> <span id="summary-email"></span></p>
+                        <p><strong>Teléfono:</strong> <span id="summary-numero"></span></p>
+                        <p><strong>Usuario:</strong> <span id="summary-usuario"></span></p>
+                    </div>
+                    <div id="summary-business" class="form-group">
+                        <h3>Datos del comercio</h3>
+                        <p><strong>Nombre:</strong> <span id="summary-business-name"></span></p>
+                        <p><strong>Horario:</strong> <span id="summary-horario"></span></p>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="back-3">Anterior</button>
+                        <button type="submit" class="btn" id="submit-form">Crear cuenta</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="success-message" class="success-message" style="display: none;">
+                <h2>¡Cuenta creada exitosamente!</h2>
+                <p>Tu cuenta ha sido creada y está lista para usar.</p>
+                <a href="https://appu.store/" class="btn">Ir a mi cuenta</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const transactionId = urlParams.get('transactionId');
+            const monto = urlParams.get('monto');
+            const plan = urlParams.get('plan');
+
+            // Elementos del DOM
+            const loadingSection = document.getElementById('loading-section');
+            const successSection = document.getElementById('success-section');
+            const errorSection = document.getElementById('error-section');
+            const registrationForm = document.getElementById('registration-form');
+            const startRegistrationBtn = document.getElementById('start-registration');
+            const userForm = document.getElementById('user-form');
+            const successMessage = document.getElementById('success-message');
+
+            // Elementos de navegación del formulario
+            const next1Btn = document.getElementById('next-1');
+            const next2Btn = document.getElementById('next-2');
+            const back2Btn = document.getElementById('back-2');
+            const back3Btn = document.getElementById('back-3');
+            const submitFormBtn = document.getElementById('submit-form');
+
+            // Elementos de los pasos
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            const step3 = document.getElementById('step-3');
+            const section1 = document.getElementById('section-1');
+            const section2 = document.getElementById('section-2');
+            const section3 = document.getElementById('section-3');
+
+            // Elementos de resumen
+            const summaryNombre = document.getElementById('summary-nombre');
+            const summaryApellido = document.getElementById('summary-apellido');
+            const summaryEmail = document.getElementById('summary-email');
+            const summaryNumero = document.getElementById('summary-numero');
+            const summaryUsuario = document.getElementById('summary-usuario');
+            const summaryBusinessName = document.getElementById('summary-business-name');
+            const summaryHorario = document.getElementById('summary-horario');
+
+            // Verificar el estado del pago
+            if (transactionId) {
+                fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/verify-transaction', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ transactionId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    loadingSection.style.display = 'none';
+                    if (data.status === 'APPROVED') {
+                        successSection.style.display = 'block';
+                    } else {
+                        errorSection.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    loadingSection.style.display = 'none';
+                    errorSection.style.display = 'block';
+                });
+            } else {
+                // Si no hay transactionId, mostrar error
+                loadingSection.style.display = 'none';
+                errorSection.style.display = 'block';
+            }
+
+            // Iniciar registro
+            startRegistrationBtn.addEventListener('click', function() {
+                successSection.style.display = 'none';
+                registrationForm.style.display = 'block';
             });
-        } else {
-            document.body.innerHTML = '<h1>No se encontró el ID de la transacción.</h1>';
-        }
+
+            // Navegación entre pasos
+            next1Btn.addEventListener('click', function() {
+                // Validar contraseñas
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm_password').value;
+                const passwordError = document.getElementById('password-error');
+
+                if (password !== confirmPassword) {
+                    passwordError.style.display = 'block';
+                    return;
+                }
+
+                passwordError.style.display = 'none';
+                section1.style.display = 'none';
+                section2.style.display = 'block';
+                step1.classList.remove('active');
+                step1.classList.add('completed');
+                step2.classList.add('active');
+            });
+
+            next2Btn.addEventListener('click', function() {
+                // Actualizar resumen
+                summaryNombre.textContent = document.getElementById('primer_nombre').value;
+                summaryApellido.textContent = document.getElementById('primer_apellido').value;
+                summaryEmail.textContent = document.getElementById('email').value;
+                summaryNumero.textContent = document.getElementById('numero').value;
+                summaryUsuario.textContent = document.getElementById('usuario').value;
+                summaryBusinessName.textContent = document.getElementById('nombre').value;
+
+                const aperturaAM = document.getElementById('horario_apertura_am').value;
+                const cierreAM = document.getElementById('horario_cierre_am').value;
+                const aperturaPM = document.getElementById('horario_apertura_pm').value;
+                const cierrePM = document.getElementById('horario_cierre_pm').value;
+
+                summaryHorario.textContent = `${aperturaAM} - ${cierreAM} y ${aperturaPM} - ${cierrePM}`;
+
+                section2.style.display = 'none';
+                section3.style.display = 'block';
+                step2.classList.remove('active');
+                step2.classList.add('completed');
+                step3.classList.add('active');
+            });
+
+            back2Btn.addEventListener('click', function() {
+                section2.style.display = 'none';
+                section1.style.display = 'block';
+                step2.classList.remove('active');
+                step1.classList.remove('completed');
+                step1.classList.add('active');
+            });
+
+            back3Btn.addEventListener('click', function() {
+                section3.style.display = 'none';
+                section2.style.display = 'block';
+                step3.classList.remove('active');
+                step2.classList.remove('completed');
+                step2.classList.add('active');
+            });
+
+            // Enviar formulario
+            userForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Recopilar datos del usuario
+                const userData = {
+                    password: document.getElementById('password').value,
+                    primer_nombre: document.getElementById('primer_nombre').value,
+                    primer_apellido: document.getElementById('primer_apellido').value,
+                    usuario: document.getElementById('usuario').value,
+                    email: document.getElementById('email').value,
+                    numero: document.getElementById('numero').value
+                };
+
+                // Recopilar datos del comercio
+                const businessData = {
+                    nombre: document.getElementById('nombre').value,
+                    logo: document.getElementById('logo').value || '',
+                    horario_apertura_am: document.getElementById('horario_apertura_am').value,
+                    horario_cierre_am: document.getElementById('horario_cierre_am').value,
+                    horario_apertura_pm: document.getElementById('horario_apertura_pm').value,
+                    horario_cierre_pm: document.getElementById('horario_cierre_pm').value,
+                    precio_para_llevar: document.getElementById('precio_para_llevar').value || 0
+                };
+
+                // Datos completos para enviar a la Lambda
+                const data = {
+                    usuario: userData,
+                    cafeteria: businessData,
+                    transactionId: transactionId,
+                    plan: plan,
+                    monto: monto
+                };
+
+                // Enviar datos a la Lambda
+                fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/crear-usuario-comercio', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Ocultar formulario y mostrar mensaje de éxito
+                    registrationForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Hubo un error al crear tu cuenta. Por favor, intenta nuevamente o contacta a soporte.');
+                });
+            });
+        });
     </script>
 </body>
 </html>
