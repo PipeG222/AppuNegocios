@@ -14,29 +14,35 @@
   </head>
   <body>
     <header>
+      <div id="logoHeader">
+        <a href="/index.html"
+          ><img
+            src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
+            alt="Logo AppuStore"
+        /></a>
+      </div>
       <div id="navHeader" class="d-flex justify-around align-center">
-        <div>
-          <a href="/index.html"
-            ><img
-              src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png"
-              alt="Logo AppuStore"
-              height="70px"
-          /></a>
-        </div>
         <nav class="d-flex justify-around">
           <ul class="nav-links">
-            <li>
-              <a
-                href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
-                id="btnHamburguesa"
-                class="bc-white btn c-appuAzul"
+            <select name="ciudad" id="ciduadSelect">
+              <option value="Ciudad" hidden>Ciudad</option>
+              <option value="Bogotá">Bogotá</option>
+              <option value="Medellín">Medellín</option>
+            </select>
+            <li><a href="/index.html" class="dirNav">Inicio</a></li>
+            <!-- <li>
+              <a href="#formularioInformacion" class="dirNav"
+                >¿Quiénes somos?</a
               >
-                INGRESAR
-              </a>
+            </li> -->
+            <li>
+              <a href="https://appu.store/" class="dirNav">APPU Reservas</a>
             </li>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="https://appu.store/">APPU Reservas</a></li>
-            <li><a href="#planes">APPU Facturación</a></li>
+            <li><a href="#planes" class="dirNav">APPU Facturación</a></li>
+            <li>
+              <a href="#footer" class="dirNav">Contacto</a>
+            </li>
+            
           </ul>
           <div class="hamburger" id="hamburger">
             <span class="bar"></span>
@@ -46,22 +52,21 @@
         </nav>
         <div>
           <a
+            class="c-appuAzul bc-white btnHeader"
             href="https://appu.store/951f23030e1f79e1f026dea76a93d2bc/"
             target="_blank"
-            ><button class="c-appuAzul bc-white btn">INGRESAR</button></a
+            >Ingresar</a
           >
         </div>
       </div>
-      <img
-        id="banner"
-        src="//Img/banner1.webp"
-        alt="Banner de AppuStore"
-        width="100%"
-        height="500px"
-      />
-      
     </header>
-    <aside
+    <img
+      id="banner"
+      src="/Img/banner1.webp"
+      alt="Banner de AppuStore"
+      width="100%"
+    />
+    <!-- <aside
       id="infoCaracteristicasAPPU"
       class="d-flex justify-around bc-naranja c-white p-20"
     >
@@ -76,7 +81,7 @@
         SOPORTE<br />
         24/7
       </h2>
-    </aside>
+    </aside> -->
     <section id="checkoutMain">
       <div class="texto">
         <h1 id="ofertaEspecial" class="text-center c-naranja">

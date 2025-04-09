@@ -130,7 +130,6 @@ async function pagar(monto) {
         signature: { integrity: signature },
     })
 
-    // 
     checkout.open(function (result) {
         let transaction = result.transaction;
         // console.log("Transaction ID: ", transaction.id);
