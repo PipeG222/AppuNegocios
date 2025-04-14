@@ -706,6 +706,24 @@
       }
 
       async function procesarPago(monto) {
+        // Crear y mostrar el overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'wompi-overlay';
+        overlay.innerHTML = `
+          <div class="wompi-overlay-content">
+            <img src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/logo_appu.png" alt="Logo Appu" class="wompi-logo">
+            <p>Procesando pago...</p>
+            <button class="close-overlay-btn">Cerrar</button>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Añadir evento al botón de cierre
+        const closeBtn = overlay.querySelector('.close-overlay-btn');
+        closeBtn.addEventListener('click', () => {
+          overlay.remove();
+        });
+
         try {
           const costo = monto * 100;
           const reference = generarReferencia();
@@ -740,6 +758,9 @@
           });
 
           checkout.open(function (result) {
+            // Remover el overlay cuando se cierra el widget
+            overlay.remove();
+            
             let transaction = result.transaction;
             console.log('Resultado de la transacción:', transaction);
 
@@ -759,6 +780,9 @@
             }
           });
         } catch (error) {
+          // Remover el overlay en caso de error
+          overlay.remove();
+          
           console.error('Error en el proceso de pago:', error);
           
           // Mostrar mensaje de error
