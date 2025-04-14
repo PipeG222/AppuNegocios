@@ -1,27 +1,36 @@
+// Espera a que todo el contenido del DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Crea un observer que detecta cuando los elementos aparecen o desaparecen en la pantalla
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Si el elemento es visible en la pantalla, se le añade la clase 'appear' y se le quita 'disappear'
                 entry.target.classList.add('appear');
                 entry.target.classList.remove('disappear');
             } else {
+                // Si el elemento ya no está visible, se le quita 'appear' y se le añade 'disappear'
                 entry.target.classList.remove('appear');
                 entry.target.classList.add('disappear');
             }
         });
     });
 
+    // Se seleccionan todos los elementos con clase 'fade-in-up' y se observa cada uno
     document.querySelectorAll('.fade-in-up').forEach(element => {
         observer.observe(element);
     });
 
+    // También se observan los elementos con clase 'slideInRight'
     document.querySelectorAll('.slideInRight').forEach(element => {
         observer.observe(element);
     });
 
+    // Manejo del envío del formulario de registro
     document.getElementById("formularioRegistro").addEventListener("submit", async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Evita el comportamiento por defecto del formulario
 
+        // Se recogen los datos del formulario
         const datos = {
             nombre: document.getElementById("nombre2").value,
             email: document.getElementById("email2").value,
@@ -29,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         console.log("Datos a enviar:", datos);
+
+        // Envío de los datos a una API por POST en formato JSON
         const response = await fetch("https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/registro", {
             method: "POST",
             body: JSON.stringify(datos),
@@ -36,12 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         console.log("Respuesta del servidor:", response);
+
+        // Alerta de confirmación y limpieza de los campos del formulario
         alert("¡Gracias por registrarte! Pronto nos pondremos en contacto contigo.");
         document.getElementById("nombre2").value = "";
         document.getElementById("email2").value = "";
         document.getElementById("telefono2").value = "";
     });
 
+    // Lógica del botón hamburguesa para el menú móvil
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.querySelector(".nav-links");
 
@@ -50,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.classList.toggle("active");
     });
 
-    // Función para mostrar y ocultar el chat de WhatsApp
+    // Botón para mostrar u ocultar el chat de WhatsApp
     document.getElementById('whatsappButton').addEventListener('click', function () {
         let chatBox = document.getElementById('chatBox'); // Obtener el chat de WhatsApp  
 
@@ -68,20 +82,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Manejo del menú select
+    // Cambio de selección en un menú select de navegación
     const menuSelect = document.getElementById('menuSelect');
     if (menuSelect) {
         menuSelect.addEventListener('change', function () {
             const selectedValue = this.value;
             if (selectedValue.startsWith('http')) {
-                window.open(selectedValue, '_blank');
+                window.open(selectedValue, '_blank'); // Abre enlace externo
             } else {
-                window.location.href = selectedValue;
+                window.location.href = selectedValue; // Navega internamente
             }
         });
     }
 
-    // Manejo del select de ciudad
+    // Selección de ciudad en un select
     const ciudadSelect = document.getElementById('ciduadSelect');
     if (ciudadSelect) {
         ciudadSelect.addEventListener('change', function () {
@@ -91,12 +105,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Manejo unificado del menú modal
+    // Manejo del menú modal en pantallas grandes
     const menuBtn = document.getElementById('menuBtn');
     const menuModal = document.getElementById('menuModal');
     let modalVisible = false;
 
-    // Función para abrir el modal
+    // Abre el modal con posición adecuada dependiendo de la pantalla
     function openModal(clickEvent) {
         clickEvent.stopPropagation();
 
@@ -114,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalVisible = true;
     }
 
-    // Función para cerrar el modal
+    // Cierra el modal
     function closeModal() {
         menuModal.classList.remove('active');
         hamburger.classList.remove('active');
@@ -124,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalVisible = false;
     }
 
-    // Event listeners para el botón de menú y hamburguesa
+    // Eventos para abrir y cerrar el modal
     if (menuBtn) {
         menuBtn.addEventListener('click', openModal);
     }
@@ -140,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Cerrar el modal al hacer clic fuera
+    // Cierra el modal si se hace clic fuera de él
     document.addEventListener('click', function (e) {
         if (modalVisible && !menuModal.contains(e.target) &&
             e.target !== menuBtn && e.target !== hamburger &&
@@ -149,20 +163,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Cerrar el modal al hacer clic en un enlace
+    // Cierra el modal al hacer clic en algún enlace dentro de él
     menuModal.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', closeModal);
     });
 });
 
-// Funcion de pago de Wompi
+// Función para iniciar un pago con Wompi
 async function pagar(monto) {
 
-    const costo = monto * 100; // Convertir a centavos
-    const reference = generarReferencia(); // Generar referencia a partir de la marca de tiempo y un número aleatorio con la función generarReferencia
-    console.log('Referencia:', reference); // Imprimir referencia en consola
+    const costo = monto * 100; // Convierte el valor a centavos (Wompi lo requiere así)
+    const reference = generarReferencia(); // Genera una referencia única para el pago
+    console.log('Referencia:', reference);
 
-    // Llamar a la API de Wompi para generar la firma
+    // Solicita una firma de integridad desde una API intermedia
     const response = await fetch('https://34053pzrhb.execute-api.us-east-1.amazonaws.com/produccion/WOMPI/generate-signature', {
         method: 'POST',
         headers: {
@@ -181,7 +195,7 @@ async function pagar(monto) {
     const signature = data.signature;
     console.log('Firma:', signature);
 
-
+    // Configura y abre el widget de pago de Wompi
     let checkout = new WidgetCheckout({
         currency: 'COP',
         amountInCents: costo,
@@ -190,7 +204,7 @@ async function pagar(monto) {
         signature: { integrity: signature },
     })
 
-    // 
+    // Cuando el usuario termina el pago
     checkout.open(function (result) {
         let transaction = result.transaction;
         // console.log("Transaction ID: ", transaction.id);
@@ -198,19 +212,18 @@ async function pagar(monto) {
 
         if (transaction.status === 'APPROVED') {
             alert("¡Pago exitoso!");
-            window.location.href = "/planes/checkout/index.html";
+            window.location.href = "/planes/checkout/index.html"; // Redirige tras pago exitoso
         }
     });
-
 }
 
+// Función para generar una referencia de pago única
 function generarReferencia() {
-    const timestamp = Date.now(); // Marca de tiempo en milisegundos
+    const timestamp = Date.now(); // Hora actual
     const random = Math.floor(Math.random() * 1000000); // Número aleatorio
-    return `REF-${timestamp}-${random}`;
+    return `REF-${timestamp}-${random}`; // Formato de referencia: REF-tiempo-random
 }
-
-// Slider de Aliados
+// Control del slider de aliados (patrocinadores, clientes, etc.)
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.slider');
     const slideTrack = document.querySelector('.slide-track');
@@ -219,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevButton = document.querySelector('.slider-arrow.prev');
     const nextButton = document.querySelector('.slider-arrow.next');
 
-    // Clonar slides si hay menos de 4
+    // Si hay menos de 4 slides, se clonan para completar al menos 4
     if (slides.length < 4) {
         const slidesToAdd = 4 - slides.length;
         for (let i = 0; i < slidesToAdd; i++) {
@@ -229,20 +242,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const originalSlidesCount = slideTrack.children.length;
-    const totalGroups = Math.ceil(originalSlidesCount / 4);
+    const totalGroups = Math.ceil(originalSlidesCount / 4); // Cuántos grupos de 4 hay
 
-    // Función para ir a un grupo específico de slides
+    // Cambia el grupo visible del slider
     function goToGroup(groupIndex) {
         const slideWidth = slider.offsetWidth / 4;
         const offset = -(groupIndex * 4) * slideWidth;
         slideTrack.style.transform = `translateX(${offset}px)`;
 
-        // Actualizar estado de los dots
+        // Actualiza los puntos/dots de navegación
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === groupIndex);
         });
 
-        // Actualizar estado de los botones
+        // Ajusta la visibilidad de botones según la posición
         prevButton.style.opacity = groupIndex === 0 ? '0.5' : '1';
         prevButton.style.cursor = groupIndex === 0 ? 'default' : 'pointer';
         nextButton.style.opacity = groupIndex === totalGroups - 1 ? '0.5' : '1';
@@ -259,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Botón siguiente
     nextButton.addEventListener('click', () => {
         if (currentGroup < totalGroups - 1) {
             currentGroup++;
@@ -266,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Event listeners para los dots
+    // Click en los puntos/dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentGroup = index;
@@ -274,8 +288,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Inicializar el slider
+    // Inicializa el slider en el primer grupo
     goToGroup(0);
 });
-
-
