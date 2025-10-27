@@ -1,4 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Appu | Potencia tu negocio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+  :root{
+    --appu-purple:#6c4ab6;
+    --appu-purple-700:#53359c;
+    --appu-lilac:#efe9fb;
+    --appu-deep:#201a3a;
+    --appu-green:#6ba347;
+  }
+
+  body{
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+    color:var(--appu-deep);
+    background:#f7f6fb;
+  }
+
+  /* ===== Header 50/50: izquierda lila, derecha imagen con velo ===== */
+  .hero{
+    position: relative;
+    background: #efe9fb;  /* mitad izquierda */
+    overflow: hidden;
+  }
+  /* Imagen (mitad derecha) al fondo en desktop */
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:50%; right:0;   /* ocupa la mitad derecha */
+    background-image:url('https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/Figmas/supermarket-worker-measuring-selling-meat-customer+1.png');
+    background-size:cover;
+    background-position:left center;
+    filter:blur(5px);
+    transform:scale(1.04);
+    transform-origin:left center;
+    z-index:0;
+    pointer-events:none;
+  }
+  /* Velo morado sobre la imagen en desktop */
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:50%; right:0;
+    background:rgba(76,52,126,0.55);
+    z-index:1;
+    pointer-events:none;
+  }
+  /* Contenido por encima */
+  .hero > .container{
+    position:relative;
+    z-index:2;
+  }
+
+  /* ===== Responsive: <992px -> la imagen pasa a .right-pane ===== */
+  @media (max-width: 991.98px){
+    /* quita el split del header */
+    .hero::before, .hero::after{ display:none; }
+    .hero{ background:#efe9fb; }
+
+    /* activa el fondo en la columna derecha, para que escale con ella */
+    .right-pane{
+      position:relative;
+      overflow:hidden;
+      background:transparent;
+    }
+    .right-pane::after{
+      content:"";
+      position:absolute; inset:0;
+      background-image:url('https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/Figmas/supermarket-worker-measuring-selling-meat-customer+1.png');
+      background-size:cover;
+      background-position:center;
+      filter:blur(5px);
+      transform:scale(1.04);
+      z-index:0;
+      pointer-events:none;
+    }
+    .right-pane::before{
+      content:"";
+      position:absolute; inset:0;
+      background:rgba(76,52,126,0.55);
+      z-index:1;
+      pointer-events:none;
+    }
+    .right-pane > *{
+      position:relative;
+      z-index:2; /* contenido por encima del fondo */
+    }
+  }
+
+  .title-xl{ font-weight:790; letter-spacing:-0.5px; line-height:1.05; }
+  .btn-pill{ border-radius:999px; padding:.9rem 1.25rem; font-weight:600; }
+  .btn-primary{ background:var(--appu-purple); border-color:var(--appu-purple); }
+  .btn-primary:hover{ background:var(--appu-purple-700); border-color:var(--appu-purple-700); }
+
+  .bubble{
+    background:#fff; border-radius:22px; padding:1rem 1.25rem;
+    box-shadow:0 8px 24px rgba(14,10,35,.08);
+  }
+  .bullet{ list-style:none; margin:0; padding:0; }
+  .bullet li{ position:relative; padding-left:1.75rem; margin:.35rem 0; }
+  .bullet li::before{
+    content:"•"; position:absolute; left:0; top:0;
+    font-size:1.5rem; line-height:1; color:var(--appu-purple);
+  }
+
+  /* Pane derecho (sin fondo en desktop, solo contenido) */
+  .right-pane{ position:relative; background:transparent; }
+
+  .bar{
+    background:var(--appu-green); color:#fff; font-weight:700;
+    padding:.65rem 1rem; border-radius:12px; display:inline-block;
+  }
+
+  /* Izquierda layout */
+  .hero-left{ max-width:460px; }
+  .hero-left .lead{ margin-bottom:0; font-weight: 500; !important; }
+  .character{ max-width:100%; height:auto; }
+
+  /* Facturación + figura lado a lado */
+  .facturacion-row{ display:flex; align-items:flex-end; gap:24px; }
+  .facturacion-row .fact-copy{ flex:1; }
+  .facturacion-row .fact-figure img{ width:245px; height:auto; }
+  @media (max-width: 991.98px){
+    .facturacion-row{ flex-direction:column; align-items:flex-start; }
+    .facturacion-row .fact-figure img{ width:170px; }
+  }
+
+  /* Recorte vertical del chico (mitad superior) */
+  .img-crop-top{
+    width:100%;
+    max-width:10.5rem;
+    height:9rem;
+    overflow:hidden;
+    border-radius:12px;
+  }
+  .img-crop-top img{
+    width:100%; height:100%; display:block;
+    object-fit:cover; object-position: top right;
+  }
+  @media (min-width:1200px){
+    .img-crop-top{ height:286px; max-width:360px; }
+  }
+
+  /* Fondo del mid section */
+  .mid-section{ background:#DFDFEC; }
+
+  /* Tarjetas uniformes para logos del footer */
+  .brand-card{
+    background:#fff; border-radius:12px; height:150px;
+    display:flex; align-items:center; justify-content:center;
+    padding:10px 16px;
+  }
+  .brand-card img{
+    max-height:12rem; width:auto; object-fit:contain;
+  }
+
+  /* Avatares sociales */
+  .social-avatar{
+    width:28px; height:28px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid rgba(0,0,0,.08);
+  }
+  .text-secondary1 {
+    --bs-text-opacity: 1;
+    color: rgba((0,0,0,0), var(--bs-text-opacity)) !important;
+    font-weight: 500;
+    }
+    
+</style>
+
+
+
+</head>
+<body>
+  <!-- HERO / TOP -->
+  <header class="hero py-5 py-lg-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <!-- Columna izquierda -->
+      <div class="col-lg-6 text-center text-lg-start">
+        <div class="container p-0" style="max-width:460px;">
+          <div class="row g-0 align-items-end">
+            <!-- Título y subtítulo a la izquierda -->
+            <div class="col-8 pe-2 mb-5">
+              <h1 class="title-xl display-4 mb-2" style="color:#3d2d78;">Potencia<br>tu negocio</h1>
+              <p class="lead text-secondary1 mb-0"style="color:black;">Gestiona reservas, domicilios y control de ventas.</p>
+            </div>
+            <!-- Chica con gafas a la derecha, sin margen inferior -->
+            <div class="col-4 ps-2 text-center">
+              <img class="character glasses d-inline-block" style="width:120px; margin-bottom:0;" alt="Chica con anteojos" src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/CHICA+APPU+3.png"/>
+            </div>
+            <!-- Botones ocupan todo el ancho debajo -->
+            <div class="col-12">
+            <div class="d-grid gap-3 mt-0">
+              <a href="https://appustore.com/#footer" target="_blank" rel="noopener" class="btn btn-primary btn-pill w-100">Contáctanos</a>
+              <a href="https://appu.store" target="_blank" rel="noopener" class="btn btn-primary btn-pill w-100">Reservas y domicilios</a>
+              <a href="https://appustore.com/#planes" target="_blank" rel="noopener" class="btn btn-primary btn-pill w-100">Ver planes POS</a>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+       <!-- Columna derecha morada -->
+        <div class="col-lg-6">
+          <div class="right-pane rounded-4 p-3 p-md-4">
+            <!-- Appu Reservas -->
+            <div id="reservas" class="mb-4">
+              <h3 class="m-0 text-white mb-2">Appu <span class="fw-bold">Reservas</span></h3>
+              <div class="bubble">
+                <ul class="bullet mb-0">
+                  <li><strong>Digitalización</strong> de reservas y domicilios de pedidos.</li>
+                  <li><strong>Aumento de ventas</strong> y mayor visibilidad.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Appu Facturación + Figura lado a lado -->
+            <div class="facturacion-row">
+              <div class="fact-copy">
+                <h3 class="m-0 text-white mb-1">Appu <span class="fw-bold">Facturación</span></h3>
+              </div>
+              <div class="fact-figure d-none d-md-block">
+                <img class="character" alt="Chica camiseta naranja" src="https://appustore.com/Img/posInteligente/personaje1.webp" />
+              </div>
+            </div>
+             <div class="bubble">
+                <ul class="bullet mb-0">
+                  <li><strong>Disminución de gastos</strong> de la empresa.</li>
+                  <li><strong>Conexión directa</strong> con comerciantes en <strong>área metropolitana</strong>.</li>
+                  <li>Integración a la <strong>inteligencia artificial</strong>.</li>
+                </ul>
+              </div>
+
+          </div>
+        </div>
+        <!-- /col derecha -->
+      </div>
+    </div>
+  </header>
+<!-- MID SECTION: video + contacto -->
+<section class="py-5 mid-section">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <!-- Video YouTube -->
+      <div class="col-lg-8">
+        <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/mFYkyOp4t_A?rel=0&modestbranding=1&playsinline=1"
+            title="Appu - Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="contact-box mb-3">
+          <div class="d-flex align-items-center gap-2 mb-2">
+<div class="d-flex align-items-center gap-3 mb-2">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/appustore_/" target="_blank" rel="noopener"
+     class="d-inline-flex align-items-center link-dark text-decoration-none"
+     aria-label="Instagram @appustore_">
+    <img class="social-avatar me-2"
+         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABOFBMVEVHcExxF/13F/1zFf2AFv2MCu+iBOmyAuLEAd7SANraBMzwHpedI+XeANfmANHmAr+PF/6fD/vxAL7qArV7GP21FvnRVurnZ+P2Z9roQeDzGtXzB8v7AqvWiPn+7fn////7ftv/A7z0BKH3v/H+3fT+ruj+AJr/9/r/RcD/bMDKFff/Bo3iG+r8GrX/AIH+H5r/yeP+BHj/t9n/V5r+Am7+H37+BGT/ssX/Imz/RXv/ucz+e4z+JFT/XI3/MGL+LUf/u7f/yc7/Alr+OUf+MSz+QzT+R0T+iHD+SRj+VzH+WQX+AkL+c2L/0sT+aCX+cBL/7+j+aQL+eRv/oUX/fwL+iBD/wXz+jgD/3rr/1rn+dgz+nAP9FpT+lw7+qgH+tQD+vQD/w1f9kwf/xAD9PFn9ogj/ywD9uAfgLZLBAAAAaHRSTlMAW9H+////////xEsC///N////zFz/////////////////uP////7///////////7////////////////////////////////////////////////////////F/7VQ///+/87/vsj/uqL0GQwAAAHcSURBVHgBRMlFehwxEEDhV1VS04yZ7U04m+AmcBjfLLscJ4xLHyA0YGqSlJ7P9MT6BRC52EEQuDjlFITx2eWvXJsDQWYIKgJj4VQW5gBJAg75K5vTgZDTFUEu/kUEzqGaiC6DMBbhpqQyoyKTNYD1Hp+Ui6J0ZH1HhXNA0RfzyRIZl5WprroK3BZwwvx0aUGdB87HCIN5VBUVP9i468ZLxWLv+pg6vJmDaSiSW2eyIRNg84/HxfVJmTD3DxFWGmWjrosRpxMNGr3iIqYbG7IGK5lKvZE3jVuTynsDzHRoD3xpxaTQvIKumGBWgCouM9bPKEisJg0VTV4X0aBqQEuXQ2kGlmVmZCtgCoxBJfeAz0b8NQbWI7wOAKCZMgbn9E6tItG1HFTKRQ4jgSYpiiPu6BFJW1fW9J7oDFWWgpf0MH09YnB6yIEYnIJhLhqkpw3aC4OuUJ4QlDzX55/Um5m4Ue6dmXr59LwkBM0xy/ieVNV7zSSTZMU3fs8UNBomr+v3jQx5X1XmB7tdgnNu1JqDl+0nbnp+HpLp+WM5bB0mIMJFc/ouSgjd+U99O1qYONOhFEMonPcZCZ6eGp9eRcSwhWkSRCIxKnfeIMBh1WRcFOhTaENo/096OTA7AACDzKODDThakgAAAABJRU5ErkJggg=="
+         alt="Avatar Instagram @appustore_">
+    <span>@appustore_</span>
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@appu_colombia" target="_blank" rel="noopener"
+     class="d-inline-flex align-items-center link-dark text-decoration-none ms-2"
+     aria-label="TikTok @appu_colombia">
+    <img class="social-avatar me-2"
+         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAw1BMVEUAAAAAAAAFT1IAQUMDAABBub6i5Oe5wcRyQ0wIAABaxsv5////9/nGkJs5AAf////94OWSZW3m4uN4f4AhPj8AFBXt+vu019lzZG0mAAD91Nz/6e3wnq9VAAIALzAkfoM+o6djpqpGMDbNcIHVo632gJdrABPf+vvx7/HJYnUdAAA/AACNLD89zNLH9PfhXXcYnaO99vi8MU5Yz9SbCieE3uGtN1EAa3A9jI+ftLX//f7gN1pYAA8YHh/9tsToq7a3ADN4LtD7AAAAAXRSTlP+GuMHfQAAANJJREFUeAG90gMSxEAQBdDt2D9r27Z5/0ttUIhTThcGbzydy1FyZIMMwyYixwuiJCcgKaqmG8kIM5+CKBRL5UREpVqrR7DsoNZoAq12EDvdXn9gY3OYHzXGkwAyvDCdzRcOLgfSyvBjZ70BtG3dRSKZ8+NuD3O8PSxcDF2lc0RzfKoTxSFzRuNQp3hkBZgXp3JUzXkYy2do+oLo6q4QQroBs3t3d5w+Wqfor1QBtTJV0Xi+KIJvUXvg8fg8JxRFWuRH39b296I45Kjefi2zSc20sABZBhbHh+pZTQAAAABJRU5ErkJggg=="
+         alt="Avatar TikTok @appu_colombia">
+    <span>@appu_colombia</span>
+  </a>
+</div>
+
+          </div>
+            <div class="d-flex align-items-start gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Correo" style="width:24px; height:24px;">
+            <a id="contacto" href="mailto:administracion@appu.store" class="link-dark">administracion@appu.store</a>
+            </div>
+        </div>
+
+        <!-- Imagen recortada (mitad superior) -->
+        <div class="img-crop-top">
+          <img alt="Chico Appu"
+               src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/static/img/Chico+appu+4.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="row row-cols-1 row-cols-lg-3 justify-content-center text-center g-3 py-4" style="background:#fff;">
+  <div class="col">
+    <div class="brand-card mx-auto" style="max-width:360px;">
+      <img src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/Figmas/logominorista.png" alt="Plaza Minorista">
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="brand-card mx-auto" style="max-width:360px;">
+      <img src="https://appu-store-bucket-s3.s3.us-east-1.amazonaws.com/Figmas/LOGO+APPU+AZUL.png" alt="Appu">
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="brand-card mx-auto" style="max-width:360px;">
+      <img src="https://appustore.com/Img/Aliados/alcaldiaMed.webp" alt="Alcaldía de Medellín">
+    </div>
+  </div>
+</div>
+
+  <footer class="py-4 text-center text-secondary small" style="background-color: #fff;">© <span id="year"></span> Appu. Todos los derechos reservados.</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -433,4 +761,4 @@
         });
     </script>
 </body>
-</html>
+</html> -->
