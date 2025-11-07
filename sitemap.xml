@@ -4,83 +4,71 @@
 
   <!-- Página principal -->
   <url>
-    <loc>https://appu.store/</loc>
+    <loc>https://appustore.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Sección Appu Negocios -->
-  <url>
-    <loc>https://appu.store/planes/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
   <!-- Categorías -->
   <url>
-    <loc>https://appu.store/planes/cafeterias/</loc>
+    <loc>https://appustore.com/planes/cafeterias/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/carnicerias/</loc>
+    <loc>https://appustore.com/planes/carnicerias/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/droguerias/</loc>
+    <loc>https://appustore.com/planes/droguerias/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/fruvers/</loc>
+    <loc>https://appustore.com/planes/fruvers/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/restaurantes/</loc>
+    <loc>https://appustore.com/planes/restaurantes/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/retails/</loc>
+    <loc>https://appustore.com/planes/retails/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/supermercados/</loc>
+    <loc>https://appustore.com/planes/supermercados/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://appu.store/planes/tiendas/</loc>
+    <loc>https://appustore.com/planes/tiendas/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Flujo de compra -->
   <url>
-    <loc>https://appu.store/planes/checkout/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://appu.store/planes/confirmacion/</loc>
+    <loc>https://appustore.com/planes/checkout/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- StartCo o aliados -->
   <url>
-    <loc>https://appu.store/startco/</loc>
+    <loc>https://appustore.com/startco/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
